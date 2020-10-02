@@ -21,16 +21,14 @@ function eventlistener(){
 }
 
 function newForm(e){
-        e.preventDefault();
-        spinner.style.display = 'block';
-        spinner.style.marginTop = '50px'
-        btnLog.style.display = 'none';
-
-        setTimeout( () => {
-            
-            location.href = '../controller/iniciar-sesion.php';
-
-        }, 3000)       
+    e.preventDefault();
+    spinner.style.display = 'block';
+    spinner.style.marginTop = '50px'
+    btnLog.style.display = 'none';
+        
+    setTimeout( () => {
+        form.submit();
+    }, 2000);     
 }
 
 
@@ -55,4 +53,8 @@ function formValidation(){
     if(pass.value.length >= 8 && email.value.length > 6 && email.value.includes("@montechelo.com")){
        btnLog.disabled = false;
     }  
+
+    console.log(String(email.value));
+    console.log(String(pass.value));
+    
 }

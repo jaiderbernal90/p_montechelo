@@ -42,15 +42,15 @@
               <div>
                 <div class="inside-form">
                      <!-- FORM LOGIN -->
-                      <form action="" class="mt-0">
+                      <form action="#" class="mt-0 form-init" method="POST">
                         <!-- Email -->
                         <div class="md-form">
-                          <input type="email" id="materialLoginFormEmail" class="form-control material-tooltip-main" pattern="[a-zA-Z0-9_.-]+([.][a-zA-Z0-9_]+)*@montechelo.com" oninvalid="setCustomValidity('Ingrese un formato de correo valido: nombre@montechelo.com')" oninput="setCustomValidity('')"  minlength="8" required>
+                          <input type="email" name="email" id="materialLoginFormEmail" class="form-control material-tooltip-main email-log" pattern="[a-zA-Z0-9_.-]+([.][a-zA-Z0-9_]+)*@montechelo.com" oninvalid="setCustomValidity('Ingrese un formato de correo valido: nombre@montechelo.com')" oninput="setCustomValidity('')"  minlength="8" required>
                           <label for="materialLoginFormEmail">Correo</label>
                         </div>
                         <!-- Password -->
                         <div class="md-form">
-                          <input type="password" id="materialLoginFormPassword" class="form-control">
+                          <input type="password" name="pass" id="materialLoginFormPassword" class="form-control pass-log">
                           <label for="materialLoginFormPassword" minlength="8" required>Contraseña</label>
                         </div>
                         <div class="d-flex justify-content-around">
@@ -69,9 +69,12 @@
                         <!-- Sign in button -->
                         <button class="btn btn-login waves-effect w-100 mt-5 z-depth-0">Ingresar</button>
                         <!--Big blue-->
-                        <div class="spinner-grow text-primary" role="status">
-                          <span class="sr-only">Loading...</span>
+                        <div class="w-100 text-center">
+                          <div class="spinner-grow text-primary text-center" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
                         </div>
+                       
                       </form>
                     </div>
               </div>
@@ -135,5 +138,6 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <!--LOCAL JAVASCRIPT-->
+    <script src="js/login.js" type="module"></script>
 </body>
 </html>

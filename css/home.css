@@ -15,11 +15,6 @@ body {
     min-height: 100vh;
     background: #f0f0f0;
   }
-  footer {
-    width: 100%;
-    text-align: center;
-    align-self: flex-end !important;
-  }
 .scrollbar-light-blue::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     background-color: #F5F5F5;
@@ -135,69 +130,6 @@ body {
 .form-sm{
     display: none;
 }
-
-/*FOOTER*/
-.footer-login{
-    background: #002A60;
-    margin-top: 10% !important;
-    display: inline-block;
-}
-.container-fo{
-    height: auto;
-}
-.pt-foo-one{
-    max-height: 100%;
-}
-.groups-icon{
-    text-align: start;
-    justify-content: start;
-    margin-left: auto;
-    display: flex;
-    padding-top:20px;
-}
-.icon-font{
-    margin-left: 20%;
-    width: 50px;
-    height: 50px;
-    background: rgb(0, 0, 0);
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-}
-.fa-ico{
-    padding-top: 10px;
-    color: white;
-    font-size: 30px;
-}
-.text-icon{
-    padding-top: 2%;
-    padding-left: 10%;
-}
-.pt-foo-two{
-    color: white;
-    text-align: start;
-    padding-left: 10%;
-}
-.title-footer{
-    padding-top: 6%;
-    padding-bottom: 2%;
-    font-weight: bold;
-}
-.text-content-one{
-    font-style: normal;
-}
-.group-icons-foo{
-    padding-top: 2%;
-    font-size: 35px;
-}
-.color-icon{
-    color: white;
-}
-.foo-txt{
-    font-size: 12px;
-    font-style: italic;
-}
 /*
 MEDIA QUERIES - RESPONSIVE
 */
@@ -248,19 +180,8 @@ RESPONSIVE PHONE AND TABLET
         width: 100% !important;
         margin: auto;
     }
-    .footer-login{
-        display: block;
-        margin-top: 180px !important;
-        justify-content: center;
-        text-align: center;
-    }
     .link-pass{
         padding-left: 30px;
-    }
-    .title-footer {
-        margin-top: 8%;
-        padding-top: 9%;
-        border-top: 1px solid #fff;
     }
 }
 
@@ -275,11 +196,6 @@ RESPONSIVE PHONE AND TABLET
         margin: 5%;
         z-index: 0;
     }
-}
-@media(min-width:764px) and (max-width:993px) and (max-width:1060px){
-   .footer-login{
-       margin-top: 180px !important;
-   }
 }
 @media(max-width:993px){
     .cont-top,.text-bar{
@@ -306,11 +222,6 @@ RESPONSIVE PHONE AND TABLET
     }
     .inside-form{
         display: block;
-    }
-    .pt-foo-one,.pt-foo-two{
-        width: 100%;
-        justify-content: center !important;
-        text-align: center !important;
     }
 }
 
@@ -397,12 +308,6 @@ RESPONSIVE PHONE AND TABLET
         margin-top: 12% !important;
         margin-left: 11% !important;
     }
-    .pt-foo-one {
-        padding-left: 10%;
-    }
-    .pt-foo-two {
-        padding-left: 13%;
-    }
 }
 @media(min-width:1940px) and (max-width:2020px){
     .font-form{
@@ -412,12 +317,6 @@ RESPONSIVE PHONE AND TABLET
         width: 95%;
         margin-top: 12% !important;
         margin-left: 15% !important;
-    }
-    .pt-foo-one {
-        padding-left: 10%;
-    }
-    .pt-foo-two {
-        padding-left: 13%;
     }
 }
 @media(min-width:2021px) and (max-width:2240px){
@@ -429,12 +328,6 @@ RESPONSIVE PHONE AND TABLET
         margin-top: 12% !important;
         margin-left: 14% !important;
     }
-    .pt-foo-one {
-        padding-left: 10%;
-    }
-    .pt-foo-two {
-        padding-left: 13%;
-    }
 }
 @media(min-width:2240px) and (max-width:2400px){
     .font-form{
@@ -444,12 +337,6 @@ RESPONSIVE PHONE AND TABLET
         width: 100%;
         margin-top: 13% !important;
         margin-left: 18% !important;
-    }
-    .pt-foo-one {
-        padding-left: 10%;
-    }
-    .pt-foo-two {
-        padding-left: 13%;
     }
 }
 @media(min-width:2400px) and (max-width:2591px){
@@ -461,12 +348,6 @@ RESPONSIVE PHONE AND TABLET
         margin-top: 13% !important;
         margin-left: 21% !important;
     }
-    .pt-foo-one {
-        padding-left: 10%;
-    }
-    .pt-foo-two {
-        padding-left: 13%;
-    }
 }
 @media (min-width:2592px){
     .font-form{
@@ -476,11 +357,5 @@ RESPONSIVE PHONE AND TABLET
         width: 100%;
         margin-top: 13.5%!important;
         margin-left: 26% !important;
-    }
-    .pt-foo-one {
-        padding-left: 10%;
-    }
-    .pt-foo-two {
-        padding-left: 13%;
     }
 }

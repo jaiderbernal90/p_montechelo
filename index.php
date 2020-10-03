@@ -12,6 +12,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>INTRANET MONTECHELO</title>
 </head>
 <body class="scrollbar-light-blue">
@@ -84,50 +85,7 @@
      </section>
       <!-- Footer--> 
       <footer class="footer-login container-fluid p-0 m-0">
-        <div class="w-100 container-fo row">
-            <div class="pt-foo-one col-12 col-md-6">
-                <div class="groups-icon">
-                  <div class="icon-font">
-                    <i class="fas fa-map-marker-alt fa-ico"></i>
-                  </div>
-                  <div class="text-white text-icon">
-                    <span><strong>Carrera 43 # 17-47</strong></span>
-                  </div>
-                </div>
-                <div class="groups-icon">
-                  <div class="icon-font">
-                    <i class="fas fa-phone fa-ico"></i>
-                  </div>
-                  <div class="text-white text-icon">
-                    <span><strong>7441427</strong></span>
-                  </div>
-                </div>
-                <div class="groups-icon">
-                  <div class="icon-font">
-                    <i class="far fa-envelope fa-ico" ></i>
-                  </div>
-                  <div class="text-white text-icon">
-                    <span><strong>montechelo@motechelo.com</strong></span>
-                  </div>
-                </div>
-            </div>
-            <div class="pt-foo-two col-12 col-md-6 ">
-              <div class="title-footer">
-                <h4>Información de la compañia</h4>
-              </div>
-              <div class="text-content-one">
-                <p>Type something here Type something here</p> 
-              </div>
-              <div class="group-icons-foo">
-                <a href=""><i class="fab fa-facebook-square color-icon"></i></a>
-                <a href=""><i class="fab fa-instagram ml-3 color-icon"></i></a>
-                <a href=""><i class="fab fa-linkedin ml-3 color-icon"></i></a>
-              </div>
-            </div>
-        </div>
-        <div class="text-white mt-3 mb-2 foo-txt">
-          <span>Copyright © Grupo 1 - SENA </span>  
-        </div>
+        <?php include('view/footer.html') ?>
       </footer>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -138,6 +96,6 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <!--LOCAL JAVASCRIPT-->
-    <script src="js/login.js" type="module"></script>
+    <script src="js/login.js" type="text/javascript"></script>
 </body>
 </html>

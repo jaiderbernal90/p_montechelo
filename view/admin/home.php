@@ -1,3 +1,7 @@
+<?php
+    require_once('../../controller/sessions/security/securityAdmin.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,7 @@
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
-        <?php include('../header.html') ?>
+        <?php include('../header.php') ?>
     <!--/.Navbar-->
     <!--First section-->
     <section class="fond-item d-block" >
@@ -455,17 +459,17 @@
     <!-- eighth Section -->
     <section class="eighth-section container-fluid w-100 m-0 p-0">
         <div class="row w-100 p-0 m-0">
-            <div class="col-12">
-                <h4 class="title-section text-center"> En Montechelo te escuchamos</h4>
+            <div class="col-12 p-0">
+                <h4 class="title-section text-center p-3"> En Montechelo te escuchamos</h4>
             </div>
-            <div class="col-12">
+            <div class="col-12 p-0">
                 <p class="text-des">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, porro unde. Tempore sapiente sed nesciunt, quis minus iusto dolorum itaque at possimus iure optio harum necessitatibus cum eos aperiam velit!
                 </p>
             </div> 
         </div>
-        <div class="row w-100">
-            <div class="col-12">
+        <div class="row w-100 m-0 p-0">
+            <div class="col-12 p-0">
             <div class="text-center mt-4 mb-4 btn-color-one">
                 <button type="button" class="btn p-2">Realizar mi PQRF</button>
             </div>

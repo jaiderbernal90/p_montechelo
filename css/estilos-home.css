@@ -59,7 +59,11 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       width: 50%;
       margin: 25px;
   }
-  
+  @media(max-width:840px){
+    .widget {
+      width: 100%;
+    }
+  }
   .widget p {
     display: inline; 
     position: relative;
@@ -138,10 +142,14 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 .carousel-item{
     cursor: pointer;
 }
+.view{
+  min-height: 400px;
+}
 .view > img{
     height: auto;
     background-position: center;
     background-size: 100%;
+    min-height: 400px;
 }
 .button-sec > button{
     width: 15%;
@@ -291,7 +299,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 /*./SECTION SIXTH*/
 /*section-seventh*/
 .card-wrapper{
-    margin: 5em;
+    margin: 2em;
     height: auto;
     min-width: 250px;
     display: block;

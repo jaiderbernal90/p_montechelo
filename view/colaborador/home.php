@@ -1,3 +1,7 @@
+<?php
+    require_once('../../controller/sessions/security/securityColaborador.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,7 @@
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
-        <?php include('../header.html') ?>
+        <?php include('../header.php') ?>
     <!--/.Navbar-->
     <!--First section-->
     <section class="fond-item d-block" >

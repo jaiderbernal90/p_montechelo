@@ -43,7 +43,7 @@
               <div>
                 <div class="inside-form">
                      <!-- FORM LOGIN -->
-                      <form action="controller/iniciar_sesion.php" class="mt-0 form-init" method="POST">
+                      <form action="controller/sessions/iniciarSesion.php" class="mt-0 form-init" method="POST">
                         <!-- Email -->
                         <div class="md-form">
                           <input type="email" name="email" id="materialLoginFormEmail" class="form-control material-tooltip-main email-log" pattern="[a-zA-Z0-9_.-]+([.][a-zA-Z0-9_]+)*@montechelo.com" oninvalid="setCustomValidity('Ingrese un formato de correo valido: nombre@montechelo.com')" oninput="setCustomValidity('')"  minlength="8" required>
@@ -51,8 +51,8 @@
                         </div>
                         <!-- Password -->
                         <div class="md-form">
-                          <input type="password" name="pass" id="materialLoginFormPassword" class="form-control pass-log">
-                          <label for="materialLoginFormPassword" minlength="8" required>Contraseña</label>
+                          <input type="password" name="password" id="materialLoginFormPassword" class="form-control pass-log">
+                          <label for="materialLoginFormPassword" minlength="5" required>Contraseña</label>
                         </div>
                         <div class="d-flex justify-content-around">
                           <div>

@@ -49,7 +49,7 @@ function formValidation(){
         }
     }
     //PASSWORD VALIDATION
-    if(pass.value.length >= 8){
+    if(pass.value.length >= 5){
         //BORDER GREEN 
         pass.style.borderBottom = "1px solid #00B811";
     }else{
@@ -59,7 +59,7 @@ function formValidation(){
         btnLog.disabled = true;
     } 
     //SPINNER FUN
-    if(pass.value.length >= 8 && email.value.length > 6 && email.value.includes("@montechelo.com")){
+    if(pass.value.length >= 5 && email.value.length > 6 && email.value.includes("@montechelo.com")){
         //BUTTON ENABLED
        btnLog.disabled = false;
     }  

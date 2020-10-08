@@ -12,5 +12,5 @@ $(document).ready(function () {
   
       $('.animated-icon3').toggleClass('open');
     });
-    
+  
   });

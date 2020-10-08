@@ -71,38 +71,7 @@
         </div>
     </section>
     <!--/.Second Section-->
-    <!--Tird section-->
-    <section class="full-reset text-center w-100 container-fluid mt-5 pb-5 d-block bg-white" >
-            <div class="row text-center mt-5">
-                <h4 class="m-auto title-section">Estadísticas</h4>
-            </div>
-            <div class="row mb-5 mt-5">
-                <div class="col-12">
-                    <a href="" class="mr-md-5">
-                        <article class="tile">
-                            <div class="tile-icon full-reset"><i class="zmdi fas fa-user-tie fa-xs"></i></div>
-                            <div class="tile-name all-tittles">Usuarios</div>
-                            <div class="tile-num full-reset">100</div>
-                        </article>
-                    </a>
-                    <a href="" class="mr-md-5">
-                        <article class="tile">
-                            <div class="tile-icon full-reset"><i class="fas fa-folder-open fa-xs"></i></div>
-                            <div class="tile-name all-tittles">Publicaciones</div>
-                            <div class="tile-num full-reset">410</div>
-                        </article>
-                    </a>
-                    <a href="">
-                        <article class="tile">
-                            <div class="tile-icon full-reset"><i class="fas fa-stamp fa-xs"></i></div>
-                            <div class="tile-name all-tittles" style="width: 90%;">Solicitudes</div>
-                            <div class="tile-num full-reset">30</div>
-                        </article>
-                    </a>
-                </div> 
-            </div>
-        </section>
-     <!--/.Tird section-->
+    <!--Tird section--><!--/.Tird section-->
     <!--fourth section-->
     <section class="w-100 section-fourth container-fluid p-0">
         <div class="my-5">

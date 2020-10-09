@@ -25,7 +25,7 @@
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
-        <?php include('../header.php') ?>
+        <?php include('header.php') ?>
     <!--/.Navbar-->
     <!--First section-->
     <section class="fond-item d-block" >

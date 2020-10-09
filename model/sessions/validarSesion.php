@@ -30,7 +30,7 @@
 
 					$_SESSION['autenticado'] = "Activo";
 
-					if($f['estate'] == "Activo"){
+					if($f['estate'] == "activo"){
 						//REDIRECTION HOME
 						if($f['role'] == 1){
 							echo "<script>alert('BIENVENID@ ADMINISTRADOR')</script>";
@@ -46,15 +46,15 @@
 						}
 					}else{
 						echo "<script>alert('USUARIO INACTIVO')</script>";
-						echo "<script>location.href='../index.php'</script>";
+						echo "<script>location.href='../../index.php'</script>";
 					}
 				}else{
 					echo "<script>alert('CONTRASEÑA INCORRECTA')</script>";
-					echo "<script>location.href='../index.php'</script>";
+					echo "<script>location.href='../../index.php'</script>";
 				}
 			}else{
-				echo "<script>alert('USUARIO INCORRECTO')</script>";
-				echo "<script>location.href='../index.php'</script>";
+				echo "<script>alert('USUARIO NO REGISTRADO')</script>";
+				echo "<script>location.href='../../index.php'</script>";
 			}
 		}
 		//FUNCTION LOGOUT

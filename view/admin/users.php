@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="row w-100 m-0 mt-5">
-                <div class="text-center m-auto">
+                <div class="text-center m-auto col-12">
                     <table id="example" class="display table dataTable table-striped table-sm" cellspacing="0" width="100%">
                         <thead class="header-table">
                             <tr class="text-center">

@@ -60,6 +60,13 @@
     table.dataTable thead .sorting_desc_disabled{
         background-image:url("../img/sort_desc_disabled.png");
     }
+   label {
+       width: 100%;
+        display: inline-block;
+        margin-bottom: .5rem;
+        margin-right: auto;
+        text-align: left;
+    }
     .dataTables_filter{
         text-align: right;
     }
@@ -156,4 +163,73 @@
     .colum6 i:hover{
         color: #0760be !important;
         font-size: 24px;
+    }
+    @media screen and (max-width: 768px){
+        .dataTables_filter{
+            text-align: left;
+        }
+    }    
+
+    @media(max-width:999px){
+        table {
+            width:100%;
+        }
+        select[name ='example_length']{
+            margin-top: 10px;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem 1.75rem .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            border-radius: .25rem;
+        }
+        thead {
+            display: none;
+        }
+        tbody td{
+            display: block;
+        }
+        tbody td:before {
+            content: attr(data-th);
+            display: block;
+        }
+        table tbody tr td:before {
+            font-size: 14px;
+            color: #a1a1a1;
+            line-height: 1.2;
+            font-weight: unset;
+            position: absolute;
+            text-align: left;
+            width: 30%;
+            left: 5px;
+        }
+        table tbody tr td {
+            padding-left: 30% !important;
+            margin-bottom: 24px;
+            text-align: right;
+        }
+        table tbody tr td:nth-child(1):before {
+            content: "Id";
+        }
+        table tbody tr td:nth-child(2):before {
+            content: "Nombres";
+        }
+        table tbody tr td:nth-child(3):before {
+            content: "E-mail";
+        }
+        table tbody tr td:nth-child(4):before {
+            content: "Rol";
+        }
+        table tbody tr td:nth-child(5):before {
+            content: "Activo";
+
+        }
+        table tbody tr td:nth-child(6):before {
+            content: "Más Información";
+        }
+        .colum1,.colum2,.colum3,.colum4,.colum5,.colum6{
+           display: block;
+           margin-left: auto;
+        }
     }

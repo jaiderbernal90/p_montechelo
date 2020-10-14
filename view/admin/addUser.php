@@ -101,16 +101,15 @@
                     <div class="form-row">
                         <!-- Grid column -->
                         <div class="col-md-6">
-                        <!-- Material input -->
-                        <div class="md-form form-group mt-2">
-                            <p class="tite text-primary">Rol</p>
-                            <select class="seleccionar md-form w-100">
-                                <option value="" disabled selected>Elija una opción</option>
-                                <option value="1">Colaborador</option>
-                                <option value="2">Líder</option>
-                                <option value="3">Administrador</option>
+                            <!-- Material input -->
+                            <div class="md-form form-group mt-2">
+                                <p class="tite text-primary">Estado</p>
+                                <select class="seleccionar md-form w-100">
+                                    <option value="" disabled selected>Elija una opción</option>
+                                    <option value="1">Activo</option>
+                                    <option value="2">Inactivo</option>
                             </select>
-                        </div>
+                            </div>
                         </div>
                         <!-- Grid column -->
 
@@ -205,30 +204,7 @@
 
                     <!-- Grid row -->
                     <div class="form-row">
-                        <!-- Grid column -->
-                        <div class="col-md-6">
-                            <!-- Material input -->
-                            <div class="md-form form-group">
-                                <p class="tite text-primary">Estado</p>
-                                <select class="seleccionar md-form w-100">
-                                    <option value="" disabled selected>Elija una opción</option>
-                                    <option value="1">Activo</option>
-                                    <option value="2">Inactivo</option>
-                            </select>
-                            </div>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-6">
-                            <!-- Material input -->
-                            <div class="md-form form-group ar-input">
-                                <p class="tite text-primary">Salario</p>
-                                <input type="number" class="form-control inputs"
-                                placeholder="Salario del usuario">
-                            </div>
-                        </div>
-                        <!-- Grid column -->
+                       
                     </div>
                     <!-- Grid row -->
                     <!-- Grid row -->

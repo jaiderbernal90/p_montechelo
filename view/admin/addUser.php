@@ -201,7 +201,21 @@
                         <!-- Grid column -->
                     </div>
                     <!-- Grid row -->
+                     <!-- Grid row -->
+                     <div class="form-row">
 
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <!-- Material input -->
+                            <div class="md-form form-group ar-input">
+                                <p class="tite text-primary">Salario</p>
+                                <input type="number" class="form-control inputs"
+                                placeholder="2'000.000">
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
                     <!-- Grid row -->
                     <div class="form-row">
                        

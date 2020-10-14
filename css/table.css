@@ -201,11 +201,11 @@
             font-weight: unset;
             position: absolute;
             text-align: left;
-            width: 30%;
+            width: 40%;
             left: 5px;
         }
         table tbody tr td {
-            padding-left: 30% !important;
+            padding-left: 25% !important;
             margin-bottom: 24px;
             text-align: right;
         }
@@ -228,8 +228,31 @@
         table tbody tr td:nth-child(6):before {
             content: "Más Información";
         }
+        .colum1{
+            margin-top: 20px;
+        }
         .colum1,.colum2,.colum3,.colum4,.colum5,.colum6{
            display: block;
            margin-left: auto;
+           max-width: 100% !important;
+           width: 70%;
+           height: 50px;
+           box-sizing: border-box;
+           white-space: nowrap !important;      
+           overflow: hidden;
+           text-overflow: ellipsis;
+        }
+        .colum6{
+            padding-bottom: 20px;
+        }
+    }
+    @media(max-width:412px){
+        tbody td{
+            display: table;
+        }
+        table tbody tr td {
+            padding-left: 15% !important;
+            margin-bottom: 24px;
+            text-align: right;
         }
     }

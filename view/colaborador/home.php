@@ -17,6 +17,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <!-- CAROUSEL -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+     <!-- ICON -->
+     <link rel="shortcut icon" href="../../img/icon.png" type="image/x-icon">
     <title>MONTECHELO</title>
     <!--Local CSS -->
     <link rel="stylesheet" href="../../css/menu.css">

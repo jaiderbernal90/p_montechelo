@@ -1,0 +1,36 @@
+.inputs::placeholder { 
+    color: #888888 !important;
+    padding: 0; 
+}
+
+.tite{
+    margin-bottom: -1px;
+    font-weight: 500;
+}
+.seleccionar {
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    text-decoration: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    font: inherit;
+    border-bottom: 1px solid #ced4da;
+    transition: 200ms all;
+    color: #888888 !important; 
+    font-weight: 500;
+    padding-bottom: 3.5px;
+}
+.correo{
+    padding-top: 12px !important; 
+}
+.ar-input{
+    padding-top: 9px !important;
+}
+.btn{
+    line-height: 1.5;
+    font-size: 1em !important;
+    border-radius: 5px;
+}
+/**/

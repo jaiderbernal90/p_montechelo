@@ -18,12 +18,12 @@
     <!-- CAROUSEL -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
     <!-- ICON -->
-    <link rel="shortcut icon" href="../../img/logo-montechelo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../img/icon.png" type="image/x-icon">
     <title>MONTECHELO</title>
     <!--Local CSS -->
     <link rel="stylesheet" href="../../css/menu.css">
-    <link rel="stylesheet" href="../../css/estilos-home.css">
     <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/estilos-home.css">
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
@@ -78,7 +78,7 @@
     </section>
     <!--/.Second Section-->
     <!--Tird section-->
-    <section class="full-reset text-center w-100 container-fluid mt-5 pb-5 d-block bg-white" >
+    <section class="full-reset text-center w-100 container-fluid mt-5 pb-5 d-block third-section" >
             <div class="row text-center mt-5">
                 <h4 class="m-auto title-section">Estadísticas</h4>
             </div>
@@ -243,7 +243,7 @@
     </section>
     <!--/. Fifth Section -->
     <!-- Sixth Section -->
-    <section class="class-sixth container-fluid m-0 p-0">
+    <section class="class-sixth container-fluid m-0 p-0 mt-5">
     <div class="mb-5 w-100">
             <h4 class="title-section text-center">Anuncios</h4>
     </div>
@@ -345,11 +345,11 @@
     </section>
     <!--/. Sixth Section -->
     <!-- Seventh Section -->
-    <section class="section-seventh full-reset container-fluid p-0 m-0 w-100">
-        <div class="row w-100 m-0 mt-3">
+    <section class="section-seventh full-reset container-fluid p-0 m-0 w-100 my-5">
+        <div class="row w-100 m-0 mt-5">
             <h4 class="title-section m-auto">Próximos Cumpleaños</h4>
         </div>
-        <div class="row p-0 m-0 w-100">
+        <div class="row p-0 m-0 w-100 mb-5">
             <div class="col-12 col-md-6 col-lg-4 p-0">
                   <!-- Rotating card -->
                 <div class="card-wrapper">

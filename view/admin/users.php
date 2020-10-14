@@ -18,7 +18,7 @@
     <!-- DATATABLE -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <!-- ICON -->
-    <link rel="shortcut icon" href="../../img/logo-montechelo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../img/icon.png" type="image/x-icon">
     <title>MONTECHELO</title>
     <!--Local CSS -->
     <link rel="stylesheet" href="../../css/menu.css">
@@ -33,6 +33,7 @@
     <!--First section-->
 
     <section class="first-section container-fluid p-0 m-0 mt-5">
+        <!-- title -->
             <div class="row m-0 mt-4 p-0">
                 <div class="col-12 mt-5">
                     <header>
@@ -40,9 +41,19 @@
                     </header>
                 </div>
             </div>
-            <div class="row w-100 m-0 mt-5">
+        <!--./ title -->
+        <!-- BTN -->
+        <div class="row m-0 p-0">
+            <div class="col-12 text-center mt-5 p-0">
+            <a href="addUser.php" class="text-white"><button type="button" class="btn btn-primary px-5 py-2 mb-3"><i class="fas fa-plus"></i></button></a>
+            </div>
+        </div>
+        <!--./ BTN  -->
+        <!-- TABLE -->
+            <div class="row w-100 m-0   ">
                 <div class="text-center m-auto col-12">
                     <table id="example" class="display table dataTable table-striped table-sm" cellspacing="0" width="100%">
+                        <!-- TABLE HEAD -->
                         <thead class="header-table">
                             <tr class="text-center">
                                 <th class="th-sm">DOCUMENTO</th>
@@ -53,6 +64,7 @@
                                 <th class="th-sm"></th>
                             </tr>
                         </thead>
+                        <!-- TABLE BODY -->
                         <tbody>
                             <tr>
                                 <td class="colum1">205125181</td>
@@ -60,7 +72,7 @@
                                 <td class="colum3">sebastianbustos1509@montechelo.com</td>
                                 <td class="colum4">Administrador</td>
                                 <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye" title="Ver más"></i></td>
+                                <td class="colum6 text-center"><a href="infoUser.php"><i class="fas fa-eye" title="Ver más"></i></a></td>
                             </tr>
                             <tr>
                                 <td class="colum1">1003588111</td>
@@ -154,6 +166,7 @@
                     </table>
                 </div>
             </div>
+        <!-- TABLE -->
     </section>
 
     

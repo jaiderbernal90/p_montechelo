@@ -216,6 +216,9 @@
 .active{
     background: rgba(228, 228, 228,.5);
 }
+.nav-flex-icons .nav-link:hover{
+    background: transparent !important;
+}
 .nav-link{
     transition: linear .1s !important;
 }

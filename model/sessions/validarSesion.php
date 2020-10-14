@@ -46,7 +46,7 @@
 						}
 					}else{
 						echo "<script>alert('USUARIO INACTIVO')</script>";
-						echo "<script>location.href='../../index.php'</script>";
+						 echo "<script>location.href='../../index.php'</script>";
 					}
 				}else{
 					echo "<script>alert('CONTRASEÑA INCORRECTA')</script>";

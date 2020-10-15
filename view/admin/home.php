@@ -174,7 +174,7 @@
         </div>
         <!--/.Carousel Wrapper-->
         <div class="button-sec text-center mt-4 mb-4">
-            <button type="button" class="btn btn-primary p-2"><i class="fas fa-plus"></i></button>
+            <button type="button" class="btn btn-primary p-2 mb-3"><i class="fas fa-plus"></i></button>
         </div>
     </section>
     <!--/.fourth section-->

@@ -1,5 +1,6 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
+    require_once('../../controller/admin/read/load.php');
 ?>
 
 <!DOCTYPE html>
@@ -54,115 +55,10 @@
                 <div class="text-center m-auto col-12">
                     <table id="example" class="display table dataTable table-striped table-sm" cellspacing="0" width="100%">
                         <!-- TABLE HEAD -->
-                        <thead class="header-table">
-                            <tr class="text-center">
-                                <th class="th-sm">DOCUMENTO</th>
-                                <th class="th-sm">NOMBRE</th>
-                                <th class="th-sm">EMAIL</th>
-                                <th class="th-sm">ROL</th>
-                                <th class="th-sm">ACTIVO</th>
-                                <th class="th-sm"></th>
-                            </tr>
-                        </thead>
-                        <!-- TABLE BODY -->
-                        <tbody>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">Juan Sebastian Bustos</td>
-                                <td class="colum3">sebastianbustos1509@montechelo.com</td>
-                                <td class="colum4">Administrador</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><a href="infoUser.php"><i class="fas fa-eye" title="Ver más"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">1003588111</td>
-                                <td class="colum2">Jaider Alejandro Bernal Camacho</td>
-                                <td class="colum3">jaider.bernal90@montechelo.com</td>
-                                <td class="colum4">Administrador</td>
-                                <td class="colum5">No</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">1003056258</td>
-                                <td class="colum2">Pepiro Perez</td>
-                                <td class="colum3">pepito12@montechelo.com</td>
-                                <td class="colum4">Lider</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">No</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">No</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="colum1">205125181</td>
-                                <td class="colum2">System Architect</td>
-                                <td class="colum3">Edinburgh</td>
-                                <td class="colum4">61</td>
-                                <td class="colum5">Si</td>
-                                <td class="colum6 text-center"><i class="fas fa-eye"></i></td>
-                            </tr>
-                        </tbody>
+                        <?php
+                            //Invocacion de la función para cargar usuarios
+                            loadUsers();
+                        ?>
                     </table>
                 </div>
             </div>

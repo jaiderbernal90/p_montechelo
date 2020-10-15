@@ -314,7 +314,7 @@
     <!--/. Sixth Section -->
     <!-- Seventh Section -->
     <section class="section-seventh full-reset container-fluid p-0 m-0 w-100">
-        <div class="row w-100 m-0 mt-3">
+        <div class="row w-100 m-0 mt-5 mb-3">
             <h4 class="title-section m-auto">Próximos Cumpleaños</h4>
         </div>
         <div class="row p-0 m-0 w-100">
@@ -430,7 +430,7 @@
     <section class="eighth-section container-fluid w-100 m-0 p-0">
         <div class="row w-100 p-0 m-0">
             <div class="col-12">
-                <h4 class="title-section text-center"> En Montechelo te escuchamos</h4>
+                <h4 class="title-section text-center mt-5"> En Montechelo te escuchamos</h4>
             </div>
             <div class="col-12">
                 <p class="text-des">

@@ -44,15 +44,15 @@
         <!-- FORM -->
         <div class="row m-0 p-0">
             <div class="col-12">
-                <form action="" class="form m-4 m-md-5">
+                <form action="" class="form m-4 m-md-5" method="POST">
                     <!-- Grid row -->
                     <div class="form-row">
                         <!-- Grid column -->
                         <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form form-group">
-                            <p class="tite text-primary">Nombre</p>
-                            <input type="text" class="form-control inputs" placeholder="Nombre">
+                            <p class="tite text-primary">Nombres</p>
+                            <input type="text" class="form-control inputs" name="name" placeholder="Nombre">
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -61,8 +61,8 @@
                         <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form form-group">
-                            <p class="tite text-primary">Apellido</p>
-                            <input type="password" class="form-control inputs" placeholder="Apellido">
+                            <p class="tite text-primary">Apellidos</p>
+                            <input type="text" class="form-control inputs" name="last_name" placeholder="Apellido">
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -76,8 +76,8 @@
                             <!-- Material input -->
                             <div class="md-form form-group rounded">
                                 <p class="tite text-primary">Tipo de Documento</p>
-                                <select class="seleccionar md-form w-100">
-                                    <option value="" disabled selected>Elija una opción</option>
+                                <select class="seleccionar md-form w-100" name="type_id">
+                                    <option value="" >Elija una opción</option>
                                     <option value="1">Cédula de Ciudadania</option>
                                     <option value="2">Cédula de Extranjería</option>
                                     <option value="3">Tarjeta de Identidad</option>
@@ -90,7 +90,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary pt-2">Número de Documento</p>
-                                <input type="password" class="form-control inputs" placeholder="Número de Documento">
+                                <input type="text" class="form-control inputs" name="document" placeholder="Número de Documento">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -99,15 +99,15 @@
 
                     <!-- Grid row -->
                     <div class="form-row">
-                       <!-- Grid column -->
-                       <div class="col-md-6">
+                        <!-- Grid column -->
+                        <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group mt-2">
                                 <p class="tite text-primary">Estado</p>
-                                <select class="seleccionar md-form w-100">
-                                    <option value="" disabled selected>Elija una opción</option>
-                                    <option value="1">Activo</option>
-                                    <option value="2">Inactivo</option>
+                                <select class="seleccionar md-form w-100" name="estate">
+                                    <option value="" >Elija una opción</option>
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
                             </select>
                             </div>
                         </div>
@@ -117,9 +117,9 @@
                         <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form form-group mt-2">
-                            <p class="tite text-primary">Genero</p>
-                            <select class="seleccionar md-form w-100">
-                                <option value="" disabled selected>Elija una opción</option>
+                            <p class="tite text-primary">Género</p>
+                            <select class="seleccionar md-form w-100" name="gender">
+                                <option value="" >Elija una opción</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
                                 <option value="3">Otro</option>
@@ -137,7 +137,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary">Correo</p>
-                                <input type="email" class="form-control inputs correo" placeholder="Correo">
+                                <input type="email" class="form-control inputs correo" name="email" placeholder="Correo">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -146,8 +146,8 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Fecha de Nacimiento</p>
-                                <input type="date" class="form-control inputs" value="2020-10-10">
+                                <p class="tite text-primary">Fecha de Nacimiento </p>
+                                <input type="date" class="form-control inputs" name="date_birth" value="">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -159,8 +159,8 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Celular</p>
-                                <input type="number" class="form-control inputs" placeholder="33333333333">
+                                <p class="tite text-primary mt-3">Celular</p>
+                                <input type="text" class="form-control inputs" name="num_cel" placeholder="Número de Celular">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -169,9 +169,9 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Telefono</p>
-                                <input type="number" class="form-control inputs"
-                                placeholder="7441427">
+                                <p class="tite text-primary mt-3">Teléfono</p>
+                                <input type="text" class="form-control inputs" name="tel" 
+                                placeholder="Número de Teléfono">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -182,9 +182,14 @@
                         <!-- Grid column -->
                         <div class="col-md-6">
                             <!-- Material input -->
-                            <div class="md-form form-group">
+                            <div class="md-form form-group ">
                                 <p class="tite text-primary">Rol</p>
-                                <input type="text" class="form-control inputs" placeholder="Administrador">
+                                <select class="seleccionar md-form w-100" name="role">
+                                    <option value="" disabled selected>Elija una opción</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Líder</option>
+                                    <option value="3">Colaborador</option>
+                                </select>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -193,31 +198,34 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Cargo</p>
-                                <input type="text" class="form-control inputs"
-                                placeholder="Programador">
+                                <p class="tite text-primary ar-input">Cargo</p>
+                                <input type="text" class="form-control inputs" name="charge" 
+                                placeholder="Cargo que desempeña">
                             </div>
                         </div>
                         <!-- Grid column -->
                     </div>
                     <!-- Grid row -->
-
-                    <!-- Grid row -->
-                    <div class="form-row">
+                     <!-- Grid row -->
+                     <div class="form-row">
 
                         <!-- Grid column -->
                         <div class="col-md-12">
                             <!-- Material input -->
                             <div class="md-form form-group ar-input">
                                 <p class="tite text-primary">Salario</p>
-                                <input type="number" class="form-control inputs"
+                                <input type="text" class="form-control inputs" name="salary" 
                                 placeholder="2'000.000">
                             </div>
                         </div>
                         <!-- Grid column -->
                     </div>
                     <!-- Grid row -->
-
+                    <!-- Grid row -->
+                    <div class="form-row">
+                       
+                    </div>
+                    <!-- Grid row -->
                     <!-- Grid row -->
                     <div class="form-row">
                         <!-- Grid column -->
@@ -225,8 +233,8 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary">Departamento</p>
-                                <select class="seleccionar md-form w-100">
-                                    <option value="" disabled selected>Elija una opción</option>
+                                <select class="seleccionar md-form w-100" name="deparment" id="deparment">
+
                                 </select>
                             </div>
                         </div>
@@ -237,8 +245,8 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary">Ciudad</p>
-                                <select class="seleccionar md-form w-100">
-                                    <option value="" disabled selected>Elija una opción</option>
+                                <select class="seleccionar md-form w-100" name="city" id="municipality"> 
+                                    <option value="" >Elija una opción</option>
                                 </select>
                             </div>
                         </div>
@@ -252,8 +260,8 @@
                             <!-- Material input -->
                             <div class="md-form form-group ar-input">
                                 <p class="tite text-primary">Dirección</p>
-                                <input type="number" class="form-control inputs"
-                                placeholder="Cra.4 #7-22">
+                                <input type="text" class="form-control inputs" name="address" 
+                                placeholder="Dirección">
                             </div>  
                         </div>
                         <!-- Grid column -->
@@ -263,22 +271,22 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary">Tipo de contrato</p>
-                                <select class="seleccionar md-form w-100">
+                                <select class="seleccionar md-form w-100" name="type_contract">
                                     <option value="" disabled selected>Elija una opción</option>
-                                    <option value="" disabled >Contrato Laboral</option>
-                                    <option value="" disabled >Contrato de Aprendizaje</option>
+                                    <option value="1">Contrato Laboral</option>
+                                    <option value="2">Contrato de Aprendizaje</option>
                                 </select>
                             </div>
                         </div>
                         <!-- Grid column -->
-                    </div>
+                    </div> 
                     <!-- Grid row -->
                     <div class="form-row d-flex mt-5">
                         <div class="col-6 text-md-right text-center">
-                            <button type="submit" class="btn btn-md btn-info"><a class='text-white' href="users.php">Volver</button></a>    
-                        </div>
+                            <label type="button" class="btn btn-md btn-info"><a class='text-white' href="users.php">Volver</a></label>
+                        </div> 
                         <div class="col-6 text-md-left text-center">
-                            <button type="submit" class="btn btn-md btn-info"><a class='text-white' href="">Modificar</a></button>
+                            <button type="submit" class="btn btn-md btn-info"><a class='text-white'>Modificar</a></button>
                         </div>
                     </div>
                    

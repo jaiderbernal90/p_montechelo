@@ -146,7 +146,7 @@
     </section>
     <!--/.fourth section-->
     <!-- Fifth Section -->
-    <section class="section-fifth container-fluid w-100 p-2 p-md-5">
+    <section class="section-fifth container-fluid w-100 p-2 p-md-5 pt-0">
         <div class="row text-center w-100">
             <h4 class="title-section m-auto">Noticias</h4>
         </div>
@@ -208,10 +208,10 @@
     <!--/. Fifth Section -->
     <!-- Sixth Section -->
     <section class="class-sixth container-fluid m-0 p-0">
-    <div class="mb-5 w-100">
+    <div class="my-5 w-100">
             <h4 class="title-section text-center">Anuncios</h4>
     </div>
-    <div uk-slider="center: true">
+    <div uk-slider="center: true" class="mb-5">
         <div class="w-100 arrows text-center">
             <a class=" uk-position-small uk-hidden-hover p-0 font-weight-bold" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
             <a class="uk-position-small uk-hidden-hover p-0 font-weight-bold" href="#" uk-slidenav-next uk-slider-item="next"></a>
@@ -306,10 +306,10 @@
     <!--/. Sixth Section -->
     <!-- Seventh Section -->
     <section class="section-seventh full-reset container-fluid p-0 m-0 w-100">
-        <div class="row w-100 m-0 mt-5">
+        <div class="row w-100 m-0 mt-5 mb-3">
             <h4 class="title-section m-auto">Próximos Cumpleaños</h4>
         </div>
-        <div class="row p-0 m-0 w-100">
+        <div class="row p-0 m-0 w-100 mb-5">
             <div class="col-12 col-md-6 col-lg-4 p-0">
                   <!-- Rotating card -->
                 <div class="card-wrapper">
@@ -420,7 +420,7 @@
     <!--/.Seventh Section-->
     <!-- eighth Section -->
     <section class="eighth-section container-fluid w-100 m-0 p-0">
-        <div class="row w-100 p-0 m-0">
+        <div class="row w-100 p-0 m-0 mt-5">
             <div class="col-12">
                 <h4 class="title-section text-center"> En Montechelo te escuchamos</h4>
             </div>

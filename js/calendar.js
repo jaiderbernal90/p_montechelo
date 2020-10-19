@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let calendar = new Calendar('calendar');
     calendar.getElement().addEventListener('change', e => {
-        console.log(calendar.value().format('LLL'));
+       
     });
 })
 
@@ -17,7 +17,7 @@ class Calendar {
       this.elGridBody = this.elCalendar.querySelector('.grid__body');
       this.elMonthName = this.elCalendar.querySelector('.month-name');
       this.showCells();
-      this.dtaeBirth = '18';
+      this.dateBirth = null;
   }
 
   showTemplate() {
@@ -86,15 +86,19 @@ class Calendar {
       let templateCells = '';
       let disabledClass = '';
       for (let i = 0; i < this.cells.length; i++) {
+          this.dateBirth = 18;
           disabledClass = '';
+
           if (!this.cells[i].isInCurrentMonth) {
               disabledClass = 'grid__cell--disabled';
           }
+
           // <span class="grid__cell grid__cell--gd grid__cell--selected">1</span>
-          if(this.dtaeBirth === this.cells[i].date.date()){
+
+          if(parseInt(this.dateBirth) === this.cells[i].date.date()){
                 //Dibujar las celdas
                 templateCells += `
-                    <span class="grid__cell grid__cell--gd ${disabledClass}" data-cell-id="${i} bg-danger">
+                    <span class="bg-dark grid__cell grid__cell--gd ${disabledClass} text-white" data-cell-id="${i}">
                         ${this.cells[i].date.date()}
                     </span>
                 `;

@@ -40,7 +40,7 @@
                     <div class="avatar avatar-profile">
                         <div class="mask">
                             <div class="mask-black rounded-circle text-center">
-                                <a href="" class="link-text nav-link"><span>Modificar </span><i class="fas fa-pen"></i></a>
+                                <a href="changePhoto.php" class="link-text nav-link"><span>Modificar </span><i class="fas fa-pen"></i></a>
                             </div>
                             <img src="../../img/user.png" class="rounded-circle"
                             alt="Sample avatar image.">  
@@ -73,136 +73,145 @@
             </div>
         </div>
         <!--./ row -->
-        <!-- row -->
-        <div class="row w-100 pl-md-5">
-            <!-- Column -->
-            <div class="col-md-6 p-0">
-                <div class="md-form form-group row mx-0">
-                    <div class="col-11 px-4">
-                        <input type="email" class="form-control inputs" name="email" placeholder="Correo" disabled>
-                    </div> 
-                    <div class="col-1 p-0">
-                        <div class="icon pt-3 mt-1">
-                            <i class="fas fa-pen"></i>
-                        </div>    
-                    </div>              
+        <form action="" class="form" method="POST">
+            <!-- row -->
+            <div class="row w-100 pl-md-5 pl-3">
+                <!-- Column -->
+                <div class="col-md-6 p-0">
+                    <div class="md-form form-group row mx-0">
+                        <div class="col-11 px-4">
+                            <input type="email" class="form-control inputs" name="email" placeholder="Correo" id="email" disabled>
+                        </div> 
+                        <div class="col-1 p-0">
+                            <div class="icon pt-3 mt-1">
+                                <i class="fas fa-pen"></i>
+                            </div>    
+                        </div>              
+                    </div>
                 </div>
-            </div>
-            <!--./ Column -->
+                <!--./ Column -->
 
-            <!-- Column -->
-            <div class="col-md-6">
-                <div class="md-form form-group row">
-                    <div class="col-11 px-4">
-                        <input type="number" class="form-control inputs" name="cel" placeholder="Celular" disabled>
-                    </div> 
-                    <div class="col-1 p-0">
-                        <div class="icon pt-3 mt-1">
-                            <i class="fas fa-pen"></i>
-                        </div>    
-                    </div>              
+                <!-- Column -->
+                <div class="col-md-6">
+                    <div class="md-form form-group row">
+                        <div class="col-11 px-4">
+                            <input type="number" class="form-control inputs" name="cel" placeholder="Celular" id="cel" disabled>
+                        </div> 
+                        <div class="col-1 p-0">
+                            <div class="icon pt-3 mt-1">
+                                <i class="fas fa-pen"></i>
+                            </div>    
+                        </div>              
+                    </div>
                 </div>
+                <!-- ./ Column -->
             </div>
-            <!-- ./ Column -->
-        </div>
-        <!--./ row -->
-        
-         <!-- row -->
-         <div class="row w-100 pl-md-5">
-            <!-- Column -->
-            <div class="col-md-6 p-0">
-                <div class="md-form form-group row mx-0">
-                    <div class="col-11 px-4">
-                        <input type="text" class="form-control inputs" name="gender" placeholder="Género" disabled>
-                    </div> 
-                    <div class="col-1 p-0">
-                        <div class="icon pt-3 mt-1">
-                            <i class="fas fa-pen"></i>
-                        </div>    
-                    </div>              
+            <!--./ row -->
+            
+            <!-- row -->
+            <div class="row w-100 pl-md-5 pl-3">
+                <!-- Column -->
+                <div class="col-md-6 p-0">
+                    <div class="md-form form-group row mx-0">
+                        <div class="col-11 px-4">
+                            <input type="text" class="form-control inputs" name="gender" placeholder="Género" id="genero" disabled>
+                        </div> 
+                        <div class="col-1 p-0">
+                            <div class="icon pt-3 mt-1">
+                                <i class="fas fa-pen"></i>
+                            </div>    
+                        </div>              
+                    </div>
                 </div>
-            </div>
-            <!--./ Column -->
+                <!--./ Column -->
 
-            <!-- Column -->
-            <div class="col-md-6">
-                <div class="md-form form-group row">
-                    <div class="col-11 px-4">
-                        <input type="text" class="form-control inputs" name="municipality" placeholder="Ciudad" disabled>
-                    </div> 
-                    <div class="col-1 p-0">
-                        <div class="icon pt-3 mt-1">
-                            <i class="fas fa-pen"></i>
-                        </div>    
-                    </div>              
+                <!-- Column -->
+                <div class="col-md-6">
+                    <div class="md-form form-group row">
+                        <div class="col-11 px-4">
+                            <input type="text" class="form-control inputs" name="municipality" placeholder="Ciudad" id="city" disabled>
+                        </div> 
+                        <div class="col-1 p-0">
+                            <div class="icon pt-3 mt-1">
+                                <i class="fas fa-pen"></i>
+                            </div>    
+                        </div>              
+                    </div>
                 </div>
+                <!-- ./ Column -->
             </div>
-            <!-- ./ Column -->
-        </div>
-        <!--./ row -->
+            <!--./ row -->
 
-        <!-- row -->
-        <div class="row w-100 pl-md-5">
-            <!-- Column -->
-            <div class="col-md-6">
-                <div class="md-form form-group row ">
-                    <div class="col-11 px-4">
-                        <input type="text" class="form-control inputs" name="department" placeholder="Departamento" disabled>
-                    </div> 
-                    <div class="col-1 p-0">
-                        <div class="icon pt-3 mt-1">
-                            <i class="fas fa-pen"></i>
-                        </div>    
-                    </div>              
+            <!-- row -->
+            <div class="row w-100 pl-md-5 pl-3">
+                <!-- Column -->
+                <div class="col-md-6">
+                    <div class="md-form form-group row ">
+                        <div class="col-11 px-4">
+                            <input type="text" class="form-control inputs" name="department" placeholder="Departamento" id="department" disabled>
+                        </div> 
+                        <div class="col-1 p-0">
+                            <div class="icon pt-3 mt-1">
+                                <i class="fas fa-pen"></i>
+                            </div>    
+                        </div>              
+                    </div>
                 </div>
-            </div>
-            <!--./ Column -->
+                <!--./ Column -->
 
-            <!-- Column -->
-            <div class="col-md-6">
-                <div class="md-form form-group row">
-                    <div class="col-11 px-4">
-                        <input type="text" class="form-control inputs" name="address" placeholder="Dirección" disabled>
-                    </div> 
-                    <div class="col-1 p-0">
-                        <div class="icon pt-3 mt-1">
-                            <i class="fas fa-pen"></i>
-                        </div>    
-                    </div>              
+                <!-- Column -->
+                <div class="col-md-6">
+                    <div class="md-form form-group row">
+                        <div class="col-11 px-4">
+                            <input type="text" class="form-control inputs" name="address" placeholder="Dirección" id="address" disabled>
+                        </div> 
+                        <div class="col-1 p-0">
+                            <div class="icon pt-3 mt-1">
+                                <i class="fas fa-pen"></i>
+                            </div>    
+                        </div>              
+                    </div>
                 </div>
+                <!-- ./ Column -->
             </div>
-            <!-- ./ Column -->
-        </div>
-        <!--./ row -->
+            <!--./ row -->
+            <!-- row -->
+            <div class="row w-100 pl-md-5 pl-3">
+                <!-- Column -->
+                <div class="col-md-6 p-0">
+                    <div class="md-form form-group row mx-0">
+                        <div class="col-11 px-4">
+                            <select class="seleccionar md-form w-100" name="type_contract" required disabled>
+                                <option value="" selected disabled>Tipo Contrato</option>
+                                <option value="1">Contrato Laboral</option>
+                                <option value="2">Contrato de Aprendizaje</option>
+                            </select>
+                        </div>           
+                    </div>
+                </div>
+                <!--./ Column -->
 
-        
-        <!-- row -->
-        <div class="row w-100 pl-md-5">
-            <!-- Column -->
-            <div class="col-md-6 p-0">
-                <div class="md-form form-group row mx-0">
-                    <div class="col-11 px-4">
-                        <select class="seleccionar md-form w-100 " name="type_contract" required disabled>
-                            <option value="" selected disabled>Tipo Contrato</option>
-                            <option value="1">Contrato Laboral</option>
-                            <option value="2">Contrato de Aprendizaje</option>
-                        </select>
-                    </div>           
+                <!-- Column -->
+                <div class="col-md-6">
+                    <div class="md-form form-group row">
+                        <div class="col-11 mt-2 px-4">
+                            <input type="number" class="form-control" name="salary" placeholder="Salario" disabled>
+                        </div>         
+                    </div>
+                </div>
+                <!-- ./ Column -->
+                <div class="col-md-12 d-flex group-btn">
+                    <button class="btn btn-primary m-auto update">Modificar</button>
+                    <button type="submit" class="btn btn-primary mr-auto save">Guardar</button>
                 </div>
             </div>
-            <!--./ Column -->
-
-            <!-- Column -->
-            <div class="col-md-6">
-                <div class="md-form form-group row">
-                    <div class="col-11 mt-2 px-4">
-                        <input type="number" class="form-control inputs" name="salary" placeholder="Salario" disabled>
-                    </div>         
+            <div class="col-md-12 d-flex">
+                <div class="spinner-grow text-primary text-center m-auto" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
             </div>
-            <!-- ./ Column -->
-        </div>
-        <!--./ row -->
+            <!--./ row -->
+        </form>
         <hr>
         <div class="row w-100 d-flex">
             <div class="root text-center m-auto">
@@ -240,5 +249,6 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/calendar.js"></script>
+    <script src="../../js/perfil.js"></script>
 </body>
 </html>

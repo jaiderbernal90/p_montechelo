@@ -91,8 +91,7 @@
     font-weight: 700;
 }
 .icon{
-    color: #000 !important;
-    cursor: pointer !important;
+    color: rgb(107, 107, 107) !important;
 }
 .seleccionar {
     outline: none;
@@ -103,11 +102,16 @@
     background-color: transparent;
     background-image: none;
     font: inherit;
-    border-bottom: 1px solid #ced4da;
     transition: 200ms all;
     color: #888888 !important; 
     font-weight: 500;
     padding-bottom: 3.5px;
+}
+.spinner-grow{
+    display: none;
+}
+.md-form input:not([type]), .md-form input[type="text"]:not(.browser-default), .md-form input[type="password"]:not(.browser-default), .md-form input[type="email"]:not(.browser-default), .md-form input[type="url"]:not(.browser-default), .md-form input[type="time"]:not(.browser-default), .md-form input[type="date"]:not(.browser-default), .md-form input[type="datetime"]:not(.browser-default), .md-form input[type="datetime-local"]:not(.browser-default), .md-form input[type="tel"]:not(.browser-default), .md-form input[type="number"]:not(.browser-default), .md-form input[type="search"]:not(.browser-default), .md-form input[type="phone"]:not(.browser-default), .md-form input[type="search-md"], .md-form textarea.md-textarea {
+    border: 0px;
 }
 /**/
 .footer-login{

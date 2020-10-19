@@ -1,6 +1,7 @@
 <?php
    require_once('../../../model/conection/conexion.php');
    require_once('../../../model/query/admin/queryUser.php');
+   require_once('../../modales/modal.php');
    error_reporting(0);
 
    //Variables
@@ -28,8 +29,7 @@
          $consultas=new consultas();
          $result=$consultas->registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract);
    }else {
-      echo "<script>alert('LLENE TODOS LOS CAMPOS')</script>";
-      echo "<script>location.href='../../../view/admin/addUser.php'</script>";
+      modalAlert('Llene todos los campos obligatorios','../../../view/admin/addUser.php','warning',3);
    }
 
  ?>

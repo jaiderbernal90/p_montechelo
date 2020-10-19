@@ -14,8 +14,8 @@
                         </a>
                     </li>
                 <li class="nav-item avatar img-icon px-2 d-none d-lg-block">    
-                    <img src="../../img/user.png" width="42" height="42" class="rounded-circle z-depth-0"
-                    alt="avatar image">
+                    <a href="perfil.php"><img src="../../img/user.png" width="42" height="42" class="rounded-circle z-depth-0"
+                    alt="avatar image"></a>
                 </li>
             </ul>
         </div>

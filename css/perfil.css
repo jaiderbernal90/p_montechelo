@@ -1,0 +1,115 @@
+.cont-card{
+    width: 30%;
+}
+.font-up{
+    height: 20em !important;
+    display: flex;
+    position: relative;
+    background: rgb(4, 12, 6);
+}
+.avatar-profile{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 12em;
+}
+.avatar{
+    cursor: initial;
+}
+.avatar img{
+    cursor: pointer;
+}
+.mask{
+    position: relative;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    vertical-align: middle;
+    margin: 0 auto;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center center;
+}
+.mask:hover .mask-black{
+    background: rgba(0, 0, 0, 0.3) !important;
+    z-index: 3;
+    display: flex;
+}
+.mask > img {
+    border: 7px solid white;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 2;
+    position: relative;
+}
+.mask-black{
+    display: none;
+    border: 7px solid white;
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+    z-index: 0;
+    transition: all;
+    transition-duration: .3s;
+    transition-delay: .2s;
+}
+.link-text{
+    margin: auto;
+    text-decoration: none;
+    color: white !important;
+    font-weight: 600;
+}
+.link-text:hover {
+    background: transparent;
+    cursor: pointer;
+}
+.c-mask{
+    display: flex;
+    margin-top: 8.5em !important;
+}
+.title-name h4{
+    margin: 0 auto;
+    font-size: 28px !important;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+.title-second span{
+    font-size: 19px !important;
+}
+.title-section h4{
+    font-size: 26px !important;
+    font-weight: 700;
+}
+.icon{
+    color: #000 !important;
+    cursor: pointer !important;
+}
+.seleccionar {
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    text-decoration: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    font: inherit;
+    border-bottom: 1px solid #ced4da;
+    transition: 200ms all;
+    color: #888888 !important; 
+    font-weight: 500;
+    padding-bottom: 3.5px;
+}
+/**/
+.footer-login{
+    margin-top: 10em !important;
+}

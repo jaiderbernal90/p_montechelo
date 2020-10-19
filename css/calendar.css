@@ -1,0 +1,154 @@
+/*  */
+:root {
+  --color-bg-calendar: #1b1e22;
+  --color-cell: #000;
+  --color-cell-disabled: #424649;
+}
+
+.root {
+  min-height: 100vh;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  padding: 20px 20px;
+  border-radius: 3px;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.calendar__header {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+/* */
+.container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar-container {
+	position: relative;
+  width: 450px;
+  background: #ccc;
+  border-radius: 15px;
+}
+
+.calendar-container header {
+	border-radius: 1em 1em 0 0;
+	background: #e66b6b;
+	color: #fff;
+	padding: 1.5em 1em;
+}
+
+.day {
+	font-size: 4em;
+	font-weight: 900;
+	line-height: 1em;
+}
+
+.month {
+	font-size: 4em;
+	line-height: 1em;
+	text-transform: lowercase;
+}
+.calendar thead {
+	color: #e66b6b;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.calendar td {
+	padding: .5em 1em;
+	text-align: center;
+}
+
+.calendar tbody td:hover {
+	background: #cacaca;
+	color: rgb(114, 114, 114);
+}
+
+.current-day {
+	color: #e66b6b;
+}
+
+.prev-month,
+.next-month {
+	color: #000;
+}
+
+.ring-left,
+.ring-right {
+	position: absolute;
+	top: 230px;
+}
+
+.ring-left { left: 2em; }
+.ring-right { right: 2em; }
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 8px;
+	height: 32px;
+	width: 8px;
+}
+.calendar .control {
+  color: #000;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.grid__header, .grid__body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.grid__header {
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.grid__body {
+  grid-auto-rows: 40px;
+  color: var(--color-cell);
+}
+
+.grid__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid__cell--gd {
+  cursor: pointer;
+}
+
+.grid__cell--selected {
+  color: var(--color-bg-calendar);
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--color-bg-calendar) inset;
+}
+
+.grid__cell--disabled {
+  color: var(--color-cell-disabled);
+  cursor: not-allowed;
+}

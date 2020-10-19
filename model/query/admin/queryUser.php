@@ -77,14 +77,10 @@
 
 			//QUERY RESULT
 			if (!$result){
-				
-				echo "<script>alert('ERROR AL REGISTRAR')</script>";
-				echo "<script>location.href='../../../view/admin/addUser.php'</script>";
-			}else {
-				
+				modalAlert('ERROR AL REGISTRAR','../../../view/admin/addUser.php','error',3);
+			}else {		
 				$result->execute();
-				echo "<script>alert('USUARIO REGISTRADO')</script>";
-				echo "<script>location.href='../../../view/admin/users.php'</script>";
+				modalAlert('USUARIO REGISTRADO','../../../view/admin/users.php','success',3);
         	}
 	  }
 	  //Cierra insertarUsuarios

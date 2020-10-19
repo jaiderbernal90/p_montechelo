@@ -45,13 +45,18 @@
         <div class="row m-0 p-0">
             <div class="col-12">
                 <form action="../../controller/admin/create/registerUser.php" class="form m-4 m-md-5" method="POST">
+                    <div class="form-row">
+                        <div class="col-12 text-left text-infor">
+                            <span><span class="text-danger">*</span> Campos obligatorios</span>
+                        </div>
+                    </div>
                     <!-- Grid row -->
                     <div class="form-row">
                         <!-- Grid column -->
                         <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form form-group">
-                            <p class="tite text-primary">Nombres</p>
+                            <p class="tite text-primary">Nombres <span class="text-danger">*</span></p>
                             <input type="text" class="form-control inputs" name="name" placeholder="Nombre" required>
                         </div>
                         </div>
@@ -61,7 +66,7 @@
                         <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form form-group">
-                            <p class="tite text-primary">Apellidos</p>
+                            <p class="tite text-primary">Apellidos <span class="text-danger">*</span></p>
                             <input type="text" class="form-control inputs" name="last_name" placeholder="Apellido" required>
                         </div>
                         </div>
@@ -75,9 +80,9 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group rounded">
-                                <p class="tite text-primary">Tipo de Documento</p>
+                                <p class="tite text-primary">Tipo de Documento <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="type_id" required>
-                                    <option value="" >Elija una opción</option>
+                                    <option value="" disabled selected >Elija una opción</option>
                                     <option value="1">Cédula de Ciudadania</option>
                                     <option value="2">Cédula de Extranjería</option>
                                     <option value="3">Tarjeta de Identidad</option>
@@ -89,8 +94,8 @@
                          <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary pt-2">Número de Documento</p>
-                                <input type="text" class="form-control inputs" name="document" placeholder="Número de Documento" required>
+                                <p class="tite text-primary pt-2">Número de Documento <span class="text-danger">*</span></p>
+                                <input type="text" class="form-control inputs" name="document" placeholder="Número de Documento" required pattern="[0-9]+" oninvalid="setCustomValidity('Ingrese un formato valido de número de documento')" oninput="setCustomValidity('')"> 
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -103,7 +108,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group mt-2">
-                                <p class="tite text-primary">Estado</p>
+                                <p class="tite text-primary">Estado <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="estate" required>
                                     <option value="" >Elija una opción</option>
                                     <option value="activo">Activo</option>
@@ -117,9 +122,9 @@
                         <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form form-group mt-2">
-                            <p class="tite text-primary">Género</p>
+                            <p class="tite text-primary">Género <span class="text-danger">*</span></p>
                             <select class="seleccionar md-form w-100" name="gender" required>
-                                <option value="" >Elija una opción</option>
+                                <option value="" disabled selected>Elija una opción</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
                                 <option value="3">Otro</option>
@@ -136,8 +141,8 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Correo</p>
-                                <input type="email" class="form-control inputs correo" name="email" placeholder="Correo" required>
+                                <p class="tite text-primary">Correo <span class="text-danger">*</span></p>
+                                <input type="email" class="form-control inputs correo" name="email" placeholder="Correo" required pattern="[a-zA-Z0-9_.-]+([.][a-zA-Z0-9_]+)*@montechelo.com" minlength="8" oninvalid="setCustomValidity('Ingrese un formato de correo valido: nombre@montechelo.com')" oninput="setCustomValidity('')" >
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -146,7 +151,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Fecha de Nacimiento </p>
+                                <p class="tite text-primary">Fecha de Nacimiento <span class="text-danger">*</span></p>
                                 <input type="date" class="form-control inputs" name="date_birth" required>
                             </div>
                         </div>
@@ -159,8 +164,8 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary mt-3">Celular</p>
-                                <input type="text" class="form-control inputs" name="num_cel" placeholder="Número de Celular" required>
+                                <p class="tite text-primary mt-3">Celular <span class="text-danger">*</span></p>
+                                <input type="text" class="form-control inputs" name="num_cel" placeholder="Número de Celular" required pattern="[0-9]+" oninvalid="setCustomValidity('Ingrese un formato valido de número de celular')" oninput="setCustomValidity('')" minlength="9">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -171,7 +176,7 @@
                             <div class="md-form form-group">
                                 <p class="tite text-primary mt-3">Teléfono</p>
                                 <input type="text" class="form-control inputs" name="tel" 
-                                placeholder="Número de Teléfono">
+                                placeholder="Número de Teléfono" pattern="[+()-.0-9a-zA-Z]+" minlength="6">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -183,7 +188,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group ">
-                                <p class="tite text-primary">Rol</p>
+                                <p class="tite text-primary">Rol <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="role" required>
                                     <option value="" disabled selected>Elija una opción</option>
                                     <option value="1">Administrador</option>
@@ -198,9 +203,9 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary ar-input">Cargo</p>
+                                <p class="tite text-primary ar-input">Cargo<span class="text-danger">*</span></p>
                                 <input type="text" class="form-control inputs" name="charge" 
-                                placeholder="Cargo que desempeña" required>
+                                placeholder="Cargo que desempeña" required minlength="3" pattern="[A-Za-z0-9]+">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -213,9 +218,9 @@
                         <div class="col-md-12">
                             <!-- Material input -->
                             <div class="md-form form-group ar-input">
-                                <p class="tite text-primary">Salario</p>
+                                <p class="tite text-primary">Salario<span class="text-danger">*</span></p>
                                 <input type="text" class="form-control inputs" name="salary" 
-                                placeholder="Salario" required>
+                                placeholder="Salario" required pattern="[0-9]+">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -232,7 +237,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Departamento</p>
+                                <p class="tite text-primary">Departamento <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="deparment" id="deparment" required>
 
                                 </select>
@@ -244,7 +249,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Ciudad</p>
+                                <p class="tite text-primary">Ciudad <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="city" id="municipality" required> 
                                     <option value="" >Elija una opción</option>
                                 </select>
@@ -259,7 +264,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group ar-input">
-                                <p class="tite text-primary">Dirección</p>
+                                <p class="tite text-primary">Dirección <span class="text-danger">*</span></p>
                                 <input type="text" class="form-control inputs" name="address" 
                                 placeholder="Dirección" required>
                             </div>  
@@ -270,7 +275,7 @@
                         <div class="col-md-6">
                             <!-- Material input -->
                             <div class="md-form form-group">
-                                <p class="tite text-primary">Tipo de contrato</p>
+                                <p class="tite text-primary">Tipo de contrato <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="type_contract" required>
                                     <option value="" disabled selected>Elija una opción</option>
                                     <option value="1">Contrato Laboral</option>
@@ -310,6 +315,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
    <!-- DATATABLE JS -->
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/selects.js"></script>

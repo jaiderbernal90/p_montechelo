@@ -366,6 +366,10 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     background:  #73B5CA;
     color: #fff;
 }
+.text-infor{
+  font-size: 13px;
+  color: #6a696d;
+}
 /**/
 .footer-login{
   margin-top: 60px !important;

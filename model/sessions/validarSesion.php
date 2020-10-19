@@ -1,4 +1,6 @@
 <?php  
+   require_once('../../controller/modales/modal.php');
+
 	class validarSesion{
 		//FUNCTION LOGIN
 		public function iniciarSesion($email, $password){
@@ -14,7 +16,7 @@
 			if($result){
 				$result -> execute();
 			}else{
-				echo "<script>alert('Error')</script>";
+				modalAlertLogin('Error','../../index.php','error',2);
 			}
 			//VALIDATION USER
 			if($f = $result -> fetch()){
@@ -33,28 +35,22 @@
 					if($f['estate'] == "activo"){
 						//REDIRECTION HOME
 						if($f['role'] == 1){
-							echo "<script>alert('BIENVENID@ ADMINISTRADOR')</script>";
-							echo "<script>location.href='../../view/admin/home.php'</script>";
+							modalAlertLogin('BIENVENIDO ADMINISTRADOR', '../../view/admin/home.php','success',2);
 						}
 						if($f['role'] == 2){
-							echo "<script>alert('BIENVENID@ LIDER')</script>";
-							echo "<script>location.href='../../view/lider/home.php'</script>";
+							modalAlertLogin('BIENVENIDO LÍDER', '../../view/lider/home.php','success',2);
                         }
                         if($f['role'] == 3){
-							echo "<script>alert('BIENVENID@ COLABORADOR')</script>";
-							echo "<script>location.href='../../view/colaborador/home.php'</script>";
+							modalAlertLogin('BIENVENIDO COLABORADOR', '../../view/colaborador/home.php','success',2);
 						}
 					}else{
-						echo "<script>alert('USUARIO INACTIVO')</script>";
-						 echo "<script>location.href='../../index.php'</script>";
+						modalAlertLogin('USUARIO INACTIVO','../../index.php','warning',2);
 					}
 				}else{
-					echo "<script>alert('CONTRASEÑA INCORRECTA')</script>";
-					echo "<script>location.href='../../index.php'</script>";
+					modalAlertLogin('CONTRASEÑA INCORRECTA','../../index.php','error',2);
 				}
 			}else{
-				echo "<script>alert('USUARIO NO REGISTRADO')</script>";
-				echo "<script>location.href='../../index.php'</script>";
+				modalAlertLogin('USUARIO NO REGISTRADO','../../index.php','error',2);
 			}
 		}
 		//FUNCTION LOGOUT
@@ -65,9 +61,8 @@
 			//EXIT THE SESSION 
 			session_start();
 			session_destroy();
-			//MESSAGE AND REDIRECTION
-			echo "<script>alert('SESION TERMINADA')</script>";
-			echo "<script>location.href='../../index.php'</script>";
+			//MODAL AND REDIRECTION
+			modalAlertLogin('SESIÓN TERMINADA','../../index.php','success',2);
 		}
 	}
 	

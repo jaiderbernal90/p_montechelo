@@ -113,7 +113,30 @@
 .md-form input:not([type]), .md-form input[type="text"]:not(.browser-default), .md-form input[type="password"]:not(.browser-default), .md-form input[type="email"]:not(.browser-default), .md-form input[type="url"]:not(.browser-default), .md-form input[type="time"]:not(.browser-default), .md-form input[type="date"]:not(.browser-default), .md-form input[type="datetime"]:not(.browser-default), .md-form input[type="datetime-local"]:not(.browser-default), .md-form input[type="tel"]:not(.browser-default), .md-form input[type="number"]:not(.browser-default), .md-form input[type="search"]:not(.browser-default), .md-form input[type="phone"]:not(.browser-default), .md-form input[type="search-md"], .md-form textarea.md-textarea {
     border: 0px;
 }
-/**/
+/*CHANGE PROFILE*/
+.img-change{
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgb(255, 255, 255);
+}
+.cont-btn{
+    margin: auto;
+}
+@media(min-width:992px){
+    .custom-file{
+        width: 50%;
+    }
+    .cont-btn{
+        margin: 0;
+    }
+    .rigth{
+        margin-left: auto !important;
+    }
+    .left{
+        margin-right: auto !important;
+    }
+}
+/*Footer*/
 .footer-login{
     margin-top: 10em !important;
 }

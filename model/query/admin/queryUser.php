@@ -1,5 +1,23 @@
 <?php  
 	class consultas{
+		public function userInfo($id){
+			//VARIABLES
+			$resultado = null;
+			//CONECTION DATA BASE
+			$modelo = new conexion();
+			$conexion = $modelo -> post_conexion();
+			//QUERY SQL
+			$sql = "SELECT * FROM user WHERE id_user = :id";
+			//PDO
+			$result = $conexion -> prepare($sql);
+			$result->bindParam(':id',$id);
+			$result -> execute();
+
+			while ($f=$result->fetch()) {
+				$resultado[]=$f;
+			}
+			return $resultado;
+		}
 		public function email(){
 			//VARIABLES
 			$resultado = null;
@@ -84,5 +102,45 @@
         	}
 	  }
 	  //Cierra insertarUsuarios
+	  public function updateUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="UPDATE user SET name=:name, last_name=:last_name, type_id=:type_id, document=:document, estate=:estate, gender=:gender, email=:email, date_birth=:date_birth, num_cel=:num_cel, tel=:tel, role=:role, charge=:charge, salary=:salary, deparment=:deparment, city=:city, address=:address, type_contract=:type_contract WHERE document=:document";
+
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":name",$name);
+			$result->bindParam(":last_name",$last_name);
+			$result->bindParam(":type_id",$type_id);
+			$result->bindParam(":document",$document);
+			$result->bindParam(":estate",$estate);
+			$result->bindParam(":gender",$gender);
+			$result->bindParam(":email",$email);
+			$result->bindParam(":date_birth",$date_birth);
+			$result->bindParam(":num_cel",$num_cel);
+			$result->bindParam(":tel",$tel);
+			$result->bindParam(":role",$role);
+			$result->bindParam(":charge",$charge);
+			$result->bindParam(":salary",$salary);
+			$result->bindParam(":deparment",$deparment);
+			$result->bindParam(":city",$city);
+			$result->bindParam(":address",$address);
+			$result->bindParam(":type_contract",$type_contract);
+			
+
+			//QUERY RESULT
+			if (!$result){
+				
+				echo "<script>alert('ERROR AL MODIFICAR')</script>";
+				echo "<script>location.href='../../../view/admin/addUser.php'</script>";
+			}else {
+				
+				$result->execute();
+				echo "<script>alert('ACTUALIZACION EXITOSA')</script>";
+				echo "<script>location.href='../../../view/admin/users.php'</script>";
+			}
+		}//Cierra insertarUsuarios
 	}
 ?>

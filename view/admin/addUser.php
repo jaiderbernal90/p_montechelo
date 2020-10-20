@@ -111,8 +111,8 @@
                                 <p class="tite text-primary">Estado <span class="text-danger">*</span></p>
                                 <select class="seleccionar md-form w-100" name="estate" required>
                                     <option value="" >Elija una opción</option>
-                                    <option value="activo">Activo</option>
-                                    <option value="inactivo">Inactivo</option>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
                             </select>
                             </div>
                         </div>

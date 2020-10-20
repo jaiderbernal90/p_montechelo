@@ -13,5 +13,16 @@ function translationRole($role){
 
     return $rol;
 }
+function translationState($state){
+    $estado = null;
+
+    if($state === '1'){
+        $estado = 'Activo';
+    }else{
+        $estado = 'Inactivo';
+    }
+
+    return $estado;
+}
 
 ?>

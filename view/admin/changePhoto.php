@@ -24,14 +24,45 @@
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/perfil.css">
-    <link rel="stylesheet" href="../../css/calendar.css">
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
         <?php include('header.php') ?>
     <!--/.Navbar-->
-        
+    <!-- Section one -->
+    <section class="container-fluid w-100 m-0 p-0 mt-5">
+        <div class="row w-100 m-0 p-0 mt-3">
+            <div class="col-12 mt-5 text-center title-section">
+                <h4>Cambiar foto de perfil</h4>
+            </div>
+        </div>
+        <div class="row w-100 m-0 p-0">
+            <div class="col-12 mt-3 text-center">
+                <img src="../../img/user.png" alt="" class="img-change shadow">
+            </div>
+        </div>
+        <div class="row w-100 m-0 p-0 mt-5">   
+                <form action="" class="form w-100 row">
+                    <div class="col-12 text-center"> 
+                        <input type="file" class="">
+                    </div>
+                    <div class="row w-100 p-0 m-0 mt-3 ">
+                        <div class="col-md-6 p-0 m-0 d-flex">
+                            <div class="cont-btn rigth">
+                                <button type="submit" class="btn btn-primary btn-md btn-cancel">Enviar</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0 m-0 d-flex w-100">
+                            <div class="cont-btn left">
+                                <button type="button" class="btn btn-danger btn-md btn-cancel"><a href="perfil.php" class="text-white text-decoration-none">Cancelar</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+        </div>
 
+    </section>
     <!--FOOTER-->
     <footer class="footer-login container-fluid p-0 m-0"-->   
         <?php include('../footer.html')?>
@@ -51,7 +82,5 @@
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
-    <script src="../../js/calendar.js"></script>
-    <script src="../../js/perfil.js"></script>
 </body>
 </html>

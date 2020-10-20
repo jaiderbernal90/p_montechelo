@@ -567,7 +567,7 @@
         "id":12,
         "departamento":"Cundinamarca",
         "ciudades":[ 
-            {"id_municipality":"490","name_municipality":"Agua de D}ios"},
+            {"id_municipality":"490","name_municipality":"Agua de Dios"},
             {"id_municipality":"491","name_municipality":"Albán"},
             {"id_municipality":"492","name_municipality":"Anapoima"},
             {"id_municipality":"493","name_municipality":"Anolaima"},

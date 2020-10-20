@@ -31,7 +31,6 @@
 .container {
   left: 50%;
   position: fixed;
-  top: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -83,30 +82,6 @@
 .prev-month,
 .next-month {
 	color: #000;
-}
-
-.ring-left,
-.ring-right {
-	position: absolute;
-	top: 230px;
-}
-
-.ring-left { left: 2em; }
-.ring-right { right: 2em; }
-
-.ring-left:before,
-.ring-left:after,
-.ring-right:before,
-.ring-right:after {
-	background: #fff;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
-	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
-	content: "";
-	display: inline-block;
-	margin: 8px;
-	height: 32px;
-	width: 8px;
 }
 .calendar .control {
   color: #000;

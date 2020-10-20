@@ -1,5 +1,4 @@
 //Variables
-
 const selectDeparments = document.querySelector('#deparment');
 const selectMunicipalitys = document.querySelector('#municipality');
 

@@ -24,5 +24,18 @@ function translationState($state){
 
     return $estado;
 }
+function translationGenders($gender){
+    $genero = null;
+
+    if($gender === '1'){
+        $genero = 'Masculino';
+    }else if($gender === '2'){
+        $genero = 'Femenino';
+    }else if($gender === '3'){
+        $genero = 'Otro';
+    }
+
+    return $genero;
+}
 
 ?>

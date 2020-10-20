@@ -142,5 +142,27 @@
 				echo "<script>location.href='../../../view/admin/users.php'</script>";
 			}
 		}//Cierra insertarUsuarios
+		//Ver pefil
+		public function user($email){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql = "SELECT * FROM user WHERE email = :email"; 
+			$result=$conexion->prepare($sql);
+			$result->bindParam(":email",$email);
+			//PDO
+			$result->execute();
+
+			//Cargar el resultado a la variable resultado
+			while ($f=$result->fetch()) {
+				$resultado[]=$f;
+			}
+
+			return $resultado;
+		}
+		//./ver perfil
 	}
 ?>

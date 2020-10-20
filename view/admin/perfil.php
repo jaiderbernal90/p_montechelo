@@ -1,5 +1,7 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
+    require_once('../../controller/admin/read/load.php');
+    $email=$_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -53,178 +55,10 @@
 
     <!-- Secondth Section -->
     <section class="container-fluid p-0 m-0 ">
-        <!-- row -->
-        <div class="row w-100 m-0 p-0">
-            <!-- Name User -->
-            <div class="col-12 p-0 m-0 title-name c-mask">
-                <h4> PEPITO PEREZ </h4>
-            </div>
-            <!-- Role user -->
-            <div class="col-12 text-center title-second">
-                <span> Administrador </span>
-            </div>
-        </div>
-        <!--./ row -->
-        <hr>
-        <!-- row -->
-        <div class="row w-100 m-0 p-0">
-            <div class="col-12 title-section">
-                <h4 class="ml-lg-5 text-center text-lg-left">Información</h4>
-            </div>
-        </div>
-        <!--./ row -->
-        <form action="" class="form" method="POST">
-            <!-- row -->
-            <div class="row w-100 pl-md-5 pl-3">
-                <!-- Column -->
-                <div class="col-md-6 p-0">
-                    <div class="md-form form-group row mx-0">
-                        <div class="col-11 px-4">
-                            <input type="email" class="form-control inputs" name="email" placeholder="Correo" id="email" disabled>
-                        </div> 
-                        <div class="col-1 p-0">
-                            <div class="icon pt-3 mt-1">
-                                <i class="fas fa-pen"></i>
-                            </div>    
-                        </div>              
-                    </div>
-                </div>
-                <!--./ Column -->
-
-                <!-- Column -->
-                <div class="col-md-6">
-                    <div class="md-form form-group row">
-                        <div class="col-11 px-4">
-                            <input type="number" class="form-control inputs" name="cel" placeholder="Celular" id="cel" disabled>
-                        </div> 
-                        <div class="col-1 p-0">
-                            <div class="icon pt-3 mt-1">
-                                <i class="fas fa-pen"></i>
-                            </div>    
-                        </div>              
-                    </div>
-                </div>
-                <!-- ./ Column -->
-            </div>
-            <!--./ row -->
-            
-            <!-- row -->
-            <div class="row w-100 pl-md-5 pl-3">
-                <!-- Column -->
-                <div class="col-md-6 p-0">
-                    <div class="md-form form-group row mx-0">
-                        <div class="col-11 px-4">
-                            <input type="text" class="form-control inputs" name="gender" placeholder="Género" id="genero" disabled>
-                        </div> 
-                        <div class="col-1 p-0">
-                            <div class="icon pt-3 mt-1">
-                                <i class="fas fa-pen"></i>
-                            </div>    
-                        </div>              
-                    </div>
-                </div>
-                <!--./ Column -->
-
-                <!-- Column -->
-                <div class="col-md-6">
-                    <div class="md-form form-group row">
-                        <div class="col-11 px-4">
-                            <input type="text" class="form-control inputs" name="municipality" placeholder="Ciudad" id="city" disabled>
-                        </div> 
-                        <div class="col-1 p-0">
-                            <div class="icon pt-3 mt-1">
-                                <i class="fas fa-pen"></i>
-                            </div>    
-                        </div>              
-                    </div>
-                </div>
-                <!-- ./ Column -->
-            </div>
-            <!--./ row -->
-
-            <!-- row -->
-            <div class="row w-100 pl-md-5 pl-3">
-                <!-- Column -->
-                <div class="col-md-6">
-                    <div class="md-form form-group row ">
-                        <div class="col-11 px-4">
-                            <input type="text" class="form-control inputs" name="department" placeholder="Departamento" id="department" disabled>
-                        </div> 
-                        <div class="col-1 p-0">
-                            <div class="icon pt-3 mt-1">
-                                <i class="fas fa-pen"></i>
-                            </div>    
-                        </div>              
-                    </div>
-                </div>
-                <!--./ Column -->
-
-                <!-- Column -->
-                <div class="col-md-6">
-                    <div class="md-form form-group row">
-                        <div class="col-11 px-4">
-                            <input type="text" class="form-control inputs" name="address" placeholder="Dirección" id="address" disabled>
-                        </div> 
-                        <div class="col-1 p-0">
-                            <div class="icon pt-3 mt-1">
-                                <i class="fas fa-pen"></i>
-                            </div>    
-                        </div>              
-                    </div>
-                </div>
-                <!-- ./ Column -->
-            </div>
-            <!--./ row -->
-            <!-- row -->
-            <div class="row w-100 pl-md-5 pl-3">
-                <!-- Column -->
-                <div class="col-md-6 p-0">
-                    <div class="md-form form-group row mx-0">
-                        <div class="col-11 px-4">
-                            <select class="seleccionar md-form w-100" name="type_contract" required disabled>
-                                <option value="" selected disabled>Tipo Contrato</option>
-                                <option value="1">Contrato Laboral</option>
-                                <option value="2">Contrato de Aprendizaje</option>
-                            </select>
-                        </div>           
-                    </div>
-                </div>
-                <!--./ Column -->
-
-                <!-- Column -->
-                <div class="col-md-6">
-                    <div class="md-form form-group row">
-                        <div class="col-11 mt-2 px-4">
-                            <input type="number" class="form-control" name="salary" placeholder="Salario" disabled>
-                        </div>         
-                    </div>
-                </div>
-                <!-- ./ Column -->
-                <div class="col-md-12 d-flex group-btn">
-                    <button class="btn btn-primary m-auto update">Modificar</button>
-                    <button type="submit" class="btn btn-primary mr-auto save">Guardar</button>
-                </div>
-            </div>
-            <div class="col-md-12 d-flex">
-                <div class="spinner-grow text-primary text-center m-auto" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-            <!--./ row -->
-        </form>
-        <hr>
-        <div class="row w-100 d-flex">
-            <div class="root text-center m-auto">
-                <!--  -->
-                <div class="calendar-container">
-                    <header>
-                        <div class="day">18</div>
-                        <div class="month">August</div>
-                    </header>
-                    <div class="calendar" id="calendar"></div>
-                </div> 
-            </div> 
-        </div> 
+            <?php
+                //Invocacion de la función para cargar usuarios
+                info($email);
+            ?>
     </section>
     <hr>
     <!--./ Secondth Section -->
@@ -250,5 +84,7 @@
     <script src="../../js/menu.js"></script>
     <script src="../../js/calendar.js"></script>
     <script src="../../js/perfil.js"></script>
+    <script src="../../js/updateSelect.js"></script>
+
 </body>
 </html>

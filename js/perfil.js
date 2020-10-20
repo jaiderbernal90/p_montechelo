@@ -7,7 +7,7 @@ const inputEmail = document.querySelector('#email');
 const inputCel = document.querySelector('#cel');
 const inputGenero = document.querySelector('#genero');
 const inputCity = document.querySelector('#city');
-const inputDepartment = document.querySelector('#department');
+const inputDepartment = document.querySelector('#deparment');
 const inputAddress = document.querySelector('#address');
 
 const inputs = document.querySelectorAll('.inputs');
@@ -44,7 +44,7 @@ btnSave.addEventListener('click', loadForm);
                 input.addEventListener('blur', validationInput);
             }else if(input.disabled === false){
                 //Se agrega la propiedad disabled, se quita el borde y btn cancelar cambia a Modificar
-                form.reset();
+                console.log('sdfd');
                 input.setAttribute('disabled',true);
                 input.style.borderBottom = '0px';
                 btnUpdate.textContent = 'Modificar';

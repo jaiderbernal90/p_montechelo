@@ -86,6 +86,10 @@
 
         return $type_contract;
     }
-
+    function translationDate($date){
+        addslashes($date);
+        
+        return $date;
+    }
 
 ?>

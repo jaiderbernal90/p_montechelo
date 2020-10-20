@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2020 a las 18:36:10
+-- Tiempo de generación: 20-10-2020 a las 19:57:21
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -177,7 +177,7 @@ CREATE TABLE `user` (
   `deparment` varchar(100) NOT NULL,
   `city` varchar(100) NOT NULL,
   `charge` varchar(255) NOT NULL,
-  `salary` decimal(10,2) NOT NULL,
+  `salary` decimal(10,0) NOT NULL,
   `type_contract` varchar(150) NOT NULL,
   `id_area` int(11) NOT NULL,
   `campus` varchar(200) NOT NULL,
@@ -189,10 +189,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `name`, `last_name`, `type_id`, `document`, `email`, `password`, `date_birth`, `gender`, `num_cel`, `tel`, `role`, `estate`, `address`, `deparment`, `city`, `charge`, `salary`, `type_contract`, `id_area`, `campus`, `img_profile`) VALUES
-(1, 'juan', 'benito', 'CC', 123, 'benito@montechelo.com', '827ccb0eea8a706c4c34a16891f84e7b', '1999-09-15', 'Masculino', 3134877517, NULL, '3', 'activo', 'Centro ', '20', '30', 'programador', '600000.00', 'aprendizaje', 0, 'montechelo', NULL),
-(2, 'pepito', 'perez', 'CC', 12345, 'pepito@montechelo.com', '827ccb0eea8a706c4c34a16891f84e7b', '1999-09-15', 'Masculino', 3134877517, NULL, '2', 'activo', 'cra 3 #77-99 ', '1', '4', 'diseñador', '800000.00', 'laboral', 0, 'montechelo', NULL),
-(3, 'Juan Sebastian', 'Bustos Virguez', 'CC', 1077976715, 'sebastianbustos1509@montechelo.com', '827ccb0eea8a706c4c34a16891f84e7b', '1999-09-15', 'Masculino', 3134877517, NULL, '1', 'activo', 'Av 3 #56-69', '30', '200', 'programador', '600000.00', 'aprendizaje', 0, 'cos', NULL),
-(4, 'Jaider Alejandro', 'Bernal Camacho', 'CC', 1003558224, 'jaider.bernal90@montechelo.com', 'f9d50d3dae8d5a4008d5d428538bf92d', '2000-01-26', 'Masculino', 3227700908, NULL, '1', 'activo', 'Calle 5 #63-5', '10', '50', 'analista', '2000000.00', 'laboral', 0, 'montechelo', NULL);
+(2, 'Pepito', 'Perez', '1', 12345, 'pepito@montechelo.com', '827ccb0eea8a706c4c34a16891f84e7b', '1999-09-15', '1', 3134877517, '', '3', '1', 'cra 3 #77-99', '1', '11', 'diseñador', '800000', '2', 0, 'montechelo', NULL),
+(3, 'Juan Sebastian', 'Bustos Virguez', '1', 1077976715, 'sebastianbustos1509@montechelo.com', '827ccb0eea8a706c4c34a16891f84e7b', '1999-09-15', '1', 3134877517, '', '2', '1', 'Av 3 #56-69', '30', '1117', 'programador', '600000', '2', 0, 'cos', NULL),
+(4, 'Jaider Alejandro', 'Bernal Camacho', '1', 1003558224, 'jaider.bernal90@montechelo.com', '827ccb0eea8a706c4c34a16891f84e7b', '2000-01-26', '1', 3227700908, '', '1', '1', 'Calle 5 #63-5', '12', '498', 'analista', '2000000', '1', 0, 'montechelo', NULL),
+(1077976717, 'hjhjhjh', 'dsfdsfdsfds', '1', 2147483647, 'juan.b@montechelo.com', '', '2020-10-15', '1', 3615245454, '5335543543', '1', '1', 'Centro', '13', '624', 'Programador', '3000000', '1', 0, '', NULL),
+(1077976718, 'Juan', 'Perez', '1', 2147483647, 'juan.c@montechelo.com', '', '2020-10-05', '1', 3251525896, '533554354', '2', '1', 'Centro', '12', '505', 'Programador', '3000000', '1', 0, '', NULL),
+(1077976719, 'Pablo', 'Perez', '3', 1003544778, 'barreto78@montechelo.com', '', '2000-01-11', '1', 3315245454, '424256844', '1', '1', 'Centro', '0', '2', 'Programador', '2010444', '1', 0, '', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -335,7 +337,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1077976717;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1077976721;
 
 --
 -- Restricciones para tablas volcadas

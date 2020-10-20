@@ -32,7 +32,7 @@
 
 					$_SESSION['autenticado'] = "Activo";
 
-					if($f['estate'] == "activo"){
+					if($f['estate'] == "1"){
 						//REDIRECTION HOME
 						if($f['role'] == 1){
 							modalAlertLogin('BIENVENIDO ADMINISTRADOR', '../../view/admin/home.php','success',2);

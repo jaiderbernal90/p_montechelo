@@ -12,7 +12,6 @@ class Calendar {
       this.cells = [];
       this.selectedDate = null;
       this.currentMonth = moment();
-      this.momentMonth = document.querySelector('#month');
       this.elCalendar = document.getElementById(id);
       this.showTemplate();
       this.elGridBody = this.elCalendar.querySelector('.grid__body');
@@ -77,7 +76,6 @@ class Calendar {
   }
   //Mostrar las celdas 
   showCells() {
-      console.log(this.currentMonth);
       this.cells = this.generateDates(this.currentMonth);
       if (this.cells === null) {
           console.error('No fue posible generar las fechas del calendario.');
@@ -105,12 +103,12 @@ class Calendar {
                     </span>
                 `;
           }else{
-                //Dibujar las celdas
-                templateCells += `
-                <span class="grid__cell grid__cell--gd ${disabledClass}" data-cell-id="${i}">
-                    ${this.cells[i].date.date()}
-                </span>
-                `;
+            //Dibujar las celdas
+            templateCells += `
+            <span class="grid__cell grid__cell--gd ${disabledClass}" data-cell-id="${i}">
+                ${this.cells[i].date.date()}
+            </span>
+            `;
           }
           
       }

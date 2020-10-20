@@ -87,9 +87,60 @@
         return $type_contract;
     }
     function translationDate($date){
-        addslashes($date);
-        
-        return $date;
+       //Month
+       $day = substr($date, -2); 
+       $month = substr($date, 5,2);
+       $monthFinally = null;
+       //Validation month
+        switch($month){
+            case '01': 
+                $monthFinally = "Enero"; 
+                break;
+            case '02':
+                $monthFinally = "Febrero"; 
+                break;
+            case '03':  
+                $monthFinally = "Marzo"; 
+                break;
+            case '04':  
+                $monthFinally = "Abril"; 
+                break;
+            case '05':  
+                $monthFinally = "Mayo"; 
+            break;
+            case '06':  
+                $monthFinally = "Junio"; 
+            break;
+            case '07':  
+                $monthFinally = "Julio"; 
+            break;
+            case '08':  
+                $monthFinally = "Agosto"; 
+            break;
+            case '09': 
+                 $monthFinally = "Septiembre"; 
+                break;
+            case '10' : 
+                $monthFinally = "Octubre"; 
+                break;
+            case '11': 
+                $monthFinally = "Noviembre"; 
+                break;
+            case '12': 
+                $monthFinally = "Diciembre"; 
+                break;
+
+        }
+        //Date FInally for view
+        $dateFinally = $day.' de '.$monthFinally;
+
+        return $dateFinally;
+    }
+    function translationMonth($date){
+        //Month
+        $month = substr($date, 5,2);
+       
+        return $month;
     }
 
 ?>

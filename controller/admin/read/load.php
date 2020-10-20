@@ -48,18 +48,21 @@
         $result = $queries -> user($email);
             //
             foreach ($result as $f){
-                echo '<div class="row w-100 m-0 p-0">
-                            <!-- Name User -->
-                            <div class="col-12 p-0 m-0 title-name c-mask">
-                                <h4>'.ucfirst($f['name']).' '.ucfirst($f['last_name']).'</h4>
-                            </div>
-                            <!-- Role user -->
-                            <div class="col-12 text-center title-second">
-                                <span>'.translationRole($f["role"]).'</span>
-                            </div>
+                echo '<!-- Secondth Section -->
+                <section class="container-fluid p-0 m-0 ">
+                    <!-- row -->
+                    <div class="row w-100 m-0 p-0">
+                        <!-- Name User -->
+                        <div class="col-12 p-0 m-0 title-name c-mask">
+                            <h4>'.strtoupper($f['name']).' '.strtoupper($f['last_name']).'</h4>
                         </div>
-                        
-                        <hr>
+                        <!-- Role user -->
+                        <div class="col-12 text-center title-second">
+                            <span>'.translationRole($f["role"]).'</span>
+                        </div>
+                    </div>
+                    <!--./ row -->
+                    <hr>
                     <!-- row -->
                     <div class="row w-100 m-0 p-0">
                         <div class="col-12 title-section">
@@ -67,142 +70,143 @@
                         </div>
                     </div>
                     <!--./ row -->
-                    <!-- row -->
-                    <div class="row w-100 pl-md-5">
-                        <!-- Column -->
-                        <div class="col-md-6 p-0">
-                            <div class="md-form form-group row mx-0">
-                                <div class="col-11 px-4">
-                                    <input type="email" class="form-control inputs" name="email" id="email" value="'.$f["email"].'" disabled>
-                                </div> 
-                                <div class="col-1 p-0">
-                                    <div class="icon pt-3 mt-1">
-                                        <i class="fas fa-pen"></i>
-                                    </div>    
-                                </div>              
+                    <form action="" class="form" method="POST">
+                        <!-- row -->
+                        <div class="row w-100 pl-md-5 pl-3">
+                            <!-- Column -->
+                            <div class="col-md-6 p-0">
+                                <div class="md-form form-group row mx-0">
+                                    <div class="col-11 px-4">
+                                        <input type="email" class="form-control inputs" name="email" id="email" value="'.$f["email"].'" disabled>
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
                             </div>
-                        </div>
-                        <!--./ Column -->
-
-                        <!-- Column -->
-                        <div class="col-md-6">
-                            <div class="md-form form-group row">
-                                <div class="col-11 px-4">
-                                    <input type="number" class="form-control inputs" name="cel" id="cel" value="'.$f["num_cel"].'" disabled>
-                                </div> 
-                                <div class="col-1 p-0">
-                                    <div class="icon pt-3 mt-1">
-                                        <i class="fas fa-pen"></i>
-                                    </div>    
-                                </div>              
+                            <!--./ Column -->
+            
+                            <!-- Column -->
+                            <div class="col-md-6">
+                                <div class="md-form form-group row">
+                                    <div class="col-11 px-4">
+                                        <input type="number" class="form-control inputs" name="cel" id="cel" value="'.$f["num_cel"].'" disabled>
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
                             </div>
+                            <!-- ./ Column -->
                         </div>
-                        <!-- ./ Column -->
-                    </div>
-                    <!--./ row -->
-                    
-                    <!-- row -->
-                    <div class="row w-100 pl-md-5">
-                        <!-- Column -->
-                        <div class="col-md-6 p-0">
-                            <div class="md-form form-group row mx-0">
-                                <div class="col-11 px-4">
-                                    <select type="text" class="seleccionar md-form inputs  w-100" name="gender" id="genero" value="'.translationGenders($f["gender"]).'" disabled>
-                                    "'.translationGender($f["gender"]).'"
+                        <!--./ row -->
+                        
+                        <!-- row -->
+                        <div class="row w-100 pl-md-5 pl-3">
+                            <!-- Column -->
+                            <div class="col-md-6 p-0">
+                                <div class="md-form form-group row mx-0">
+                                    <div class="col-11 px-4">
+                                            <select type="text" class="seleccionar md-form inputs  w-100" name="gender" id="genero" value="'.translationGenders($f["gender"]).'" disabled>
+                                            "'.translationGender($f["gender"]).'"
                                     </select>
-                                </div> 
-                                <div class="col-1 p-0">
-                                    <div class="icon pt-3 mt-1">
-                                        <i class="fas fa-pen"></i>
-                                    </div>    
-                                </div>              
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
                             </div>
-                        </div>
-                        <!--./ Column -->
-
-                        <!-- Column -->
-                        <div class="col-md-6">
-                            <div class="md-form form-group row">
-                                <div class="col-11 px-4">
-                                    <select type="text" class="seleccionar inputs md-form w-100" name="municipality" id="municipality" value="'.$f["city"].'" disabled>         
-                                        <option disabled>Elija una opción</option>
-                                    </select>
-                                </div> 
-                                <div class="col-1 p-0">
-                                    <div class="icon pt-3 mt-1">
-                                        <i class="fas fa-pen"></i>
-                                    </div>    
-                                </div>              
+                            <!--./ Column -->
+            
+                            <!-- Column -->
+                            <div class="col-md-6">
+                                <div class="md-form form-group row">
+                                    <div class="col-11 px-4">
+                                        <select type="text" class="seleccionar inputs md-form w-100" name="municipality" id="municipality" value="'.$f["city"].'" disabled>         
+                                            <option disabled>Elija una opción</option>
+                                        </select>
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
                             </div>
+                            <!-- ./ Column -->
                         </div>
-                        <!-- ./ Column -->
-                    </div>
-                    <!--./ row -->
-
-                    <!-- row -->
-                    <div class="row w-100 pl-md-5">
-                        <!-- Column -->
-                        <div class="col-md-6">
-                            <div class="md-form form-group row ">
-                                <div class="col-11 px-4">
-                                    <select class="seleccionar md-form w-100 inputs" name="deparment" id="deparment" disabled value="'.$f['deparment'].'">         
-                                        <option disabled>Elija una opción</option>
-                                    </select>
-                                </div> 
-                                <div class="col-1 p-0">
-                                    <div class="icon pt-3 mt-1">
-                                        <i class="fas fa-pen"></i>
-                                    </div>    
-                                </div>              
+                        <!--./ row -->
+            
+                        <!-- row -->
+                        <div class="row w-100 pl-md-5 pl-3">
+                            <!-- Column -->
+                            <div class="col-md-6">
+                                <div class="md-form form-group row ">
+                                    <div class="col-11 px-4">
+                                        <select class="seleccionar md-form w-100 inputs" name="deparment" id="deparment" disabled value="'.$f['deparment'].'">         
+                                            <option disabled>Elija una opción</option>
+                                        </select>
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
                             </div>
-                        </div>
-                        <!--./ Column -->
-
-                        <!-- Column -->
-                        <div class="col-md-6">
-                            <div class="md-form form-group row">
-                                <div class="col-11 px-4">
-                                    <input type="text" class="form-control inputs" id="address" name="address" value="'.$f["address"].'" disabled>
-                                </div> 
-                                <div class="col-1 p-0">
-                                    <div class="icon pt-3 mt-1">
-                                        <i class="fas fa-pen"></i>
-                                    </div>    
-                                </div>              
+                            <!--./ Column -->
+            
+                            <!-- Column -->
+                            <div class="col-md-6">
+                                <div class="md-form form-group row">
+                                    <div class="col-11 px-4">
+                                        <input type="text" class="form-control inputs" id="address" name="address" value="'.$f["address"].'" disabled>
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
                             </div>
+                            <!-- ./ Column -->
                         </div>
-                        <!-- ./ Column -->
-                    </div>
-
-                    <!-- row -->
-                    <div class="row w-100 pl-md-5">
-                        <!-- Column -->
-                        <div class="col-md-6 p-0">
-                            <div class="md-form form-group row mx-0">
-                                <div class="col-11 px-4">
-                                    <select class="seleccionar md-form w-100 " name="type_contract"  required disabled>
-                                        <option value="" selected disabled >'.traslationTypeContract($f["type_contract"]).'</option>
-                                        <option value="1">Contrato Laboral</option>
-                                        <option value="2">Contrato de Aprendizaje</option>
-                                    </select>
-                                </div>           
+                        <!--./ row -->
+                        <!-- row -->
+                        <div class="row w-100 pl-md-5 pl-3">
+                            <!-- Column -->
+                            <div class="col-md-6 p-0">
+                                <div class="md-form form-group row mx-0">
+                                    <div class="col-11 px-4">
+                                        <select class="seleccionar md-form w-100 " name="type_contract"  required disabled>
+                                            <option value="" selected disabled >'.traslationTypeContract($f["type_contract"]).'</option>
+                                            <option value="1">Contrato Laboral</option>
+                                            <option value="2">Contrato de Aprendizaje</option>
+                                        </select>
+                                    </div>           
+                                </div>
                             </div>
-                        </div>
-                        <!--./ Column -->
-
-                        <!-- Column -->
-                        <div class="col-md-6">
-                            <div class="md-form form-group row">
-                                <div class="col-11 mt-2 px-4">
-                                    <input type="number" class="form-control" id="salary" name="salary" value="'.$f["salary"].'" disabled>
-                                </div>         
+                            <!--./ Column -->
+            
+                            <!-- Column -->
+                            <div class="col-md-6">
+                                <div class="md-form form-group row">
+                                    <div class="col-11 mt-2 px-4">
+                                        <input type="number" class="form-control" id="salary" name="salary" value="'.$f["salary"].'" disabled>
+                                    </div>         
+                                </div>
                             </div>
-                        </div>
-                        <!-- ./ Column -->
-                        <div class="col-md-12 d-flex group-btn">
-                            <button class="btn btn-primary m-auto update">Modificar</button>
-                            <button type="submit" class="btn btn-primary mr-auto save">Guardar</button>
-                        </div>
+                            <!-- ./ Column -->
+                            <div class="col-md-12 d-flex group-btn">
+                                <button class="btn btn-primary m-auto update">Modificar</button>
+                                <button type="submit" class="btn btn-primary mr-auto save">Guardar</button>
+                            </div>
                         </div>
                         <div class="col-md-12 d-flex">
                             <div class="spinner-grow text-primary text-center m-auto" role="status">
@@ -211,21 +215,21 @@
                         </div>
                         <!--./ row -->
                     </form>
-                    </div>
-                    <!--./ row -->
                     <hr>
                     <div class="row w-100 d-flex">
                         <div class="root text-center m-auto">
                             <!--  -->
                             <div class="calendar-container">
                                 <header>
+                                    <div id="month" class="d-none">'.translationMonth($f["date_birth"]).'</div>
+                                    <div id="day" class="d-none">'.translationDate($f["date_birth"]).'</div>
                                     <div class="day">'.translationDate($f["date_birth"]).'</div>
-                                    <div class="month">'.$f["date_birth"].'</div>
                                 </header>
                                 <div class="calendar" id="calendar"></div>
                             </div> 
                         </div> 
-                    </div>';
+                    </div> 
+                </section>';
             }//end foreach
         };//end if
     // ./cierre función para ver perfil

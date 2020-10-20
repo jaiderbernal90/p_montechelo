@@ -68,7 +68,7 @@ btnSave.addEventListener('click', loadForm);
                 e.target.style.borderBottom = '1px solid #FF0000'; 
             }
         }else if(e.target.type === 'text'){
-            if(e.target.value.length > 5){
+            if(e.target.value.length > 2){
                 //BORDER GREEN
                 e.target.style.borderBottom = '1px solid #57C203';
             }else{
@@ -87,7 +87,7 @@ btnSave.addEventListener('click', loadForm);
         validationForm(); 
     }
     function validationForm(){
-        if(inputEmail.value.length > 0 && inputEmail.value.includes("@montechelo.com") && inputCel.value.length >= 10 && inputGenero.value.length > 6 && inputCity.value.length > 1 && inputDepartment.value.length > 0 && inputAddress.value.length > 4){
+        if(inputEmail.value.length > 0 && inputEmail.value.includes("@montechelo.com") && inputCel.value.length >= 10 && inputGenero.value.length > 0 && inputAddress.value.length > 4){
             btnSave.removeAttribute('disabled');
         }else{
             btnSave.setAttribute('disabled', true);
@@ -106,5 +106,5 @@ btnSave.addEventListener('click', loadForm);
         //SEND FORM    
         setTimeout( () => {
             form.submit();
-        }, 2000);  
+        }, 200);  
     }

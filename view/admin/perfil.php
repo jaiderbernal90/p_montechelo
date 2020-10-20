@@ -53,13 +53,10 @@
         </section>
     <!--./ First Section -->
 
-    <!-- Secondth Section -->
-    <section class="container-fluid p-0 m-0 ">
-            <?php
-                //Invocacion de la función para cargar usuarios
-                info($email);
-            ?>
-    </section>
+        <?php
+            //Invocacion de la función para cargar usuarios
+            info($email);
+        ?>
     <hr>
     <!--./ Secondth Section -->
 
@@ -85,6 +82,5 @@
     <script src="../../js/calendar.js"></script>
     <script src="../../js/perfil.js"></script>
     <script src="../../js/updateSelect.js"></script>
-
 </body>
 </html>

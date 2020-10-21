@@ -83,5 +83,6 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/table.js"></script>
+    <script src="../../js/viewUser.js"></script>
 </body>
 </html>

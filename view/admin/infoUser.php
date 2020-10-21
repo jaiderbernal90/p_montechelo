@@ -46,8 +46,9 @@
             <div class="col-12">
                 <form autocomplete="off" class="form m-4 m-md-5" action="../../controller/admin/update/updateUser.php" method="POST">
                     <?php
+                        $id=$_POST['id'];
                         //Invocacion de la función para cargar usuarios
-                        userInformation();
+                        userInformation($id);
                     ?> 
                     <div class="form-row d-flex mt-5">
                             <div class="col-5 text-md-right text-center">

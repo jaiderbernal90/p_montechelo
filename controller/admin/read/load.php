@@ -34,7 +34,7 @@
                                 <td class="colum3">'.$f["email"].'</td>
                                 <td class="colum4">'.translationRole($f["role"]).'</td>
                                 <td class="colum5">'.translationState(ucfirst($f["estate"])).'</td>
-                                <td class="colum6 text-center"><a id="'.$f['id_user'].'" class="eye-id"><i class="fas fa-eye" title="Ver más"></i></a></td>
+                                <td class="colum6 text-center"><a class="eye" ><i class="fas fa-eye eye-id" title="Ver más" onclick="viewUser(this)" id="'.$f["id_user"].'"></i></a></td>
                             </tr>';
             }//end foreach
             echo '</tbody>';
@@ -187,7 +187,7 @@
                             <div class="col-md-6">
                                 <div class="md-form form-group row">
                                     <div class="col-11 px-4">
-                                        <input type="text" class="form-control inputs" id="address" name="address" value="'.$f["address"].'" disabled>
+                                        <input type="text" class="form-control inputs" id="address" name="address" value="'.ucfirst($f["address"]).'" disabled>
                                     </div> 
                                     <div class="col-1 p-0">
                                         <div class="icon pt-3 mt-1">
@@ -273,8 +273,7 @@
         };//end if
     // ./cierre función para ver perfil
     //
-    function userInformation(){
-        $id = $_GET['id'];
+    function userInformation($id){
         //Invocamos una clase para realizar consultas del administrador
         $queries = new consultas();
         //Genera consulta en la tabla user para obtener las Subsedes
@@ -291,7 +290,7 @@
                                     <!-- Material input -->
                                     <div class="md-form form-group">
                                         <p class="tite text-primary">Nombres</p>
-                                        <input type="text" class="form-control inputs seleccionar" disabled name="name" value="'.$f['name'].'">
+                                        <input type="text" class="form-control inputs seleccionar" disabled name="name" value="'.ucwords($f['name']).'">
                                     </div>
                                     </div>
                                     <!-- Grid column -->
@@ -301,7 +300,7 @@
                                     <!-- Material input -->
                                     <div class="md-form form-group">
                                         <p class="tite text-primary">Apellidos</p>
-                                        <input type="text" class="form-control inputs seleccionar" disabled name="last_name" value="'.$f['last_name'].'">
+                                        <input type="text" class="form-control inputs seleccionar" disabled name="last_name" value="'.ucwords($f['last_name']).'">
                                     </div>
                                     </div>
                                     <!-- Grid column -->
@@ -434,7 +433,7 @@
                                         <div class="md-form form-group">
                                             <p class="tite text-primary ar-input">Cargo</p>
                                             <input type="text" class="form-control inputs seleccionar" name="charge" 
-                                            value="'.$f['charge'].'" disabled>
+                                            value="'.ucwords($f['charge']).'" disabled>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
@@ -497,7 +496,7 @@
                                         <div class="md-form form-group ar-input">
                                             <p class="tite text-primary">Dirección</p>
                                             <input type="text" class="form-control inputs seleccionar" name="address" 
-                                            value="'.$f['address'].'" disabled>
+                                            value="'.ucwords($f['address']).'" disabled>
                                         </div>  
                                     </div>
                                     <!-- Grid column -->

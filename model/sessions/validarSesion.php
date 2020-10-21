@@ -29,6 +29,11 @@
 					$_SESSION['password'] = $f['password'];
 					$_SESSION['role'] = $f['role'];
 					$_SESSION['estate'] = $f['estate'];
+					$_SESSION['img_profile'] = $f['img_profile'];
+					//Valor por defecto IMG
+					if($f['img_profile'] === '' || $f['img_profile'] === null){
+						$_SESSION['img_profile'] = 'user.png';
+					}
 
 					$_SESSION['autenticado'] = "Activo";
 

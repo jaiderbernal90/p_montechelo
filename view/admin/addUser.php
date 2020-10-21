@@ -95,7 +95,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary pt-2">Número de Documento <span class="text-danger">*</span></p>
-                                <input type="text" class="form-control inputs" name="document" placeholder="Número de Documento" required pattern="[0-9]+" oninvalid="setCustomValidity('Ingrese un formato valido de número de documento')" oninput="setCustomValidity('')"> 
+                                <input type="text" class="form-control inputs" name="document" placeholder="Número de Documento" required pattern="[0-9]+" oninvalid="setCustomValidity('Ingrese un formato valido de número de documento')" oninput="setCustomValidity('')" maxlength="10"> 
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -165,7 +165,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group">
                                 <p class="tite text-primary mt-3">Celular <span class="text-danger">*</span></p>
-                                <input type="text" class="form-control inputs" name="num_cel" placeholder="Número de Celular" required pattern="[0-9]+" oninvalid="setCustomValidity('Ingrese un formato valido de número de celular')" oninput="setCustomValidity('')" minlength="9">
+                                <input type="text" class="form-control inputs" name="num_cel" placeholder="Número de Celular" required pattern="[0-9]+" oninvalid="setCustomValidity('Ingrese un formato valido de número de celular')" oninput="setCustomValidity('')" minlength="9" maxlength="10">
                             </div>
                         </div>
                         <!-- Grid column -->

@@ -3,6 +3,7 @@ const selectDeparments = document.querySelector('#deparment');
 const selectMunicipalitys = document.querySelector('#municipality');
 
 
+
 //Event Listener 
 //Al cargar el documento mostrar Departamentos
 document.addEventListener('DOMContentLoaded', department);

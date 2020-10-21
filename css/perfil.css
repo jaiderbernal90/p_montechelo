@@ -118,6 +118,10 @@
     width: 200px;
     height: 200px;
     border: 3px solid rgb(255, 255, 255);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center center;
 }
 .cont-btn{
     margin: auto;
@@ -136,6 +140,11 @@
         margin-right: auto !important;
     }
 }
+/*CHANGE PERFIL*/
+.btn-color1{
+    background-color: #0098C9;
+}
+
 /*Footer*/
 .footer-login{
     margin-top: 10em !important;

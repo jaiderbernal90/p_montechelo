@@ -34,7 +34,7 @@
                                 <td class="colum3">'.$f["email"].'</td>
                                 <td class="colum4">'.translationRole($f["role"]).'</td>
                                 <td class="colum5">'.translationState(ucfirst($f["estate"])).'</td>
-                                <td class="colum6 text-center"><a href="infoUser.php?id='.$f["id_user"].'"><i class="fas fa-eye" title="Ver más"></i></a></td>
+                                <td class="colum6 text-center"><a id="'.$f['id_user'].'" class="eye-id"><i class="fas fa-eye" title="Ver más"></i></a></td>
                             </tr>';
             }//end foreach
             echo '</tbody>';
@@ -48,12 +48,31 @@
         $result = $queries -> user($email);
             //
             foreach ($result as $f){
-                echo '<!-- Secondth Section -->
+                echo '<section class="container-fluid p-0 m-0"> 
+                        <div class="row w-100 m-0 p-0">
+                            <div class="col-12 text-center p-0">
+                                <!-- Fond-->
+                                <div class="font-up"></div>
+                                <!-- Avatar -->
+                                <div class="avatar avatar-profile">
+                                    <div class="mask">
+                                        <div class="mask-black rounded-circle text-center">
+                                            <a href="changePhoto.php" class="link-text nav-link"><span>Modificar </span><i class="fas fa-pen"></i></a>
+                                        </div>
+                                        <img src="../../img/'.$_SESSION['img_profile'].'" class="rounded-circle"
+                                        alt="Sample avatar image.">  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <!--./ First Section -->
+                <!-- Secondth Section -->
                 <section class="container-fluid p-0 m-0 ">
                     <!-- row -->
                     <div class="row w-100 m-0 p-0">
                         <!-- Name User -->
-                        <div class="col-12 p-0 m-0 title-name c-mask">
+                        <div class="col-12 p-0 m-0 title-name c-mask text-center">
                             <h4>'.strtoupper($f['name']).' '.strtoupper($f['last_name']).'</h4>
                         </div>
                         <!-- Role user -->
@@ -70,7 +89,7 @@
                         </div>
                     </div>
                     <!--./ row -->
-                    <form action="" class="form" method="POST">
+                    <form action="../../controller/admin/update/updateInfo.php" class="form" method="POST">
                         <!-- row -->
                         <div class="row w-100 pl-md-5 pl-3">
                             <!-- Column -->
@@ -130,6 +149,7 @@
                                     <div class="col-11 px-4">
                                         <select type="text" class="seleccionar inputs md-form w-100" name="municipality" id="municipality" value="'.$f["city"].'" disabled>         
                                             <option disabled>Elija una opción</option>
+                                            <option selected value="'.$f['city'].'">'.$f['city'].'</option>
                                         </select>
                                     </div> 
                                     <div class="col-1 p-0">
@@ -151,6 +171,7 @@
                                     <div class="col-11 px-4">
                                         <select class="seleccionar md-form w-100 inputs" name="deparment" id="deparment" disabled value="'.$f['deparment'].'">         
                                             <option disabled>Elija una opción</option>
+                                            <option selected value="'.$f['deparment'].'">'.$f['deparment'].'</option>
                                         </select>
                                     </div> 
                                     <div class="col-1 p-0">
@@ -177,9 +198,27 @@
                             </div>
                             <!-- ./ Column -->
                         </div>
+
+                        
                         <!--./ row -->
+                        
                         <!-- row -->
                         <div class="row w-100 pl-md-5 pl-3">
+                            <!-- Column -->
+                            <div class="col-md-6">
+                                <div class="md-form form-group row">
+                                    <div class="col-11 px-4">
+                                        <input type="text" class="form-control inputs" name="charge" id="charge" value="'.ucfirst($f["charge"]).'" disabled>
+                                    </div> 
+                                    <div class="col-1 p-0">
+                                        <div class="icon pt-3 mt-1">
+                                            <i class="fas fa-pen"></i>
+                                        </div>    
+                                    </div>              
+                                </div>
+                            </div>
+                            <!-- ./ Column -->
+
                             <!-- Column -->
                             <div class="col-md-6 p-0">
                                 <div class="md-form form-group row mx-0">
@@ -216,7 +255,7 @@
                         <!--./ row -->
                     </form>
                     <hr>
-                    <div class="row w-100 d-flex">
+                    <div class="row w-100 d-flex m-0" >
                         <div class="root text-center m-auto">
                             <!--  -->
                             <div class="calendar-container">

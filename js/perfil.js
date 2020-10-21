@@ -6,7 +6,7 @@ const btnSave = document.querySelector('.save');
 const inputEmail = document.querySelector('#email');
 const inputCel = document.querySelector('#cel');
 const inputGenero = document.querySelector('#genero');
-const inputCity = document.querySelector('#city');
+const inputCity = document.querySelector('#municipality');
 const inputDepartment = document.querySelector('#deparment');
 const inputAddress = document.querySelector('#address');
 
@@ -22,6 +22,7 @@ let validate = null;
 btnSave.style.display = 'none';
 
 //Add Event Listener
+document.addEventListener('DOMContentLoaded',initValues);
 btnUpdate.addEventListener('click', formDisabled);
 btnSave.addEventListener('click', loadForm);
 
@@ -44,7 +45,7 @@ btnSave.addEventListener('click', loadForm);
                 input.addEventListener('blur', validationInput);
             }else if(input.disabled === false){
                 //Se agrega la propiedad disabled, se quita el borde y btn cancelar cambia a Modificar
-                console.log('sdfd');
+                initValues();
                 input.setAttribute('disabled',true);
                 input.style.borderBottom = '0px';
                 btnUpdate.textContent = 'Modificar';
@@ -107,4 +108,15 @@ btnSave.addEventListener('click', loadForm);
         setTimeout( () => {
             form.submit();
         }, 200);  
+    }
+
+    function initValues(){
+        let initEmial = inputEmail.value;
+        let initCel = inputCel.value
+        let initGenero = inputGenero.value;
+        let initCity = inputCity.options[inputCity.selectedIndex].text;
+        let initDepartment = inputDepartment.options[inputDepartment.selectedIndex].text;
+        let initAddress = inputAddress.value;
+        
+        inputEmail.textContent = initEmial;
     }

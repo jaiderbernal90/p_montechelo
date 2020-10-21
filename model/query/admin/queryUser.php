@@ -164,5 +164,33 @@
 			return $resultado;
 		}
 		//./ver perfil
+		public function updateInfo($email,$num_cel,$gender,$city,$deparment,$address,$charge){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="UPDATE user SET email=:email, num_cel=:num_cel, gender=:gender, city=:city, deparment=:deparment, address=:address, charge=:charge WHERE email=:email";
+
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":email",$email);
+			$result->bindParam(":num_cel",$num_cel);
+			$result->bindParam(":gender",$gender);
+			$result->bindParam(":city",$city);
+			$result->bindParam(":deparment",$deparment);
+			$result->bindParam(":address",$address);
+			$result->bindParam(":charge",$charge);
+
+			//QUERY RESULT
+			if (!$result){
+				
+				modalAlert('ERROR AL MODIFICAR' , '../../../view/admin/perfil.php' , 'warning' , '3');
+			}else {
+				
+				$result->execute();
+				modalAlert('ACTUALIZACION EXITOSA' , '../../../view/admin/perfil.php' , 'success' , '3');
+
+			}
+		}//Cierra insertarUsuarios
 	}
 ?>

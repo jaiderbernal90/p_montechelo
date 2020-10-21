@@ -2,7 +2,7 @@
 <!--Navbar-->
 <nav class="navbar navbar-dark amber menu-bar fixed-top">
     <!-- Navbar brand -->
-    <img src="../../img/Brandcolor-little-menu.png" alt="" class="logo-menu">
+    <a href="home.php" class="ml-md-5"><img src="../../img/Brandcolor-little-menu.png" alt="" class="logo-menu"></a>
     <main class="navbar-toggler d-flex">
         <div class="group-cont navbar-toggler">
         <!-- Message and user -->
@@ -14,7 +14,7 @@
                         </a>
                     </li>
                 <li class="nav-item avatar img-icon px-2 d-none d-lg-block">    
-                    <a href="perfil.php"><img src="../../img/user.png" width="42" height="42" class="rounded-circle z-depth-0"
+                    <a href="perfil.php"><img src="../../img/<?php echo $_SESSION['img_profile']; ?>" class="rounded-circle z-depth-0 avatar-xs"
                     alt="avatar image"></a>
                 </li>
             </ul>
@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse li-menu" id="navbarSupportedContent22">
         <!-- REPONSIVE MOBILE PERFIL -->
         <div class="text-center sec-respon pt-3 d-block d-lg-none">
-            <img src="../../img/user.png" alt="" width="100" height="100" class="mb-3 shadow rounded-circle">
+            <img src="../../img/<?php echo $_SESSION['img_profile']; ?>" alt="" class="mb-3 shadow rounded-circle avatar-md">
             <div class="mb-3">
                 <p class="text-menu mb-0"> <?php echo $_SESSION['name'].' '.$_SESSION['last_name']?> </p>
                 <div class="sub-text">

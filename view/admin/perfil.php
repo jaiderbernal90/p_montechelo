@@ -33,32 +33,22 @@
         <?php include('header.php') ?>
     <!--/.Navbar-->
     <!-- First Section -->
-        <section class="container-fluid p-0 m-0"> 
-            <div class="row w-100 m-0 p-0">
-                <div class="col-12 text-center p-0">
-                    <!-- Fond-->
-                    <div class="font-up"></div>
-                    <!-- Avatar -->
-                    <div class="avatar avatar-profile">
-                        <div class="mask">
-                            <div class="mask-black rounded-circle text-center">
-                                <a href="changePhoto.php" class="link-text nav-link"><span>Modificar </span><i class="fas fa-pen"></i></a>
-                            </div>
-                            <img src="../../img/user.png" class="rounded-circle"
-                            alt="Sample avatar image.">  
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <!--./ First Section -->
-
         <?php
             //Invocacion de la función para cargar usuarios
             info($email);
         ?>
-    <hr>
     <!--./ Secondth Section -->
+    <!-- Third Section -->
+    <section class="container-fluid w-100 p-0 m-0">
+    <hr>
+        <div class="row w-100 p-0 m-0">
+            <div class="col-12 title-section">
+                <h4 class="ml-lg-5 text-center text-lg-left">Mi Historial</h4>
+            </div>
+        </div>
+    </section>
+    <!--./ Third Section -->
+
 
     <!--FOOTER-->
     <footer class="footer-login container-fluid p-0 m-0"-->   
@@ -80,7 +70,7 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/calendar.js"></script>
-    <script src="../../js/perfil.js"></script>
-    <script src="../../js/updateSelect.js"></script>
+    <script src="../../js/perfil.js" type="module"></script>
+    <script src="../../js/updateSelect.js" type="module"></script>
 </body>
 </html>

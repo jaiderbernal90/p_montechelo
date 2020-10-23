@@ -37,19 +37,19 @@
         ?>
     <!--./ Secondth Section -->
     <!-- Third Section -->
-    <section class="container-fluid w-100 p-0 m-0">
+    <!-- <section class="container-fluid w-100 p-0 m-0">
     <hr>
         <div class="row w-100 p-0 m-0">
             <div class="col-12 title-section">
                 <h4 class="ml-lg-5 text-center text-lg-left">Mi Historial</h4>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--./ Third Section -->
 
 
     <!-- MODAL -->
-    <div class="modal fade mt-5" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -62,18 +62,23 @@
                 <form action="" method="POST">
                     <div class="modal-body mx-3">
                         <div class="md-form mb-5">
-                        <i class="fas fa-lock prefix grey-text"></i>
-                        <input type="password" id="orangeForm-pass" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="orangeForm-name">Nueva contraseña</label>
+                            <p data-error="wrong" data-success="right" for="orangeForm-name" class="text-primary">Contraseña actual <span class="text-danger">*</span></p>
+                            <i class="fas fa-lock prefix grey-text mt-5"></i>
+                            <input type="password" class="form-control validate input" name="passAct" minlength="8" title="La contraseña debe tener 8 caracteres">
                         </div>
                         <div class="md-form mb-5">
-                        <i class="fas fa-lock prefix grey-text"></i>
-                        <input type="password" id="orangeForm-repass" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="orangeForm-email">Repita su contraseña</label>
+                            <p data-error="wrong" data-success="right" for="orangeForm-name" class="text-primary">Nueva contraseña <span class="text-danger">*</span></p>
+                            <i class="fas fa-lock prefix grey-text mt-5"></i>
+                            <input type="password" id="orangeForm-pass" class="form-control validate input" name="newPass" minlength="8" title="La contraseña debe tener 8 caracteres">
+                        </div>
+                        <div class="md-form mb-5">
+                            <p data-error="wrong" data-success="right" for="orangeForm-email" class="tite text-primary">Repita su contraseña <span class="text-danger">*</span></p>
+                            <i class="fas fa-lock prefix grey-text mt-5"></i>
+                            <input type="password" id="orangeForm-repass" class="form-control seleccionar input validate" name="rePass" minlength="8" title="La contraseña debe tener 8 caracteres">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="submit" class="btn btn-col1 text-white">Confirmar</button>
+                        <button type="submit" class="btn btn-col2 text-white">Confirmar</button>
                     </div>
                 </form>
             </div>
@@ -102,7 +107,7 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/calendar.js"></script>
-    <script src="../../js/perfil.js" type="module"></script>
-    <script src="../../js/updateSelect.js" type="module"></script>
+    <script src="../../js/perfil.js"></script>
+    <script src="../../js/updateSelect.js"></script>
 </body>
 </html>

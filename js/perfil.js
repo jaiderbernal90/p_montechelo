@@ -17,12 +17,13 @@ const form = document.querySelector('.form');
 const spinner = document.querySelector('.spinner-grow');
 const btnsGroup = document.querySelector('.group-btn');
 let validate = null;
+//INIT
+let initEmial = null, initCel = null, initGenero = null, initCity = null, initDepartment = null, initAddress = null;
 
 //Valores predeterminados
 btnSave.style.display = 'none';
 
 //Add Event Listener
-document.addEventListener('DOMContentLoaded',initValues);
 btnUpdate.addEventListener('click', formDisabled);
 btnSave.addEventListener('click', loadForm);
 
@@ -32,7 +33,7 @@ btnSave.addEventListener('click', loadForm);
         //Se recorre la variable inputs, con todos los campos que se pueden modificar 
         inputs.forEach(input =>{
             //Se valida los inputs para hablitarlos o deshabilitarlos
-            if(input.disabled === true){
+            if(input.disabled){
                 //Se quita la propiedad disabled, se agregra borde y btn modificar cambia a cancelar
                 input.removeAttribute('disabled');
                 input.style.borderBottom = '1px solid #ccc';
@@ -45,7 +46,7 @@ btnSave.addEventListener('click', loadForm);
                 input.addEventListener('oninput', validationInput);
             }else if(input.disabled === false){
                 //Se agrega la propiedad disabled, se quita el borde y btn cancelar cambia a Modificar
-                initValues();
+                writeValueInit();
                 input.setAttribute('disabled',true);
                 input.style.borderBottom = '0px';
                 btnUpdate.textContent = 'Modificar';
@@ -109,14 +110,12 @@ btnSave.addEventListener('click', loadForm);
             form.submit();
         }, 200);  
     }
-
-    function initValues(){
-        let initEmial = inputEmail.value;
-        let initCel = inputCel.value
-        let initGenero = inputGenero.value;
-        let initCity = inputCity.options[inputCity.selectedIndex].text;
-        let initDepartment = inputDepartment.options[inputDepartment.selectedIndex].text;
-        let initAddress = inputAddress.value;
-        
-        inputEmail.textContent = initEmial;
+    function writeValueInit(){
+        location.reload();
+        fetch('../../controller/admin/read/load.php')
+            .then( res => res.text() )
+            .then( res => {
+                console.log(res);
+            })
+            .catch(error => console.log(error))
     }

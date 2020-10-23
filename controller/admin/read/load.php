@@ -234,10 +234,10 @@
                             <!--./ Column -->
             
                             <!-- Column -->
-                            <div class="col-md-12 d-flex">
-                                <div class="md-form form-group row">
-                                    <div class="col-11 mt-2 px-4">
-                                        <input type="number" class="form-control" id="salary" name="salary" value="'.$f["salary"].'" >
+                            <div class="col-md-12 d-flex mb-3">
+                                <div class="md-form form-group row w-50 m-auto">
+                                    <div class="col-11 mt-2 px-4 text-center">
+                                        <input type="number" class="form-control" id="salary" name="salary" value="'.$f["salary"].'" disabled>
                                     </div>         
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                 <button type="submit" class="btn btn-primary mr-auto save">Guardar</button>
                             </div>
                             <div class="col-md-12 d-flex group-btn mt-3">
-                                <button type="button" class="btn m-auto orange text-white" data-toggle="modal" data-target="#modalRegisterForm">Cambiar contraseña</button>
+                                <button type="button" class="btn m-auto btn-col1 text-white" data-toggle="modal" data-target="#modalRegisterForm">Cambiar contraseña</button>
                             </div>
                         </div>
                         <div class="col-md-12 d-flex">
@@ -258,6 +258,7 @@
                         <!--./ row -->
                     </form>
                     <hr>
+                    <div class="title-section W-100"><h4 class="mb-0  mt-4 ml-lg-5 text-center text-lg-left">Fecha de Cumpleaños</h4> </div> 
                     <div class="row w-100 d-flex m-0" >
                         <div class="root text-center m-auto">
                             <!--  -->

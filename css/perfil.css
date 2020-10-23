@@ -87,7 +87,7 @@ table{
     letter-spacing: 1.5px;
 }
 .title-second span{
-    font-size: 19px !important;
+    font-size: 20px !important;
 }
 .title-section h4{
     font-size: 26px !important;
@@ -115,6 +115,9 @@ table{
 }
 .md-form input:not([type]), .md-form input[type="text"]:not(.browser-default), .md-form input[type="password"]:not(.browser-default), .md-form input[type="email"]:not(.browser-default), .md-form input[type="url"]:not(.browser-default), .md-form input[type="time"]:not(.browser-default), .md-form input[type="date"]:not(.browser-default), .md-form input[type="datetime"]:not(.browser-default), .md-form input[type="datetime-local"]:not(.browser-default), .md-form input[type="tel"]:not(.browser-default), .md-form input[type="number"]:not(.browser-default), .md-form input[type="search"]:not(.browser-default), .md-form input[type="phone"]:not(.browser-default), .md-form input[type="search-md"], .md-form textarea.md-textarea {
     border: 0px;
+}
+.input{
+    border-bottom: 1px solid #ccc !important;
 }
 /*CHANGE PROFILE*/
 .img-change{
@@ -154,7 +157,10 @@ table{
 .btn-col1{
     background: #BB6216;
 }
+.btn-col2{
+    background: #73B5CA;
+}
 /*Footer*/
-.footer-login{
-    margin-top: 10em !important;
+.footer-login {
+    margin-top: 3em !important;
 }

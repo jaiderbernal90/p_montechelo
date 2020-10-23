@@ -1,10 +1,4 @@
 /*  */
-:root {
-  --color-bg-calendar: #1b1e22;
-  --color-cell: #000;
-  --color-cell-disabled: #424649;
-}
-
 .root {
   min-height: 100vh;
   padding: 0 15px;
@@ -14,6 +8,7 @@
 }
 
 .calendar {
+  margin-top: 20px;
   padding: 20px 20px;
   border-radius: 3px;
   width: 100%;
@@ -43,7 +38,7 @@
 
 .calendar-container header {
 	border-radius: 1em 1em 0 0;
-	background: #e66b6b;
+	background: #BB6216;
 	color: #fff;
 	padding: 1.5em 1em;
 }
@@ -60,7 +55,7 @@
 	text-transform: lowercase;
 }
 .calendar thead {
-	color: #e66b6b;
+	color: #000;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -71,58 +66,37 @@
 }
 
 .calendar tbody td:hover {
-	background: #cacaca;
-	color: rgb(114, 114, 114);
+  color: #BB6216;
 }
-
+.day-Cumple:hover{
+  color: #000 !important;
+}
 .current-day {
-	color: #e66b6b;
+	color: #ffffff;
 }
-
-.prev-month,
-.next-month {
-	color: #000;
+/*TABLE*/
+.fc-header-toolbar{
+  display: none;
 }
-.calendar .control {
+.calendar{
+  padding: 0 !important;
+}
+.fc-day-header span{
   color: #000;
-  font-weight: bold;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0 5px;
 }
-
-.grid__header, .grid__body {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+.fc-other-month{
+  color: rgb(82, 82, 82) !important;
 }
-
-.grid__header {
-  color: #000;
-  margin-bottom: 20px;
+.fc-week:last-child{
+  display: none;
 }
-
-.grid__body {
-  grid-auto-rows: 40px;
-  color: var(--color-cell);
+.fc-scroller{
+  height: auto !important;
 }
-
-.grid__cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.fc th, .fc td {
+   border-style: none;
 }
-
-.grid__cell--gd {
-  cursor: pointer;
-}
-
-.grid__cell--selected {
-  color: var(--color-bg-calendar);
-  background-color: rgb(122, 122, 122);
-}
-
-.grid__cell--disabled {
-  color: var(--color-cell-disabled);
-  cursor: not-allowed;
+.day-Cumple{
+  background: #BB6216;
+  color: #dffffd;
 }

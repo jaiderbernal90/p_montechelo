@@ -111,7 +111,7 @@
                             <div class="col-md-6">
                                 <div class="md-form form-group row">
                                     <div class="col-11 px-4">
-                                        <input type="number" class="form-control inputs" name="cel" id="cel" value="'.$f["num_cel"].'" disabled>
+                                        <input type="number" class="form-control inputs" name="cel" id="cel" value="'.$f["num_cel"].'" disabled maxlength="10" pattern="[0-9]+" tittle="Esto no parece ser un número de celular válido">
                                     </div> 
                                     <div class="col-1 p-0">
                                         <div class="icon pt-3 mt-1">
@@ -187,7 +187,7 @@
                             <div class="col-md-6">
                                 <div class="md-form form-group row">
                                     <div class="col-11 px-4">
-                                        <input type="text" class="form-control inputs" id="address" name="address" value="'.ucfirst($f["address"]).'" disabled>
+                                        <input type="text" class="form-control inputs" id="address" name="address" value="'.ucfirst($f["address"]).'" disabled required minlength="3" maxlength="50">
                                     </div> 
                                     <div class="col-1 p-0">
                                         <div class="icon pt-3 mt-1">
@@ -208,7 +208,7 @@
                             <div class="col-md-6">
                                 <div class="md-form form-group row">
                                     <div class="col-11 px-4">
-                                        <input type="text" class="form-control inputs" name="charge" id="charge" value="'.ucfirst($f["charge"]).'" disabled>
+                                        <input type="text" class="form-control inputs" name="charge" id="charge" value="'.ucfirst($f["charge"]).'" disabled pattern="[A-Za-z]+">
                                     </div> 
                                     <div class="col-1 p-0">
                                         <div class="icon pt-3 mt-1">
@@ -234,10 +234,10 @@
                             <!--./ Column -->
             
                             <!-- Column -->
-                            <div class="col-md-6">
+                            <div class="col-md-12 d-flex">
                                 <div class="md-form form-group row">
                                     <div class="col-11 mt-2 px-4">
-                                        <input type="number" class="form-control" id="salary" name="salary" value="'.$f["salary"].'" disabled>
+                                        <input type="number" class="form-control" id="salary" name="salary" value="'.$f["salary"].'" >
                                     </div>         
                                 </div>
                             </div>
@@ -245,6 +245,9 @@
                             <div class="col-md-12 d-flex group-btn">
                                 <button class="btn btn-primary m-auto update">Modificar</button>
                                 <button type="submit" class="btn btn-primary mr-auto save">Guardar</button>
+                            </div>
+                            <div class="col-md-12 d-flex group-btn mt-3">
+                                <button type="button" class="btn m-auto orange text-white" data-toggle="modal" data-target="#modalRegisterForm">Cambiar contraseña</button>
                             </div>
                         </div>
                         <div class="col-md-12 d-flex">
@@ -258,7 +261,7 @@
                     <div class="row w-100 d-flex m-0" >
                         <div class="root text-center m-auto">
                             <!--  -->
-                            <div class="calendar-container">
+                            <div class="calendar-container calendar">
                                 <header>
                                     <div id="month" class="d-none">'.translationMonth($f["date_birth"]).'</div>
                                     <div id="day" class="d-none">'.translationDate($f["date_birth"]).'</div>

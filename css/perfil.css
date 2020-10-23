@@ -1,3 +1,6 @@
+table{
+    width: 100% !important;
+}
 .cont-card{
     width: 30%;
 }
@@ -144,7 +147,13 @@
 .btn-color1{
     background-color: #0098C9;
 }
-
+/*MODAL*/
+.active {
+    background: transparent;
+}
+.btn-col1{
+    background: #BB6216;
+}
 /*Footer*/
 .footer-login{
     margin-top: 10em !important;

@@ -17,8 +17,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <!-- CAROUSEL -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
     <!-- ICON -->
     <link rel="shortcut icon" href="../../img/icon.png" type="image/x-icon">
     <title>MONTECHELO</title>
@@ -50,23 +48,57 @@
     <!--./ Third Section -->
 
 
+    <!-- MODAL -->
+    <div class="modal fade mt-5" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Cambio de Contraseña</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="POST">
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="orangeForm-pass" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="orangeForm-name">Nueva contraseña</label>
+                        </div>
+                        <div class="md-form mb-5">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="orangeForm-repass" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="orangeForm-email">Repita su contraseña</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="submit" class="btn btn-col1 text-white">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
     <!--FOOTER-->
     <footer class="footer-login container-fluid p-0 m-0"-->   
         <?php include('../footer.html')?>
     </footer>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <!-- JQERY UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-   <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
     <!-- MOMENTS JS -->
     <script src="https://momentjs.com/downloads/moment.js"></script>
+    <!-- CALENDAR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <!-- ES CALENDAR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/es.js" integrity="sha512-WQ3+XB6VumHQXES6Nlrktsmlr7P3WCPISNdUGQqQJR2L+MGobiZbhvo2DKzbhh7RR3iDamME8hIBgAgm8oY1XQ==" crossorigin="anonymous"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/calendar.js"></script>

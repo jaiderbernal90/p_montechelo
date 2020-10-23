@@ -42,7 +42,7 @@ btnSave.addEventListener('click', loadForm);
                 btnSave.setAttribute('disabled',true);
                 btnUpdate.classList.add('ml-auto');
                 btnUpdate.classList.remove('m-auto');
-                input.addEventListener('blur', validationInput);
+                input.addEventListener('oninput', validationInput);
             }else if(input.disabled === false){
                 //Se agrega la propiedad disabled, se quita el borde y btn cancelar cambia a Modificar
                 initValues();

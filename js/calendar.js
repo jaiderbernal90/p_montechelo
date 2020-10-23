@@ -1,182 +1,26 @@
- //Inicializar el calendario
-document.addEventListener('DOMContentLoaded', () => {
-    let calendar = new Calendar('calendar');
-    calendar.getElement().addEventListener('change', e => {
-       
-    });
-})
+//Variables
+const month = document.querySelector('#month').innerHTML;
+const daysUser = document.querySelector('#day').innerHTML;
+const year = (new Date).getFullYear(); 
 
-  /* Class */
-class Calendar {
-  constructor(id) {
-      this.cells = [];
-      this.selectedDate = null;
-      this.currentMonth = moment();
-      this.momentMonth = document.querySelector('#month');
-      this.elCalendar = document.getElementById(id);
-      this.showTemplate();
-      this.elGridBody = this.elCalendar.querySelector('.grid__body');
-      this.elMonthName = this.elCalendar.querySelector('.month-name');
-      this.showCells();
-      this.dateBirth = null;
-  }
 
-  showTemplate() {
-      this.elCalendar.innerHTML = this.getTemplate();
-      this.addEventListenerToControls();
-  }
+//API FULLCALENDAR CODE
+$('#calendar').fullCalendar({
+    header: {
+         language: 'es',
+         center: 'title',
+    },
+    defaultDate: year+"-"+month+"-"+daysUser.substr(0,2),
+    editable: false,
+    eventLimit: false, // allow "more" link when too many events
+    selectable: false,
+    selectHelper: false
+});
 
-  getTemplate() {
-      let template = `
-          <div class="calendar__header text-center d-none">
-              <button type="button" class="control control--prev">&lt;</button>
-              <span class="month-name">dic 2019</span>
-              <button type="button" class="control control--next">&gt;</button>
-          </div>
-          <div class="calendar__body">
-              <div class="grid">
-                  <div class="grid__header">
-                      <span class="grid__cell grid__cell--gh">Lun</span>
-                      <span class="grid__cell grid__cell--gh">Mar</span>
-                      <span class="grid__cell grid__cell--gh">Mié</span>
-                      <span class="grid__cell grid__cell--gh">Jue</span>
-                      <span class="grid__cell grid__cell--gh">Vie</span>
-                      <span class="grid__cell grid__cell--gh">Sáb</span>
-                      <span class="grid__cell grid__cell--gh">Dom</span>
-                  </div>
-                  <div class="grid__body">
-
-                  </div>
-              </div>
-          </div>
-      `;
-      return template;
-  }
-  //Dar el control para pasar de mes
-  addEventListenerToControls() {
-      let elControls = this.elCalendar.querySelectorAll('.control');
-      elControls.forEach(elControl => {
-          elControl.addEventListener('click', e => {
-              let elTarget = e.target;
-              if (elTarget.classList.contains('control--next')) {
-                  this.changeMonth(true);
-              } else {
-                  this.changeMonth(false);
-              }
-              this.showCells();
-          });
-      });
-  }
-//Cambiar de mes
-  changeMonth(next = true) {
-      if (next) {
-          this.currentMonth.add(1, 'months');
-      } else {
-          this.currentMonth.subtract(1, 'months');
-      }
-  }
-  //Mostrar las celdas 
-  showCells() {
-      console.log(this.currentMonth);
-      this.cells = this.generateDates(this.currentMonth);
-      if (this.cells === null) {
-          console.error('No fue posible generar las fechas del calendario.');
-          return;
-      }
-
-      this.elGridBody.innerHTML = '';
-      let templateCells = '';
-      let disabledClass = '';
-      for (let i = 0; i < this.cells.length; i++) {
-          this.dateBirth = document.querySelector('#day').textContent;
-          disabledClass = '';
-
-          if (!this.cells[i].isInCurrentMonth) {
-              disabledClass = 'grid__cell--disabled';
-          }
-
-          // <span class="grid__cell grid__cell--gd grid__cell--selected">1</span>
-
-          if(parseInt(this.dateBirth) === this.cells[i].date.date()){
-                //Dibujar las celdas
-                templateCells += `
-                    <span class="bg-dark grid__cell grid__cell--gd ${disabledClass} text-white" data-cell-id="${i}">
-                        ${this.cells[i].date.date()}
-                    </span>
-                `;
-          }else{
-                //Dibujar las celdas
-                templateCells += `
-                <span class="grid__cell grid__cell--gd ${disabledClass}" data-cell-id="${i}">
-                    ${this.cells[i].date.date()}
-                </span>
-                `;
-          }
-          
-      }
-      //
-      this.elMonthName.innerHTML = this.currentMonth.format('MMM YYYY');
-      this.elGridBody.innerHTML = templateCells;
-      this.addEventListenerToCells();
-  }
-
-  generateDates(monthToShow = moment()) {
-      if (!moment.isMoment(monthToShow)) {
-          return null;
-      }
-      let dateStart = moment(monthToShow).startOf('month');
-      let dateEnd = moment(monthToShow).endOf('month');
-      let cells = [];
-
-      // Encontrar la primer fecha que se va a mostrar en el calendario
-      while (dateStart.day() !== 1) {
-          dateStart.subtract(1, 'days');
-      }
-
-      // Encontrar la última fecha que se va a mostrar en el calendario
-      while (dateEnd.day() !== 0) {
-          dateEnd.add(1, 'days');
-      }
-
-      // Genera las fechas del grid
-      do {
-          cells.push({
-              date: moment(dateStart),
-              isInCurrentMonth: dateStart.month() === monthToShow.month()
-          });
-          dateStart.add(1, 'days');
-      } while (dateStart.isSameOrBefore(dateEnd));
-
-      return cells;
-  }
-
-  addEventListenerToCells() {
-      let elCells = this.elCalendar.querySelectorAll('.grid__cell--gd');
-      elCells.forEach(elCell => {
-          elCell.addEventListener('click', e => {
-              let elTarget = e.target;
-              if (elTarget.classList.contains('grid__cell--disabled') || elTarget.classList.contains('grid__cell--selected')) {
-                  return;
-              }
-              // Deselecionar la celda anterior
-              let selectedCell = this.elGridBody.querySelector('.grid__cell--selected');
-              if (selectedCell) {
-                  selectedCell.classList.remove('grid__cell--selected');
-              }
-              // Selecionar la nueva celda
-              elTarget.classList.add('grid__cell--selected');
-              this.selectedDate = this.cells[parseInt(elTarget.dataset.cellId)].date;
-              // Lanzar evento change
-              this.elCalendar.dispatchEvent(new Event('change'));
-          });
-      });
-  }
-
-  getElement() {
-      return this.elCalendar;
-  }
-
-  value() {
-      return this.selectedDate;
-  }
-}
+//VALIDARION DAY BIRTH 
+const values = document.querySelectorAll('.fc-day-number');
+values.forEach(day =>{
+    if(parseInt(day.innerHTML) === parseInt(daysUser.substr(0,2)) && day.parentElement.className.includes('fc-other-month') === false){
+        day.parentElement.classList.add("day-Cumple");
+    }
+});

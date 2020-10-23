@@ -57,7 +57,7 @@
                         <!-- Material input -->
                         <div class="md-form form-group">
                             <p class="tite text-primary">Nombres <span class="text-danger">*</span></p>
-                            <input type="text" class="form-control inputs" name="name" placeholder="Nombre" required>
+                            <input type="text" class="form-control inputs" name="name" placeholder="Nombre" required maxlength="50">
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -67,7 +67,7 @@
                         <!-- Material input -->
                         <div class="md-form form-group">
                             <p class="tite text-primary">Apellidos <span class="text-danger">*</span></p>
-                            <input type="text" class="form-control inputs" name="last_name" placeholder="Apellido" required>
+                            <input type="text" class="form-control inputs" name="last_name" placeholder="Apellido" required maxlength="50">
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -205,7 +205,7 @@
                             <div class="md-form form-group">
                                 <p class="tite text-primary ar-input">Cargo<span class="text-danger">*</span></p>
                                 <input type="text" class="form-control inputs" name="charge" 
-                                placeholder="Cargo que desempeña" required minlength="3" pattern="[A-Za-z0-9]+">
+                                placeholder="Cargo que desempeña" required minlength="3" pattern="[A-Za-z]+">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -266,7 +266,7 @@
                             <div class="md-form form-group ar-input">
                                 <p class="tite text-primary">Dirección <span class="text-danger">*</span></p>
                                 <input type="text" class="form-control inputs" name="address" 
-                                placeholder="Dirección" required>
+                                placeholder="Dirección" required minlength="3" maxlength="50">
                             </div>  
                         </div>
                         <!-- Grid column -->

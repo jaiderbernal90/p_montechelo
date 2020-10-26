@@ -29,7 +29,7 @@
    if (strlen($name)>0 && strlen($last_name)>0 && strlen($type_id)>0 && strlen($document)>0 && strlen($estate)>0 && strlen($gender)>0 && strlen($email)>0 && strlen($date_birth)>0 && strlen($num_cel)>0  && strlen($role)>0 && strlen($charge)>0 && strlen($salary)>0 && strlen($deparment)>0 && strlen($city)>0 && strlen($type_contract)>0) {
       //
          $consultas=new consultas();
-         $result=$consultas->registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract);
+         $result=$consultas->registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract,$password);
    }else {
       modalAlert('Llene todos los campos obligatorios','../../../view/admin/addUser.php','warning',3);
    }

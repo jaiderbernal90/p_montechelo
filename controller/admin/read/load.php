@@ -245,6 +245,11 @@
                             <!-- ./ div containe -->
                             </div>
                         </div>
+                            <div class="col-md-12 d-flex">
+                                <div class="spinner-grow text-primary text-center m-auto" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
                             <!-- ./ Column -->
                             <div class="col-md-12 d-flex group-btn">
                                 <button class="btn btn-primary m-auto update">Modificar</button>
@@ -253,11 +258,6 @@
                             <div class="col-md-12 d-flex group-btn mt-3">
                                 <button type="button" class="btn m-auto btn-col1 text-white" data-toggle="modal" data-target="#modalRegisterForm">Cambiar contraseña</button>
                             </div>
-                        <div class="col-md-12 d-flex">
-                            <div class="spinner-grow text-primary text-center m-auto" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </div>
                         <!--./ row -->
                     </form>
                     <hr>
@@ -277,7 +277,7 @@
                     </div> 
                 </section>';
             }//end foreach
-        };//end if
+        };//
     // ./cierre función para ver perfil
     //
     function userInformation($id){

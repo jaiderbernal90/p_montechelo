@@ -65,12 +65,12 @@
 		//Cierre mirar usuarios
 
 		//Funcion para añadir usuarios
-		public function registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract){
+		public function registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract,$password){
 			//CONECTION DATA BASE
 			$modelo=new conexion();
 			$conexion=$modelo->post_conexion();
 			//QUERY SQL
-			$sql="INSERT INTO user(name,last_name,type_id,document,estate,gender,email,date_birth,num_cel,tel,role,charge,salary,deparment,city,address,type_contract) VALUES(:name,:last_name,:type_id,:document,:estate,:gender,:email,:date_birth,:num_cel,:tel,:role,:charge,:salary,:deparment,:city,:address,:type_contract)";
+			$sql="INSERT INTO user(name,last_name,type_id,document,estate,gender,email,date_birth,num_cel,tel,role,charge,salary,deparment,city,address,type_contract,password) VALUES(:name,:last_name,:type_id,:document,:estate,:gender,:email,:date_birth,:num_cel,:tel,:role,:charge,:salary,:deparment,:city,:address,:type_contract,:pass)";
 
 			// PDO
 			$result = $conexion->prepare($sql);
@@ -91,8 +91,8 @@
 			$result->bindParam(":city",$city);
 			$result->bindParam(":address",$address);
 			$result->bindParam(":type_contract",$type_contract);
+			$result->bindParam(":pass",$password);
 			
-
 			//QUERY RESULT
 			if (!$result){
 				modalAlert('ERROR AL REGISTRAR','../../../view/admin/addUser.php','error',3);

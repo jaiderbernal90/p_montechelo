@@ -42,11 +42,11 @@
             <option value="2">Femenino</option>
             <option value="3">Otro</option>';
         }else if ($genero === '2') {
-            $gender = '<option selected value="'.$gender.'">Femenino</option>
+            $gender = '<option selected value="'.$genero.'">Femenino</option>
             <option value="1">Masculino</option>
             <option value="3">Otro</option>';
         }else if ($genero === '3') {
-            $gender = '<option selected value="'.$gender.'">Otro</option>
+            $gender = '<option selected value="'.$genero.'">Otro</option>
             <option value="1">Masculino</option>
             <option value="2">Femenino</option>';
         }

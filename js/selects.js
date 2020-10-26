@@ -29,7 +29,7 @@ function loadDepartment(){
         .catch(error => console.log(error))
 }
 
-function loadMunicipality(){
+function loadMunicipality(selectDeparments,selectMunicipalitys){
     //Realizamos la conexión al archivo json
     fetch('../../colombia.json')
         .then( res => res.json() )

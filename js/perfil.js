@@ -1,29 +1,28 @@
-
 // Variables
 const btnUpdate = document.querySelector('.update');
 const btnSave = document.querySelector('.save');
+let valoresEncri;
 
-const inputEmail = document.querySelector('#email');
-const inputCel = document.querySelector('#cel');
-const inputGenero = document.querySelector('#genero');
-const inputCity = document.querySelector('#municipality');
-const inputDepartment = document.querySelector('#deparment');
+let inputEmail = document.querySelector('#email');
+let inputCel = document.querySelector('#cel');
+let inputGenero = document.querySelector('#genero');
+let inputCity = document.querySelector('#municipality');
+let inputDepartment = document.querySelector('#deparment');
 const inputAddress = document.querySelector('#address');
+const inputCharge= document.querySelector('#charge');
 
-const inputs = document.querySelectorAll('.inputs');
+let inputs = document.querySelectorAll('.inputs');
 const formsInput = document.querySelectorAll('.form-control');
-const mdForm = document.querySelectorAll('.md-form');
+const mdForm = document.querySelector('.container-fluid-form');
 const form = document.querySelector('.form');
 const spinner = document.querySelector('.spinner-grow');
 const btnsGroup = document.querySelector('.group-btn');
-let validate = null;
-//INIT
-let initEmial = null, initCel = null, initGenero = null, initCity = null, initDepartment = null, initAddress = null;
 
 //Valores predeterminados
 btnSave.style.display = 'none';
 
 //Add Event Listener
+document.addEventListener('DOMContentLoaded', initValesLocal);
 btnUpdate.addEventListener('click', formDisabled);
 btnSave.addEventListener('click', loadForm);
 
@@ -43,10 +42,10 @@ btnSave.addEventListener('click', loadForm);
                 btnSave.setAttribute('disabled',true);
                 btnUpdate.classList.add('ml-auto');
                 btnUpdate.classList.remove('m-auto');
-                input.addEventListener('oninput', validationInput);
+                input.addEventListener('blur', validationInput);
             }else if(input.disabled === false){
                 //Se agrega la propiedad disabled, se quita el borde y btn cancelar cambia a Modificar
-                writeValueInit();
+                cancelLocal();
                 input.setAttribute('disabled',true);
                 input.style.borderBottom = '0px';
                 btnUpdate.textContent = 'Modificar';
@@ -108,14 +107,61 @@ btnSave.addEventListener('click', loadForm);
         //SEND FORM    
         setTimeout( () => {
             form.submit();
-        }, 200);  
+        }, 2000);  
     }
-    function writeValueInit(){
-        location.reload();
-        fetch('../../controller/admin/read/load.php')
-            .then( res => res.text() )
-            .then( res => {
-                console.log(res);
-            })
-            .catch(error => console.log(error))
+    //----------------------------------------------------------------------
+
+    function initValesLocal(){
+        añadirValorLocalStorage(inputEmail,inputEmail.id);
+        añadirValorLocalStorage(inputCel,inputCel.id);
+        añadirValorLocalStorage(inputGenero,inputGenero.id);
+        añadirValorLocalStorage(inputCity,inputCity.id);
+        añadirValorLocalStorage(inputDepartment,inputDepartment.id);
+        añadirValorLocalStorage(inputAddress,inputAddress.id);
+        añadirValorLocalStorage(inputCharge,inputCharge.id);
+        obtenerCamposLocalStorage(inputCharge.id);
+    }
+
+    //Funcion 
+    function cancelLocal(){
+        inputEmail.value = obtenerCamposLocalStorage(inputEmail.id);
+        inputCel.value = obtenerCamposLocalStorage(inputCel.id);
+        inputCharge.value = obtenerCamposLocalStorage(inputCharge.id);
+        inputAddress.value = obtenerCamposLocalStorage(inputAddress.id);
+
+        if(obtenerCamposLocalStorage(inputGenero.id) === '1'){
+            inputGenero.innerHTML = `<option selected="" value="1">Masculino</option>
+            <option value="2">Femenino</option>
+            <option value="3">Otro</option>`;
+        }else if (obtenerCamposLocalStorage(inputGenero.id) === '2'){
+            inputGenero.innerHTML = `<option value="1">Masculino</option>
+            <option value="2"  selected>Femenino</option>
+            <option value="3">Otro</option>`;
+        }
+    }
+
+    function añadirValorLocalStorage(valor,key) {
+        let valores;
+        valores = obtenerCamposLocalStorage(valores);
+        
+        //Encriptamos el valor
+        valoresEncri = valor.value;
+        //Añadir los campos
+        valores.push(valoresEncri);
+        //Encriptamos la llave
+        //keyEncrip=encriptar1(key);
+        //Convertir de string a arreglo con localStorage
+        localStorage.setItem(key, JSON.stringify(valoresEncri));
+    }
+
+    
+    //Comprobar que haya elementos en localStorage, retorna un arreglo con o sin campos
+    function obtenerCamposLocalStorage(name){
+        //Revisamos los valores del localStorage
+        if(localStorage.getItem(name) === null){
+            name=[];
+        }else{
+            name = JSON.parse(localStorage.getItem(name));
+        }
+        return name;
     }

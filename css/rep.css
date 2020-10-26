@@ -39,7 +39,7 @@
     z-index: 0;
 }
 .title-card-rep{
-    vertical-align: middle;
+    vertical-align: middle !important;
     text-align: center;
     margin: auto;
     letter-spacing: 3px;
@@ -47,10 +47,19 @@
 .title-card-rep h3{
     font-weight: 500;
 }
+.title-card-rep span{
+    font-size: 19px;
+    letter-spacing: 0px;
+}
+.title-card-rep a{
+  margin: 0 auto;
+  vertical-align: middle !important;
+}
 .hov{
     position: absolute;
-    display: none;
     transition: all .3s;
+    display: none;
+    top: 40%;
 }
 .mask{
     transition: all .3s;
@@ -62,5 +71,6 @@
 .mask:hover .hov{
     display: inline-flex;
     color: #fff !important;
+    margin: 0 auto;
 
 }

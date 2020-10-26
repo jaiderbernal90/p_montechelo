@@ -1,5 +1,5 @@
 <?php
-    require_once('../../controller/sessions/security/securityAdmin.php');
+    require_once('../../controller/sessions/security/securityColaborador.php');
 ?>
 
 <!DOCTYPE html>

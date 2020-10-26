@@ -1,8 +1,7 @@
 <?php
-    require_once('../../controller/sessions/security/securityAdmin.php');
-    require_once('../../controller/admin/read/load.php');
+    require_once('../../controller/sessions/security/securityLider.php');
+    require_once('../../controller/lider/read/load.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

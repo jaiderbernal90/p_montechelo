@@ -35,7 +35,6 @@
             info();
         ?>
     <!--./ Secondth Section -->
-    <!-- Third Section -->
     <!-- <section class="container-fluid w-100 p-0 m-0">
     <hr>
         <div class="row w-100 p-0 m-0">

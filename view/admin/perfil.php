@@ -1,7 +1,6 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
     require_once('../../controller/admin/read/load.php');
-    $email=$_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +32,7 @@
     <!-- First Section -->
         <?php
             //Invocacion de la función para cargar usuarios
-            info($email);
+            info();
         ?>
     <!--./ Secondth Section -->
     <!-- Third Section -->
@@ -59,7 +58,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="POST">
+                <form action="../../controller/admin/update/updatePass.php" method="POST">
                     <div class="modal-body mx-3">
                         <div class="md-form mb-5">
                             <p data-error="wrong" data-success="right" for="orangeForm-name" class="text-primary">Contraseña actual <span class="text-danger">*</span></p>
@@ -107,7 +106,7 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/calendar.js"></script>
-    <script src="../../js/perfil.js"></script>
-    <script src="../../js/updateSelect.js"></script>
+    <script src="../../js/perfil.js" type="module"></script>
+    <script src="../../js/updateSelect.js" type="module"></script>
 </body>
 </html>

@@ -1,19 +1,17 @@
 //Variables
-const selectDeparments = document.querySelector('#deparment');
-const selectMunicipalitys = document.querySelector('#municipality');
-
-
+let selectDeparments = document.querySelector('#deparment');
+let selectMunicipalitys = document.querySelector('#municipality');
 
 //Event Listener 
-//Al cargar el documento mostrar Departamentos
-document.addEventListener('DOMContentLoaded', department);
-//Al cargar el documento mostrar los municipios correspondientes
-document.addEventListener('DOMContentLoaded', reloadMunicipality);
 //Al evidenciar un cambio se cargan los municipios correspondientes
 selectDeparments.addEventListener('change', loadMunicipality);
+//Al cargar el documento mostrar Departamentos
+document.addEventListener('DOMContentLoaded', department(selectDeparments));
+//Al cargar el documento mostrar los municipios correspondientes
+document.addEventListener('DOMContentLoaded', reloadMunicipality(selectDeparments,selectMunicipalitys));
 
 //Functions
-function department(){
+function department(selectDeparments){
 //Realizamos la conexión al archivo json
 fetch('../../colombia.json')
     .then( res => res.json() )
@@ -37,7 +35,7 @@ fetch('../../colombia.json')
     .catch(error => console.log(error))
 }
 
-function reloadMunicipality(){
+function reloadMunicipality(selectDeparments,selectMunicipalitys){
 //Realizamos la conexión al archivo json
 fetch('../../colombia.json')
     .then( res => res.json() )
@@ -51,7 +49,7 @@ fetch('../../colombia.json')
         //Guardamos el id y el nombre del departamento en options
         department.forEach((departments) => {
              //Valida el departamento
-            if(String(departments.id) === id){
+            if(String(departments.id) === String(id)){
                 //Realiza consulta de los municipios
                 departments.ciudades.forEach(ciudad => {
                     //Validación de la ciudad que trajo la consulta
@@ -76,12 +74,14 @@ function loadMunicipality(){
         .then( deparment => { 
             let id = selectDeparments.value;
             selectMunicipalitys.innerHTML = '';
+            console.log(id);
             //Inicializamos la variable HTML con el primer option
             let html = '<option value="" disabled selected>Elija una opción</option>';
             //Guardamos el id y el nombre del departamento en options
              deparment.forEach((deparments) => {
                  //Valida el departamento
-                if(String(deparments.id) === id){
+                if(String(deparments.id) === String(id)){
+                    console.log('Coincidi');
                     //Realiza consulta de los municipios
                     deparments.ciudades.forEach(ciudad => {
                         html += `<option value="${ciudad.id_municipality}" >${ciudad.name_municipality}</option>`;

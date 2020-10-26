@@ -192,5 +192,29 @@
 
 			}
 		}//Cierra insertarUsuarios
+		
+		public function updatePass($password,$email){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="UPDATE user SET password=:password WHERE email=:email";
+	
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":password",$password);
+			$result->bindParam(":email",$email);
+			
+	
+			//QUERY RESULT
+			if (!$result){
+				modalAlert('ERROR AL MODIFICAR','../../../view/admin/updatePass.php','error',3);
+			}else {
+				
+				$result->execute();
+				session_destroy();
+				modalAlert('CONTRASEÑA MODIFICADA EXITOSAMENTE. INICIE SESION NUEVAMENTE','../../../index.php','success',3);
+			}
+		}//Cierra actualizar contraseña
 	}
 ?>

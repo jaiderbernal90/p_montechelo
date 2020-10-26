@@ -16,7 +16,6 @@
    $num_cel=trim($_POST['num_cel']);
    $tel=trim($_POST['tel']);
    $pass = $document.substr($name, 0, 1).substr($last_name, 0, 1);
-   echo $pass;
    $password=md5($pass);
    $role=trim($_POST['role']);
    $charge=trim($_POST['charge']);

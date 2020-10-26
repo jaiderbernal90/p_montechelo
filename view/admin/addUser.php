@@ -205,7 +205,7 @@
                             <div class="md-form form-group">
                                 <p class="tite text-primary ar-input">Cargo<span class="text-danger">*</span></p>
                                 <input type="text" class="form-control inputs" name="charge" 
-                                placeholder="Cargo que desempeña" required minlength="3" pattern="[A-Za-z]+">
+                                placeholder="Cargo que desempeña" required minlength="3">
                             </div>
                         </div>
                         <!-- Grid column -->

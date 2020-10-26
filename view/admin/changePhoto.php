@@ -32,33 +32,32 @@
     <!-- Section one -->
     <section class="container-fluid w-100 m-0 p-0 mt-5">
         <div class="row w-100 m-0 p-0 mt-3">
-            <div class="col-12 mt-5 text-center title-section p-0">
+            <div class="col-12 mt-5 text-center title-section">
                 <h4>Cambiar foto de perfil</h4>
             </div>
         </div>
         <div class="row w-100 m-0 p-0">
-            <div class="col-12 mt-3 text-center">
-                <img src="../../img/<?php echo $_SESSION['img_profile']; ?>" alt="" class="img-change shadow">
-            </div>
+                <div class="col-12 mt-3 text-center">
+                    <img src="../../img/<?php echo $_SESSION['img_profile']; ?>" alt="" id="mostrarimagen" class="img-change shadow">
+                </div>
         </div>
-        <div class="row w-100 m-0 p-0 mt-5">   
-                <form action="" class="form w-100 row">
+        <div class="row w-100 m-0 p-0 mt-5">
+                <form action="../../controller/admin/update/updatePhoto.php" method="POST" enctype="multipart/form-data" class="form w-100 row">
                     <div class="col-12 text-center"> 
-                        <input type="file" class="">
+                        <input type="file" name="img_profile" id="img_profile" required accept=".png, .jpeg, .jpg, image/gif">
                     </div>
                     <div class="row w-100 p-0 m-0 mt-3 ">
                         <div class="col-md-6 p-0 m-0 d-flex">
                             <div class="cont-btn rigth">
-                                <button type="submit" class="btn btn-color1 btn-md text-white">Enviar</button>
+                                <button type="submit" class="btn btn-primary btn-md btn-cancel">Enviar</button>
                             </div>
                         </div>
                         <div class="col-md-6 p-0 m-0 d-flex w-100">
                             <div class="cont-btn left">
-                                <button type="button" class="btn btn-color1 btn-md btn-cancel"><a href="perfil.php" class="text-white text-decoration-none">Cancelar</a></button>
+                                <button type="button" class="btn btn-danger btn-md btn-cancel"><a href="perfil.php" class="text-white text-decoration-none">Cancelar</a></button>
                             </div>
                         </div>
                     </div>
-                    
                 </form>
         </div>
 
@@ -82,5 +81,6 @@
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
+    <script src="../../js/photo.js"></script>
 </body>
 </html>

@@ -216,5 +216,28 @@
 				modalAlert('CONTRASEÑA MODIFICADA EXITOSAMENTE. INICIE SESION NUEVAMENTE','../../../index.php','success',3);
 			}
 		}//Cierra actualizar contraseña
+
+		public function updatePhoto($img_profile,$email){
+			
+			//CONECTION DATA BASE
+			$modelo = new conexion();
+			$conexion = $modelo->post_conexion();
+			//QUERY SQL
+			$sql = "UPDATE user SET img_profile=:img_profile WHERE email=:email";
+
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":img_profile",$img_profile);
+			$result->bindParam(":email",$email);
+
+			//QUERY RESULT
+			if (!$result){
+				modalAlert('ERROR AL ACTUALIZAR LA FOTO' , '../../../view/admin/perfil.php' , 'warning' , '3');
+			}else {	
+				$result->execute();
+				modalAlert('SE ACTUALIZÓ SU FOTO EXITOSAMENTE' , '../../../view/admin/perfil.php' , 'success' , '3');
+
+			}
+		}//Cierra imagen
 	}
 ?>

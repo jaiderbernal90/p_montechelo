@@ -526,5 +526,213 @@
         }
     }
     //./
+
+    
+    function showRepositorios(){ //función para cargar usuarios
+        //Invocamos una clase para realizar consultas del administrador
+        $queries = new consultas();
+        //Genera consulta en la tabla user para obtener los usuarios
+        $result=$queries->repositorio();
+
+
+        if (!isset($result)) {//En caso de haya un error en la variable resultado
+            echo '<script>alert("NO HAY NADA");</script>';
+            echo '<h2> NO HAY USUARIOS PARA MOSTRAR</h2>';
+        }else{//Si no se encuentra un error se realizara la maquetacion de la tabla para visualizar los usuarios 
+
+            foreach ($result as $f){
+                echo '<div class="row w-100 m-0 p-0 pt-5">
+                                <div class="col-12 p-0">
+                                    <main class="cont-card-user shadow">
+                                        <div class="mask d-flex">
+                                            <header class="img-cont">
+                                                <a title="Ver más" onclick="viewRepositorio(this)" id="'.$f["id_user"].'"><img src="../../img/'.$f['img_profile'].'" alt="" class="avatar"></a>
+                                            </header>
+                                            <div class="text-center title-card-rep" id="myDIV">
+                                                <a title="Ver más" onclick="viewRepositorio(this)" id="'.$f["id_user"].'" class="m-auto"><i onclick="viewRepositorio(this)" id="'.$f["id_user"].'" class="fas fa-plus hov fa-2x"></i></a>
+                                                <h3>'.strtoupper($f['name']).' '.strtoupper($f['last_name']).'</h3>
+                                                <span>'.translationRole($f["role"]).'</span>
+                                            </div>
+                                        </div>
+                                    </main>
+                                </div>
+                            </div>';
+            }//end foreach
+        };
+    }
+
+    function repositorioMas($id){ //función para ver perfil
+        
+        $queries = new consultas();
+        $result = $queries -> userInfo($id);
+            //
+            foreach ($result as $f){
+                echo '<div class="row w-100 m-0 p-0">
+                        <div class="col-12 text-center p-0">
+                            <!-- Fond-->
+                            <div class="font-up bg-white">
+                                <div class="mt-5">
+                                    <button class="btn btn-light btn-color1 mt-5 ml-2"><a href="repositorios.php" class="text-white">VOLVER</a></button>
+                                </div>
+                            </div>
+                            <!-- Avatar -->
+                            <div class="avatar avatar-profile">
+                                <div class="mask">
+                                    <img src="../../img/'.$f['img_profile'].'" class="rounded-circle"
+                                    alt="Sample avatar image.">  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- row -->
+                        <div class="row w-100 m-0 p-0">
+                            <!-- Name User -->
+                            <div class="col-12 p-0 m-0 title-name c-mask text-center">
+                                <h4>'.strtoupper($f['name']).' '.strtoupper($f['last_name']).'</h4>
+                            </div>
+                            <!-- Role user -->
+                            <div class="col-12 text-center title-second">
+                                <span>'.translationRole($f["role"]).'</span>
+                            </div>
+                        </div>
+                        <!--./ row -->
+                        <hr>
+                        <!-- row -->
+                        <div class="row w-100 m-0 p-0">
+                            <div class="col-12 title-section">
+                                <h4 class="ml-lg-5 text-center text-lg-left">Información</h4>
+                            </div>
+                        </div>
+                        <!--./ row -->
+                            <div class="container-fluid-form">
+                                <!-- row -->
+                                <div class="row w-100 pl-md-5 pl-3">
+                                    <!-- Column -->
+                                    <div class="col-md-6 p-0">
+                                        <div class="md-form form-group row mx-0">
+                                            <div class="col-11 px-4">
+                                                <input type="email" class="form-control inputs" name="email" id="email" value="'.$f["email"].'" disabled>
+                                            </div>         
+                                        </div>
+                                    </div>
+                                    <!--./ Column -->
+
+                                    <!-- Column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form form-group row">
+                                            <div class="col-11 px-4">
+                                                <input type="number" class="form-control inputs" name="cel" id="cel" value="'.$f["num_cel"].'" disabled maxlength="10" pattern="[0-9]+" tittle="Esto no parece ser un número de celular válido">
+                                            </div>          
+                                        </div>
+                                    </div>
+                                    <!-- ./ Column -->
+                                </div>
+                                <!--./ row -->
+                                
+                                <!-- row -->
+                                <div class="row w-100 pl-md-5 pl-3">
+                                    <!-- Column -->
+                                    <div class="col-md-6 p-0">
+                                        <div class="md-form form-group row mx-0">
+                                            <div class="col-11 px-4">
+                                                <select type="text" class="seleccionar md-form inputs  w-100" name="gender" id="genero" disabled>
+                                            '.translationGender($f["gender"]).'
+                                            </select>
+                                            </div>       
+                                        </div>
+                                    </div>
+                                    <!--./ Column -->
+
+                                    <!-- Column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form form-group row">
+                                            <div class="col-11 px-4">
+                                                <select type="text" class="seleccionar inputs md-form w-100" name="municipality" id="municipality" value="'.$f["city"].'" disabled>         
+                                                    <option disabled>Elija una opción</option>
+                                                    <option selected value="'.$f['city'].'">'.$f['city'].'</option>
+                                                </select>
+                                            </div>          
+                                        </div>
+                                    </div>
+                                    <!-- ./ Column -->
+                                </div>
+                                <!--./ row -->
+
+                                <!-- row -->
+                                <div class="row w-100 pl-md-5 pl-3">
+                                    <!-- Column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form form-group row ">
+                                            <div class="col-11 px-4">
+                                                <select class="seleccionar md-form w-100 inputs" name="deparment" id="deparment" disabled value="'.$f['deparment'].'">         
+                                                    <option disabled>Elija una opción</option>
+                                                    <option selected value="'.$f['deparment'].'">'.$f['deparment'].'</option>
+                                                </select>
+                                            </div>            
+                                        </div>
+                                    </div>
+                                    <!--./ Column -->
+
+                                    <!-- Column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form form-group row">
+                                            <div class="col-11 px-4">
+                                                <input type="text" class="form-control inputs" id="address" name="address" value="'.ucfirst($f["address"]).'" disabled required minlength="3" maxlength="50">
+                                            </div>             
+                                        </div>
+                                    </div>
+                                    <!-- ./ Column -->
+                                </div>                            
+                                <!--./ row -->
+                                <!-- row -->
+                                <div class="row w-100 pl-md-5 pl-3">
+                                    <!-- Column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form form-group row">
+                                            <div class="col-11 px-4">
+                                                <input type="text" class="form-control inputs" name="charge" id="charge" value="'.ucfirst($f["charge"]).'" disabled pattern="[A-Za-z]+">
+                                            </div>            
+                                        </div>
+                                    </div>
+                                    <!-- ./ Column -->
+
+                                    <!-- Column -->
+                                    <div class="col-md-6 p-0">
+                                        <div class="md-form form-group row mx-0">
+                                            <div class="col-11 px-4">
+                                                <select class="seleccionar md-form w-100 " name="type_contract"  required disabled>
+                                                    <option value="" selected disabled >'.traslationTypeContract($f["type_contract"]).'</option>
+                                                    <option value="1">Contrato Laboral</option>
+                                                    <option value="2">Contrato de Aprendizaje</option>
+                                                </select>
+                                            </div>           
+                                        </div>
+                                    </div>
+                                    <!--./ Column -->
+
+                                
+                                <!-- ./ div containe -->
+                                </div>
+                            </div>
+                            <!--./ row -->
+                        <hr>
+                        <div class="title-section W-100"><h4 class="mb-0  mt-4 ml-lg-5 text-center text-lg-left">Fecha de Cumpleaños</h4> </div> 
+                        <div class="row w-100 d-flex m-0" >
+                            <div class="root text-center m-auto">
+                                <!--  -->
+                                <div class="calendar-container calendar">
+                                    <header>
+                                        <div id="month" class="d-none">'.translationMonth($f["date_birth"]).'</div>
+                                        <div id="day" class="d-none">'.translationDate($f["date_birth"]).'</div>
+                                        <div class="day">'.translationDate($f["date_birth"]).'</div>
+                                    </header>
+                                    <div class="calendar" id="calendar"></div>
+                                </div> 
+                            </div> 
+                        </div>
+                ';
+            }//end foreach
+        };//
     //
 ?>

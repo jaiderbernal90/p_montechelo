@@ -150,7 +150,7 @@ table{
 }
 /*CHANGE PERFIL*/
 .btn-color1{
-    background-color: #0098C9;
+    background-color: #0098C9 !important;
 }
 /*MODAL*/
 .active {

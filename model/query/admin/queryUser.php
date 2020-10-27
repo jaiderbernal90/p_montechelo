@@ -65,12 +65,12 @@
 		//Cierre mirar usuarios
 
 		//Funcion para añadir usuarios
-		public function registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract,$password){
+		public function registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract,$password,$img){
 			//CONECTION DATA BASE
 			$modelo=new conexion();
 			$conexion=$modelo->post_conexion();
 			//QUERY SQL
-			$sql="INSERT INTO user(name,last_name,type_id,document,estate,gender,email,date_birth,num_cel,tel,role,charge,salary,deparment,city,address,type_contract,password) VALUES(:name,:last_name,:type_id,:document,:estate,:gender,:email,:date_birth,:num_cel,:tel,:role,:charge,:salary,:deparment,:city,:address,:type_contract,:pass)";
+			$sql="INSERT INTO user(name,last_name,type_id,document,estate,gender,email,date_birth,num_cel,tel,role,charge,salary,deparment,city,address,type_contract,password,img_profile) VALUES(:name,:last_name,:type_id,:document,:estate,:gender,:email,:date_birth,:num_cel,:tel,:role,:charge,:salary,:deparment,:city,:address,:type_contract,:pass,:img)";
 
 			// PDO
 			$result = $conexion->prepare($sql);
@@ -92,6 +92,7 @@
 			$result->bindParam(":address",$address);
 			$result->bindParam(":type_contract",$type_contract);
 			$result->bindParam(":pass",$password);
+			$result->bindParam(":img",$img);
 			
 			//QUERY RESULT
 			if (!$result){
@@ -239,5 +240,24 @@
 
 			}
 		}//Cierra imagen
+		public function repositorio(){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="SELECT * FROM user"; 
+			$result=$conexion->prepare($sql);
+			//PDO
+			$result->execute();
+
+			//Cargar el resultado a la variable resultado
+			while ($f=$result->fetch()) {
+				$resultado[]=$f;
+			}
+
+			return $resultado;
+		}//Cierre ver repositorios
 	}
 ?>

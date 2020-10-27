@@ -1,10 +1,26 @@
 .cont-card-user{
     background: #ccc;
     display: flex;
-    width: 60%;
+    width: 65%;
     height: 10em;
     margin: auto;
+    border-radius: 5px;
 }
+@media(min-width:1900px){
+    .cont-card-user{
+        width: 65%;
+        height: 15em;
+    }
+    .title-card-rep span{
+        font-size: 25px !important;
+        letter-spacing: 0px;
+    }
+    .title-card-rep h3{
+        font-size: 35px !important;
+        font-weight: 500;
+    }
+}
+
 @media(max-width:1080px) and (min-width:790px){
     .cont-card-user{
         width: 80%;
@@ -25,7 +41,7 @@
     }
 }
 .img-cont{
-    width: 30%;
+    width: 30% !important;
     height: 100%;
     z-index: 0;
 }
@@ -37,8 +53,10 @@
     object-fit: cover;
     object-position: center center;
     z-index: 0;
+    border-radius: 5px;
 }
 .title-card-rep{
+    width: 100%;
     vertical-align: middle !important;
     text-align: center;
     margin: auto;
@@ -46,6 +64,7 @@
 }
 .title-card-rep h3{
     font-weight: 500;
+    text-transform: uppercase !important;
 }
 .title-card-rep span{
     font-size: 19px;
@@ -62,8 +81,11 @@
     top: 40%;
 }
 .mask{
+    width: 100% !important;
+    height: 100% !important;
     transition: all .3s;
     z-index: 3;
+    border-radius: 5px;
 }
 .mask:hover{
     background: rgba(0, 0, 0, .4);
@@ -72,5 +94,40 @@
     display: inline-flex;
     color: #fff !important;
     margin: 0 auto;
-
+}
+.font-bold{
+    font-weight: 500;
+    color: #002A60 !important;
+}
+.input-group.md-form.form-sm.form-2 input.red-border {
+    border: 1px solid #000000 !important;
+}
+.input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #000 !important;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    color: rgb(0, 0, 0) !important;
+}
+/*COLOR PLACEHOLDER*/
+#anythingSearch::placeholder { color: rgb(0, 0, 0) !important; font-weight: 300; }
+.input-group-text {
+     border: none;
+}
+#anythingSearch:focus{
+    border-bottom: 1px solid #000000 !important;;
+}
+.seleccionar {
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    text-decoration: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    font: inherit;
+    border-bottom: 1px solid #ced4da;
+    transition: 200ms all;
+    color: #888888 !important; 
+    font-weight: 500;
+    padding-bottom: 3.5px;
 }

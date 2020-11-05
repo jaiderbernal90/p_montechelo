@@ -46,7 +46,7 @@
     <!--./ Third Section -->
 
 
-    <!-- MODAL -->
+    <!-- MODAL PASS -->
     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -62,22 +62,56 @@
                         <div class="md-form mb-5">
                             <p data-error="wrong" data-success="right" for="orangeForm-name" class="text-primary">Contraseña actual <span class="text-danger">*</span></p>
                             <i class="fas fa-lock prefix grey-text mt-5"></i>
-                            <input type="password" class="form-control validate input" name="passAct" minlength="8" title="La contraseña debe tener 8 caracteres">
+                            <input type="password" class="form-control validate input" name="passAct" minlength="8" title="La contraseña debe tener 8 caracteres" required> 
                         </div>
                         <div class="md-form mb-5">
                             <p data-error="wrong" data-success="right" for="orangeForm-name" class="text-primary">Nueva contraseña <span class="text-danger">*</span></p>
                             <i class="fas fa-lock prefix grey-text mt-5"></i>
-                            <input type="password" id="orangeForm-pass" class="form-control validate input" name="newPass" minlength="8" title="La contraseña debe tener 8 caracteres">
+                            <input type="password" id="orangeForm-pass" class="form-control validate input" name="newPass" minlength="8" title="La contraseña debe tener 8 caracteres" required>
                         </div>
                         <div class="md-form mb-5">
                             <p data-error="wrong" data-success="right" for="orangeForm-email" class="tite text-primary">Repita su contraseña <span class="text-danger">*</span></p>
                             <i class="fas fa-lock prefix grey-text mt-5"></i>
-                            <input type="password" id="orangeForm-repass" class="form-control seleccionar input validate" name="rePass" minlength="8" title="La contraseña debe tener 8 caracteres">
+                            <input type="password" id="orangeForm-repass" class="form-control seleccionar input validate" name="rePass" minlength="8" title="La contraseña debe tener 8 caracteres" required>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="submit" class="btn btn-col2 text-white">Confirmar</button>
                     </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    <!-- MODAL PHOTO -->
+    <div class="modal fade mt-5" id="modalRegisterFormPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+    aria-hidden="true">
+        <div class="modal-dialog mt-5" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Actualizar Foto de Perfil</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row w-100 m-0 p-0 mt-3">
+                        <div class="col-12 mt-3 text-center">
+                            <img src="../../img/<?php echo $_SESSION['img_profile']; ?>" alt="" id="mostrarimagen" class="img-change shadow">
+                        </div>
+                </div>
+                <br>
+                <form action="../../controller/admin/update/updatePhoto.php" method="POST" enctype="multipart/form-data">
+                    <div class="col-12 text-center"> 
+                        <input type="file" name="img_profile" id="img_profile" required accept=".png, .jpeg, .jpg, image/gif">
+                    </div>
+                    <div class="row w-100 p-0 m-0 mt-3 mb-3">
+                        <div class="col-md-12 p-0 m-0 d-flex">
+                            <div class="cont-btn m-auto">
+                                <button type="submit" class="btn btn-primary btn-md btn-cancel">Actualizar</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -107,5 +141,6 @@
     <script src="../../js/calendar.js"></script>
     <script src="../../js/perfil.js" type="module"></script>
     <script src="../../js/updateSelect.js" type="module"></script>
+    <script src="../../js/photo.js"></script>
 </body>
 </html>

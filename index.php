@@ -1,3 +1,7 @@
+<?php
+  require_once('controller/sessions/remember.php');
+  validation();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

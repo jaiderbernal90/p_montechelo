@@ -1,3 +1,9 @@
 *{
     font-family: 'Roboto' !important;
 }
+#swal2-title{
+    display: block !important;
+}
+#swal2-title span{
+    color: #0098C9 !important; 
+}

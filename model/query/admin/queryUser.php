@@ -65,12 +65,12 @@
 		//Cierre mirar usuarios
 
 		//Funcion para añadir usuarios
-		public function registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract,$password,$img){
+		public function registerUser($name,$last_name,$type_id,$document,$estate,$gender,$email,$date_birth,$num_cel,$tel,$role,$charge,$salary,$deparment,$city,$address,$type_contract,$password,$img,$fetch){
 			//CONECTION DATA BASE
 			$modelo=new conexion();
 			$conexion=$modelo->post_conexion();
 			//QUERY SQL
-			$sql="INSERT INTO user(name,last_name,type_id,document,estate,gender,email,date_birth,num_cel,tel,role,charge,salary,deparment,city,address,type_contract,password,img_profile) VALUES(:name,:last_name,:type_id,:document,:estate,:gender,:email,:date_birth,:num_cel,:tel,:role,:charge,:salary,:deparment,:city,:address,:type_contract,:pass,:img)";
+			$sql="INSERT INTO user(name,last_name,type_id,document,estate,gender,email,date_birth,num_cel,tel,role,charge,salary,deparment,city,address,type_contract,password,img_profile,fech_register) VALUES(:name,:last_name,:type_id,:document,:estate,:gender,:email,:date_birth,:num_cel,:tel,:role,:charge,:salary,:deparment,:city,:address,:type_contract,:pass,:img,:fech_register)";
 
 			// PDO
 			$result = $conexion->prepare($sql);
@@ -93,6 +93,7 @@
 			$result->bindParam(":type_contract",$type_contract);
 			$result->bindParam(":pass",$password);
 			$result->bindParam(":img",$img);
+			$result->bindParam(":fech_register",$fetch);
 			
 			//QUERY RESULT
 			if (!$result){
@@ -133,14 +134,10 @@
 
 			//QUERY RESULT
 			if (!$result){
-				
-				echo "<script>alert('ERROR AL MODIFICAR')</script>";
-				echo "<script>location.href='../../../view/admin/addUser.php'</script>";
-			}else {
-				
+				modalAlert('ERROR AL MODIFICAR' , '../../../view/admin/addUser.php' , 'warning' , '3');
+			}else {	
 				$result->execute();
-				echo "<script>alert('ACTUALIZACION EXITOSA')</script>";
-				echo "<script>location.href='../../../view/admin/users.php'</script>";
+				modalAlert('ACTUALIZACION EXITOSA' , '../../../view/admin/users.php' , 'success' , '3');
 			}
 		}//Cierra insertarUsuarios
 		//Ver pefil
@@ -213,8 +210,7 @@
 			}else {
 				
 				$result->execute();
-				session_destroy();
-				modalAlert('CONTRASEÑA MODIFICADA EXITOSAMENTE. INICIE SESION NUEVAMENTE','../../../index.php','success',3);
+				modalAlert('CONTRASEÑA MODIFICADA EXITOSAMENTE','../../../view/admin/perfil.php','success',3);
 			}
 		}//Cierra actualizar contraseña
 

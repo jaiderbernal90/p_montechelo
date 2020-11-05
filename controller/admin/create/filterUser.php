@@ -4,20 +4,38 @@ require_once('../../../model/query/ajax/user.php');
 require_once('../../../model/query/admin/queryUser.php');
 require_once('../../translation/translation-User.php');
 require_once('../../translation/roles.php');
-
+echo searchUsers();
 function searchUsers(){
       $text = $_POST['select'];
       $repositorios = null;
-
-      if(strtolower($text) === 'asc'){
-        $queries = new queryAjax();
-        //Genera consulta para buscar lo que el usuario escribio en el input
-        $result=$queries->filterSearchAs();
-      }else if(strtolower($text) === 'desc'){
-        $queries = new queryAjax();
-        //Genera consulta para buscar lo que el usuario escribio en el input
-        $result=$queries->filterSearchDes();
-      }
+        //VALIDACION DE CUAL FILTRO ELIGIO EL USUARIO
+        switch(strtolower($text)){
+          case 'ant':
+            $queries = new queryAjax();
+            //Genera consulta para buscar los usuarios más antiguos de la intranet
+            $result=$queries->filterSearchAnt();
+            break;
+          case 'desc':
+            $queries = new queryAjax();
+            //Genera consulta para buscar los usuarios de manera descendente
+            $result=$queries->filterSearchDes();
+            break;
+          case 'asc':
+            $queries = new queryAjax();
+            //Genera consulta para buscar los usuarios de manera ascendente
+            $result=$queries->filterSearchAs();
+            break;
+          case 'rec':
+            $queries = new queryAjax();
+            //Genera consulta para buscar los usuarios más recientes de la intranet
+            $result=$queries->filterSearchRes();
+            break;
+          case '': 
+            $queries = new consultas();
+            //Genera consulta para buscar lo que el usuario escribio en el input
+            $result=$queries->repositorio();
+            break;
+        }
 
       if (!isset($result)) {
         //En caso de haya un error en la variable resultado
@@ -34,7 +52,7 @@ function searchUsers(){
                                             <a title="Ver más" onclick="viewRepositorio(this)" id="'.$f["id_user"].'"><img src="../../img/'.$f['img_profile'].'" alt="" class="avatar"></a>
                                         </header>
                                         <div class="text-center title-card-rep" id="myDIV">
-                                            <a title="Ver más" onclick="viewRepositorio(this)" id="'.$f["id_user"].'" class="m-auto"><i onclick="viewRepositorio(this)" id="'.$f["id_user"].'" class="fas fa-plus hov fa-2x"></i></a>
+                                            <a title="Ver más" onclick="viewRepositorio(this)" id="'.$f["id_user"].'" class="m-auto"><i class="fas fa-plus hov fa-2x"></i></a>
                                             <h3>'.strtoupper($f['name']).' '.strtoupper($f['last_name']).'</h3>
                                             <span>'.translationRole($f["role"]).'</span>
                                         </div>
@@ -46,6 +64,4 @@ function searchUsers(){
     };
     return $repositorios;
 }
-
-echo searchUsers();
 ?>

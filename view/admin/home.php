@@ -132,7 +132,7 @@
                 </div>
                 <div class="carousel-caption">
                     <h3 class="h3-responsive text-white">Nueva Publicación 1</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, in id animi voluptatum, corrupti laboriosam veniam molestias rerum iure </p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, in id animi voluptatum, corrupti laboriosam veniam molestias rerum iure  </p>
                 </div>
             </div>
             <div class="carousel-item">
@@ -190,7 +190,7 @@
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/Official.png" alt="Earth News">
                 </a>
             </header>
-            <main>
+            <article>
                 <h1> Nueva noticia 1</h1>
                 <p>What a wonderful joy it is to see,
             the beauty of nature and its majesty.
@@ -198,8 +198,8 @@
             Spaced precisely in their designated places.
             What a marvel to see, I wish I were a bee,
             flying free, smelling life’s roses, no particular place to be.</p>
-                <a href="">Read full article</a>
-            </main>
+                <a href="">Ver más</a>
+            </article>
         </div>
         <!-- BODY NEWS -->
         <div class="app">
@@ -208,7 +208,7 @@
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/Official.png" alt="Earth News">
                 </a>
             </header>
-            <main>
+            <article>
                 <h1> Nueva noticia 2</h1>
                 <p>What a wonderful joy it is to see,
             the beauty of nature and its majesty.
@@ -216,8 +216,8 @@
             Spaced precisely in their designated places.
             What a marvel to see, I wish I were a bee,
             flying free, smelling life’s roses, no particular place to be.</p>
-                <a href="">Read full article</a>
-            </main>
+                <a href="">Ver más</a>
+            </article>
         </div>
         <!-- BODY NEWS -->
         <div class="app">
@@ -226,7 +226,7 @@
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/Official.png" alt="Earth News">
                 </a>
             </header>
-            <main>
+            <article>
                 <h1> Nueva noticia 3</h1>
                 <p>What a wonderful joy it is to see,
             the beauty of nature and its majesty.
@@ -234,8 +234,8 @@
             Spaced precisely in their designated places.
             What a marvel to see, I wish I were a bee,
             flying free, smelling life’s roses, no particular place to be.</p>
-                <a href="">Read full article</a>
-            </main>
+                <a href="">Ver más </a>
+            </article>
         </div>
         <div class="button-sec text-center mt-4 mb-4">
             <button type="button" class="btn btn-primary p-2"><i class="fas fa-plus"></i></button>

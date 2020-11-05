@@ -86,6 +86,71 @@
 
         return $type_contract;
     }
+    //Traductor para el tipo de identidad
+    function traslationTypeIdName($id){
+        $result = null;
+        $t_id = $id;
+
+        if ($t_id === '1') {
+            $result = "Cédula de Ciudadania";
+        }else if ($t_id === '2') {
+            $result = "Cédula de Extranjería";
+        }else if ($t_id === '3') {
+            $result = "Tarjeta de Identidad";
+        }
+        return $result;
+    }
+    //Traductor para el tipo de identidad
+    function traslationActiveName($id){
+            $result = null;
+            $state = $id;
+    
+            if ($state === '1') {
+                $result = 'Activo';
+            }else {
+                $result = 'Inactivo';
+            }
+            return $result;
+    }
+    function translationGenderName($gener){
+        $gender = null;
+        $genero = $gener;
+
+        if ($genero === '1') {
+            $gender = 'Masculino';
+        }else if ($genero === '2') {
+            $gender = 'Femenino';
+        }else if ($genero === '3') {
+            $gender = 'Otro';
+        }
+
+        return $gender;
+    }
+    function translationRolesName($role){
+        $rol = null;
+
+        if ($role === '1') {
+            $rol = 'Administrador';
+        }else if ($role === '2') {
+            $rol = 'Líder';
+        }else if ($role === '3') {
+            $rol = 'Colaborador';
+        }
+
+        return $rol;
+    }
+
+    function traslationTypeContractName($contract){
+        $type_contract = null;
+
+        if ($contract === '1') {
+            $type_contract = 'Contrato Laboral';
+        }else if ($contract === '2') {
+            $type_contract = 'Contrato de Aprendizaje';
+        }
+
+        return $type_contract;
+    }
     function translationDate($date){
        //Month
        $day = substr($date, -2); 

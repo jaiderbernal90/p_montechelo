@@ -57,7 +57,7 @@
                                 <div class="avatar avatar-profile">
                                     <div class="mask">
                                         <div class="mask-black rounded-circle text-center">
-                                            <a href="changePhoto.php" class="link-text nav-link"><span>Modificar </span><i class="fas fa-pen"></i></a>
+                                            <a data-toggle="modal" data-target="#modalRegisterFormPhoto" class="link-text nav-link"><span>Modificar </span><i class="fas fa-pen"></i></a>
                                         </div>
                                         <img src="../../img/'.$_SESSION['img_profile'].'" class="rounded-circle"
                                         alt="Sample avatar image.">  

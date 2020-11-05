@@ -40,13 +40,13 @@
 					if($f['estate'] == "1"){
 						//REDIRECTION HOME
 						if($f['role'] == 1){
-							modalAlertLogin('BIENVENIDO ADMINISTRADOR', '../../view/admin/home.php','success',2);
+							modalAlertLogin('BIENVENIDO ADMINISTRADOR, <span class="text-primary d-block">'.strtoupper($f['name']).'</span>', '../../view/admin/home.php','success',2);
 						}
 						if($f['role'] == 2){
-							modalAlertLogin('BIENVENIDO LÍDER', '../../view/lider/home.php','success',2);
+							modalAlertLogin('BIENVENIDO LÍDER, <span class="text-primary d-block">'.strtoupper($f['name']).'</span>', '../../view/lider/home.php','success',2);
                         }
                         if($f['role'] == 3){
-							modalAlertLogin('BIENVENIDO COLABORADOR', '../../view/colaborador/home.php','success',2);
+							modalAlertLogin('BIENVENIDO COLABORADOR, <span class="text-primary d-block">'.strtoupper($f['name']).'</span>', '../../view/colaborador/home.php','success',2);
 						}
 					}else{
 						modalAlertLogin('USUARIO INACTIVO','../../index.php','warning',2);

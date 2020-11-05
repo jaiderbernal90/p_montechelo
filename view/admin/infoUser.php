@@ -52,13 +52,13 @@
                     ?> 
                     <div class="form-row d-flex mt-5">
                             <div class="col-5 text-md-right text-center">
-                                <label class="btn btn-md btn-info" ><a class='text-white' href="users.php">Volver</a></label>
+                                <button type="button" class="btn btn-md btn-info" ><a class='text-white' href="users.php">Volver</a></button>
                             </div> 
                             <div class="col-1 text-md-right text-center">
-                                <label class="btn btn-md btn-info" onclick="unlockInfo()"><a class='text-white'>Modificar</a></label>
+                                <button type="button" class="btn btn-md btn-info" id="mod"><a class='text-white'>Modificar</a></button>
                             </div> 
                             <div class="col-3  text-center">
-                                <button disabled type="submit" class="btn btn-md btn-info seleccionar"><a class='text-white'>  Guardar</a></button>
+                                <button type="submit" class="btn btn-md btn-info seleccionar" disabled id="save"><a class='text-white'>Guardar</a></button>
                             </div>
 
                         </div>
@@ -73,20 +73,6 @@
         <?php include('../footer.html')?>
     </footer>
     <!--Funcion para desbloquear el boton guardar-->
-    <script>
-        function unlockInfo() {
-                inputBlock= document.getElementsByClassName("blockInput");
-                    for (var i=0;i<inputBlock.length;i++) {
-                        inputBlock[i].removeAttribute("readonly");
-                    }
-                    selectBlock=document.getElementsByClassName("seleccionar");
-                    for (var i=0;i<selectBlock.length;i++) {
-                        selectBlock[i].removeAttribute("disabled");
-                    }
-        }
-    </script>
-
-
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -100,5 +86,6 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/updateSelect.js"></script>
+    <script src="../../js/modificar.js"></script>
 </body>
 </html>

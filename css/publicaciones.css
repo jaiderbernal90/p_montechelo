@@ -207,7 +207,7 @@
 }
 @media(max-width:900px){
   .card{
-    width: 85%;
+    width: 92%;
 
   }
 }
@@ -217,8 +217,16 @@
 .card-body-pub img{
     width: 100%;
     padding: 0 !important;
-    max-height: 500px;
+    max-height: 350px;
     max-width: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.title-card h3{
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /*ANUNCIOS*/
@@ -318,9 +326,25 @@
 .media{
   width: 70%;
 }
+.avatar-comment{
+  width: 90px;
+  height: 90px;
+}
+.textareaElement{ 
+  width: 300px;
+  min-height: 17px;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto; 
+}
 @media (max-width:1000px){
   .media{
     width: 95%;
+  }
+  .avatar-comment{
+    width: 60px;
+    height: 60px;
   }
 }
 /* MODAL */

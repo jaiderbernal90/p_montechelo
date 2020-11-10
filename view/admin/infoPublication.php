@@ -44,7 +44,7 @@
         </div>
     </section>
     <section class="container-fluid w-100 p-0 m-0">
-    <div class="row w-100 m-0 p-0 ">
+        <div class="row w-100 m-0 p-0 ">
             <div class="col-12">
                 <article class="card">
                     <!-- HEADER -->
@@ -71,8 +71,8 @@
                             <span data-toggle="modal" data-target="#modalLike">55</span>
                         </div>
                         <!--./LIKE-->
-                         <!--Comments -->
-                         <div class="mb-2 col-7 text-right mt-2 pt-1">  
+                        <!--Comments -->
+                        <div class="mb-2 col-7 text-right mt-2 pt-1">  
                             <span>Comentarios:</span><span><strong> 55</strong></span>
                         </div>
                         <!--./Comments-->
@@ -80,30 +80,22 @@
                 </article>
             </div>
             <div class="col-12 mt-5">
-                <div class="media m-auto px-0 px-md-5  pt-0">
-                    <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
+                <div class="media m-auto px-0 px-md-5 pt-0">
+                    <img class="d-flex rounded-circle avatar-comment z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
                         alt="Avatar">
                     <div class="media-body">
                         <h5 class="mt-0 font-weight-bold blue-text">Anna Smith</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                        odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                        fringilla. Donec lacinia congue felis in faucibus.
-
-                        <div class="media mt-3 shadow-textarea">
-                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg"
-                            alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h5 class="mt-0 font-weight-bold blue-text">Danny Tatuum</h5>
-                            <div class="form-group basic-textarea rounded-corners">
-                                <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" placeholder="Write your comment..."></textarea>
-                            </div>
-                            <button class="btn btn-primary p-0 px-4 py-2"><i class="fas fa-paper-plane"></i> </button>
+                        <div class="w-100">
+                            <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+                            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                            fringilla. Donec lacinia congue felis in faucibus.
+                            </p>
                         </div>
-                        </div>
+                        <span class="d-none">Responder</span>
                     </div>
-                    </div>
-                    <div class="media  m-auto p-5 pt-0">
-                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.jpg"
+                </div>
+                    <div class="media m-auto px-0 px-md-5 pt-2">
+                        <img class="d-flex rounded-circle avatar-comment z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.jpg"
                             alt="Avatar">
                         <div class="media-body">
                             <h5 class="mt-0 font-weight-bold blue-text">Caroline Horwitz</h5>
@@ -113,10 +105,26 @@
                         </div>
                     </div>
                 </div>
+                <!-- MY COMMENT  -->
+                <div class="col-12 mt-5">
+                <div class="media m-auto px-0 px-md-5 pt-0">
+                    <img class="d-flex rounded-circle avatar-comment z-depth-1-half mr-3" src="../../img/user.png"
+                        alt="Avatar">
+                    <div class="media-body">
+                        <h5 class="mt-0 font-weight-bold blue-text">Yo</h5>
+                        <div class="w-100">
+                            <div class="md-form form-group green-border-focus my-0">
+                                <textarea name="" id="" cols="50" rows="1" class="textareaElement w-100 md-textarea form-control" required placeholder="Agregar comentario" maxlength="500" contenteditable ></textarea>
+                            </div>
+                            <button class="btn btn-sm btn-primary m-0">ENVIAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
     </section>
 
-     <!-- MODAL PHOTO -->
+     <!-- MODAL LIKE -->
      <div class="modal fade" id="modalLike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
     aria-hidden="true">
         <div class="modal-dialog scrollbar-light-blue" role="document">
@@ -188,5 +196,6 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/like.js"></script>
+    <script src="../../js/textarea.js"></script>
 </body>
 </html>

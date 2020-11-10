@@ -22,8 +22,8 @@
 			if($f = $result -> fetch()){
 				if($password == $f['password']){
 					session_start();
-
 					$_SESSION['email'] = $f['email'];
+					$_SESSION['id'] = $f['id_user'];
 					$_SESSION['name'] = $f['name'];
 					$_SESSION['last_name'] = $f['last_name'];
 					$_SESSION['password'] = $f['password'];
@@ -34,10 +34,8 @@
 					if($f['img_profile'] === '' || $f['img_profile'] === null){
 						$_SESSION['img_profile'] = 'user.png';
 					}
-
-					$_SESSION['autenticado'] = "Activo";
-
-					if($f['estate'] == "1"){
+					if($f['estate'] === "1"){
+						$_SESSION['autenticado'] = "Activo";
 						//REDIRECTION HOME
 						if($f['role'] == 1){
 							modalAlertLogin('BIENVENIDO ADMINISTRADOR, <span class="text-primary d-block">'.strtoupper($f['name']).'</span>', '../../view/admin/home.php','success',2);
@@ -49,6 +47,7 @@
 							modalAlertLogin('BIENVENIDO COLABORADOR, <span class="text-primary d-block">'.strtoupper($f['name']).'</span>', '../../view/colaborador/home.php','success',2);
 						}
 					}else{
+						session_destroy();
 						modalAlertLogin('USUARIO INACTIVO','../../index.php','warning',2);
 					}
 				}else{

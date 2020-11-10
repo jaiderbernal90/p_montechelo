@@ -1,5 +1,6 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
+    require_once('../../controller/admin/read/loadPublications.php');
 ?>
 
 <!DOCTYPE html>
@@ -68,163 +69,63 @@
     </section>
     <!-- FIRST SECTION -->
     <section class="container-fluid w-100 p-0 m-0 mt-5" id="demo">
-        <div class="row w-100 m-0 p-0 pb-3 border-bottom">
-            <div class="col-12">
-                <div class="w-100 row m-0 pl-2 d-flex pl-lg-5">
-                    <header class="col-12 p-0 pb-4 pl-lg-5">
-                        <div class="d-flex pt-3">
-                            <img src="../../img/user.png" alt="" width="50px" height="50px" class="img-responsive rounded-circle mr-3">
-                            <div class="d-block mt-1">
-                                <span style="font-weight: 500;">Juan@montechelo.com</span>
-                                <span class="font d-block">09/07/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </header>
-                </div>
-                <article class="card mb-5">
-                    <!-- HEADER -->
-                    <header class="card-body-pub">
-                        <a href="infoPublication.php">
-                            <img src="../../img/sky-5114499_1920.jpg" alt="" class="rounded">
-                        </a>
-                    </header>
-                    <!-- BODY -->
-                    <div class="card-body-pub">
-                        <div class="title-card px-4 py-2 text-center bg-light">
-                            <h3 class="mb-0">TITULO DE LA PUBLICACIÓN </h3>
-                        </div>
-                        <div class="desc-card px-4 pt-3">
-                            <p class="text-center">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex">
-                        <!--Like-->
-                        <div class=" mb-2 col-5 mt-1">  
-                            <button class="button like rounded-circle col-3">
-                                <i class="fa fa-heart"></i>
-                            </button>
-                            <span>55</span>
-                        </div>
-                        <!--./LIKE-->
-                         <!--Comments -->
-                         <div class="mb-2 col-7 text-right mt-2 pt-1">  
-                            <span>Comentarios:</span><span><strong> 55</strong></span>
-                        </div>
-                        <!--./Comments-->
-                    </div>
-                </article>
-            </div>
-        </div>
-        <div class="row w-100 m-0 p-0 pb-3 border-bottom">
-            <div class="col-12">
-                <div class="w-100 row m-0 pl-2 d-flex pl-lg-5">
-                    <header class="col-12 p-0 pb-4 pl-lg-5">
-                        <div class="d-flex pt-3">
-                            <img src="../../img/user.png" alt="" width="50px" height="50px" class="img-responsive rounded-circle mr-3">
-                            <div class="d-block mt-1">
-                                <span style="font-weight: 500;">Juan@montechelo.com</span>
-                                <span class="font d-block">09/07/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </header>
-                </div>
-                <article class="card mb-5">
-                    <!-- HEADER -->
-                    <header class="card-body-pub">
-                        <a href="infoPublication.php">
-                            <img src="../../img/ofiice.jpg" alt="" class="rounded">
-                        </a>
-                    </header>
-                    <!-- BODY -->
-                    <div class="card-body-pub">
-                        <div class="title-card px-4 py-2 text-center bg-light">
-                            <h3 class="mb-0">TITULO DE LA PUBLICACIÓN </h3>
-                        </div>
-                        <div class="desc-card px-4 pt-3">
-                            <p class="text-center">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-top">
-                        <!--Like-->
-                        <div class=" mb-2 col-5 mt-1">  
-                            <button class="button like rounded-circle col-3">
-                                <i class="fa fa-heart"></i>
-                            </button>
-                            <span>55</span>
-                        </div>
-                        <!--./LIKE-->
-                         <!--Comments -->
-                         <div class="mb-2 col-7 text-right mt-2 pt-1">  
-                            <span>Comentarios:</span><span><strong> 55</strong></span>
-                        </div>
-                        <!--./Comments-->
-                    </div>
-                </article>
-            </div>
-        </div>
-        <div class="row w-100 m-0 p-0 pb-3 border-bottom">
-            <div class="col-12">
-                <div class="w-100 row m-0 pl-2 d-flex pl-lg-5">
-                    <header class="col-12 p-0 pb-4 pl-lg-5">
-                        <div class="d-flex pt-3">
-                            <img src="../../img/user.png" alt="" width="50px" height="50px" class="img-responsive rounded-circle mr-3">
-                            <div class="d-block mt-1">
-                                <span style="font-weight: 500;">Juan@montechelo.com</span>
-                                <span class="font d-block">09/07/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </header>
-                </div>
-                <article class="card mb-5">
-                    <!-- HEADER -->
-                    <header class="card-body-pub">
-                        <a href="infoPublication.php">
-                            <img src="../../img/sky-5114499_1920.jpg" alt="" class="rounded">
-                        </a>
-                    </header>
-                    <!-- BODY -->
-                    <div class="card-body-pub">
-                        <div class="title-card px-4 py-2 text-center bg-light">
-                            <h3 class="mb-0">TITULO DE LA PUBLICACIÓN </h3>
-                        </div>
-                        <div class="desc-card px-4 pt-3">
-                            <p class="text-center">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, doloremque. Qui, iure laborum! Voluptates aliquid debitis laudantium nam quibusdam fuga ipsum ab delectus fugiat id ipsa officiis nemo, voluptas tempora?
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-top">
-                        <!--Like-->
-                        <div class=" mb-2 col-5 mt-1">  
-                            <button class="button like rounded-circle col-3">
-                                <i class="fa fa-heart"></i>
-                            </button>
-                            <span>55</span>
-                        </div>
-                        <!--./LIKE-->
-                         <!--Comments -->
-                         <div class="mb-2 col-7 text-right mt-2 pt-1">  
-                            <span>Comentarios:</span><span><strong> 55</strong></span>
-                        </div>
-                        <!--./Comments-->
-                    </div>
-                </article>
-            </div>
-        </div>
+       <?php 
+       loadPublications(); 
+       ?>
     </section>
+    <div class="modal fade" id="modalLike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+    aria-hidden="true">
+        <div class="modal-dialog scrollbar-light-blue" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Reacciones</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row w-100 m-0 p-0 mt-3 content mb-3 scrollbar-light-blue-menu scrollbar-light-blue">
+                    <div class="col-12">
+                        <div class=" border-bottom mb-3 cont-like-mo border-danger d-flex">
+                            <button class="button like-mod btn-danger rounded-circle col-3" disabled>
+                                    <i class="fa fa-heart text-white"></i>
+                            </button>
+                            <span class="pt-2 mt-1" style="font-size: 14px;">55</span>
+                        </div>    
+                    </div> 
+                    <br>
+                    <div class="col-12">
+                        <div class="card-modal">
+                            <header class="d-flex">
+                                <img src="../../img/user.png" alt="user image">
+                                <span class="mt-2 pl-4"> Juan Carlos Bohorquez</span>
+                                <span class="pl-5 ml-auto mr-2 mt-2">Ayer</span>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card-modal">
+                            <header class="d-flex">
+                                <img src="../../img/user.png" alt="user image">
+                                <span class="mt-2 pl-4"> Juan Carlos Bohorquez</span>
+                                <span class="pl-5 ml-auto mr-2 mt-2">Hoy</span>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card-modal">
+                            <header class="d-flex">
+                                <img src="../../img/user.png" alt="user image">
+                                <span class="mt-2 pl-4"> Juan Carlos Bohorquez</span>
+                                <span class="pl-5 ml-auto mr-2 mt-2">5/10/2020 8:00AM</span>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!--FOOTER-->
     <footer class="footer-login container-fluid p-0 m-0"-->   
         <?php include('../footer.html')?>
@@ -244,5 +145,6 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/like.js"></script>
+    <script src="../../js/viewRepositorio.js"></script>
 </body>
 </html>

@@ -208,4 +208,11 @@
         return $month;
     }
 
+    function translationOur($our){
+        $date = translationDate($our);
+        $hora = date("g:i a",strtotime($our));
+        
+        return $our;
+     }
+
 ?>

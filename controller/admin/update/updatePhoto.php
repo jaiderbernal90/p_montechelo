@@ -19,7 +19,7 @@
         $des='../../../img/'.$img_profile.'';
         $destino='../../../img/';
         //CARGAR IMAGEN
-        move_uploaded_file($_FILES['img_profile']['tmp_name'],$destino.$iimg_profilemg);
+        move_uploaded_file($_FILES['img_profile']['tmp_name'],$destino.$img_profile);
         $_SESSION['img_profile']=$img_profile;
 
         $queries = new consultas();

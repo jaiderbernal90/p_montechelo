@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse li-menu" id="navbarSupportedContent22">
         <!-- REPONSIVE MOBILE PERFIL -->
         <div class="text-center sec-respon pt-3 d-block d-lg-none">
-            <img src="../../img/<?php echo $_SESSION['img_profile']; ?>" alt="" class="mb-3 shadow rounded-circle avatar-md">
+        <a href="perfil.php"><img src="../../img/<?php echo $_SESSION['img_profile']; ?>" alt="" class="mb-3 shadow rounded-circle avatar-md"></a>
             <div class="mb-3">
                 <p class="text-menu mb-0"> <?php echo $_SESSION['name'].' '.$_SESSION['last_name']?> </p>
                 <div class="sub-text">

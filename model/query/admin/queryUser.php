@@ -255,5 +255,47 @@
 
 			return $resultado;
 		}//Cierre ver repositorios
+		//Funcion para consultar usuarios
+		public function showBirthday(){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="SELECT name, last_name, date_birth,img_profile,charge FROM user WHERE MONTH(date_birth) = MONTH(CURDATE()) AND DAY( date_birth ) > DAY(CURDATE()) OR MONTH(date_birth) = MONTH(DATE_ADD(CURDATE(),INTERVAL 1 MONTH)) LIMIT 3";
+
+			$result=$conexion->prepare($sql);
+			//PDO
+			$result->execute();
+
+			//Cargar el resultado a la variable resultado
+			while ($f=$result->fetch()) {
+				$resultado[]=$f;
+			}
+
+			return $resultado;
+		}
+		//Cierre mirar usuarios
+		//Funcion para consultar usuarios
+		public function numUsers(){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="SELECT * FROM user"; 
+			$result=$conexion->prepare($sql);
+			//PDO
+			$result->execute();
+
+			if($result){
+				$resultado = $result->rowCount()+1;
+			}
+
+			return $resultado;
+		}
+		//Cierre mirar usuarios
 	}
 ?>

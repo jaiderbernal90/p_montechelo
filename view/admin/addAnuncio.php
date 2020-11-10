@@ -42,7 +42,7 @@
     <section class="container-fluid w-100 p-0 m-0">
         <div class="row w-100 m-0 p-0 ">
             <div class="col-12">
-                <form action="" method="POST" enctype="application/x-www-form-urlencoded" class="form m-4 m-md-5">
+                <form  action="../../controller/admin/create/registerAnuncio.php" method="POST" enctype="multipart/form-data" class="form m-4 m-md-5">
                 <div class="form-row">
                         <div class="col-12 text-left text-infor">
                             <span><span class="text-danger">*</span> Campos obligatorios</span>
@@ -68,7 +68,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group mt-2">
                                 <p class="tite text-primary">Nivel de importancia <span class="text-danger">*</span></p>
-                                <select class="seleccionar md-form w-100" name="level" required>
+                                <select class="seleccionar md-form w-100" name="level_importance" required>
                                     <option value="" >Elija una opción</option>
                                     <option value="1">Alto</option>
                                     <option value="0">Medio</option>
@@ -82,7 +82,7 @@
                         <!-- Material input -->
                         <div class="md-form form-group mt-2">
                             <p class="tite text-primary">Estado <span class="text-danger">*</span></p>
-                            <select class="seleccionar md-form w-100" name="estate" required>
+                            <select class="seleccionar md-form w-100" name="state"" required>
                                 <option value="" disabled >Elija una opción</option>
                                 <option value="0">Deshabilitada</option>
                                 <option value="1" selected>Habilitada</option>
@@ -99,7 +99,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group green-border-focus">
                                 <p class="tite text-primary">Contenido del Anuncio <span class="text-danger">*</span></p>
-                                <textarea name="" id="" cols="50" rows="3" class="w-100 md-textarea form-control" required></textarea>
+                                <textarea name="content" id="" cols="50" rows="3" class="w-100 md-textarea form-control" required></textarea>
                             </div>
                         </div>
                         <!-- Grid column -->   
@@ -111,7 +111,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group rounded">
                                 <p class="tite text-primary ">Imagen del Anuncio</p>
-                                <input type="file" name="" id="" class="mt-3" accept=".png, .jpeg, .jpg, image/gif">
+                                <input type="file" name="images" id="images" class="mt-3" accept=".png, .jpeg, .jpg, .gif">
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -145,9 +145,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
    <!-- DATATABLE JS -->
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <!-- SWEET ALERT -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
+    <script src="../../js/textarea.js"></script>
+
 </body>
 </html>

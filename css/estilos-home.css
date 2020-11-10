@@ -386,6 +386,47 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   padding-bottom: 3.5px;
 }
 /**/
+/*MENU 2*/
+.link-pub {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  line-height: 1.42857143;
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  text-decoration: none !important;
+  text-align: center;
+}
+.link-pub-reac {
+  border-bottom: 1px solid #ddd !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  cursor: pointer;
+  transition: .5s all;
+}
+.li-men {
+    width: 50%;
+    position: relative;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+a:hover{
+  color: #555;
+}
+#anythingSearch::placeholder { 
+  color: rgb(0, 0, 0) !important; 
+  font-weight: 300;
+}
+#anythingSearch{ 
+  border-bottom: 1px solid #000;
+  color: #000 !important;
+}
+/*  */
 .footer-login{
   margin-top: 60px !important;
 }

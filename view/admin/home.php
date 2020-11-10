@@ -1,5 +1,6 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
+    require_once('../../controller/admin/read/load.php');
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +89,7 @@
                         <article class="tile">
                             <div class="tile-icon full-reset"><i class="zmdi fas fa-user-tie fa-xs"></i></div>
                             <div class="tile-name all-tittles">Usuarios</div>
-                            <div class="tile-num full-reset">100</div>
+                            <div class="tile-num full-reset"><?php echo numUsers();?></div>
                         </article>
                     </a>
                     <a href="" class="mr-md-5">
@@ -347,114 +348,10 @@
     <!-- Seventh Section -->
     <section class="section-seventh full-reset container-fluid p-0 m-0 w-100 my-5">
         <div class="row w-100 m-0 mt-5">
-            <h4 class="title-section m-auto">Próximos Cumpleaños</h4>
+            <h4 class="title-section m-auto"><a href="birthday.php" class="text-dark text-decoration-none">Próximos Cumpleaños</a></h4>
         </div>
-        <div class="row p-0 m-0 w-100 mb-5">
-            <div class="col-12 col-md-6 col-lg-4 p-0">
-                  <!-- Rotating card -->
-                <div class="card-wrapper">
-                <div id="card-1" class="card card-rotating text-center">
-
-                    <!-- Front Side -->
-                    <div class="face front">
-
-                    <!-- Image-->
-                    <div class="card-up">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" alt="Image with a photo of clouds.">
-                    </div>
-
-                    <!-- Avatar -->
-                    <div class="avatar avatar-card"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle"
-                        alt="Sample avatar image.">
-                    </div>
-
-                    <!-- Content -->
-                    <div class="card-body">
-                        <h4 class="font-weight-bold mb-3">Marie Johnson</h4>
-                        <p class="font-weight-bold blue-text">Web developer</p>
-                        <!-- Triggering button -->
-                        <div class="card-body-two">
-                            <!-- Content -->
-                            <h4 class="font-weight-bold mb-0">Fecha de cumpleaños</h4>
-                            <hr>
-                            <p>7 de Octubre</p>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Back Side -->
-                </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 p-0">
-                  <!-- Rotating card -->
-                  <div class="card-wrapper">
-                <div id="card-1" class="card card-rotating text-center">
-
-                    <!-- Front Side -->
-                    <div class="face front">
-
-                    <!-- Image-->
-                    <div class="card-up">
-                        <img class="card-img-top" src="../../img/ofiice.jpg" alt="Image with a photo of clouds.">
-                    </div>
-
-                    <!-- Avatar -->
-                    <div class="avatar avatar-card"><img src="../../img/user.png" class="rounded-circle"
-                        alt="Sample avatar image.">
-                    </div>
-
-                    <!-- Content -->
-                    <div class="card-body">
-                        <h4 class="font-weight-bold mb-3">Juan Johnson</h4>
-                        <p class="font-weight-bold blue-text">Web developer</p>
-                        <!-- Triggering button -->
-                        <div class="card-body-two">
-                            <!-- Content -->
-                            <h4 class="font-weight-bold mb-0">Fecha de cumpleaños</h4>
-                            <hr>
-                            <p>8 de Octubre</p>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Back Side -->
-                </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 p-0 m-auto">
-                  <!-- Rotating card -->
-                <div class="card-wrapper">
-                <div id="card-1" class="card card-rotating text-center">
-
-                    <!-- Front Side -->
-                    <div class="face front">
-
-                    <!-- Image-->
-                    <div class="card-up">
-                        <img class="card-img-top" src="../../img/cup-of-coffee-1280537_640.jpg" alt="Image with a photo of clouds.">
-                    </div>
-
-                    <!-- Avatar -->
-                    <div class="avatar avatar-card"><img src="../../img/girl-919048_1280.jpg" class="rounded-circle"
-                        alt="Sample avatar image.">
-                    </div>
-
-                    <!-- Content -->
-                    <div class="card-body">
-                        <h4 class="font-weight-bold mb-3">Juana Johnson</h4>
-                        <p class="font-weight-bold blue-text">Web developer</p>
-                        <!-- Triggering button -->
-                        <div class="card-body-two">
-                            <!-- Content -->
-                            <h4 class="font-weight-bold mb-0">Fecha de cumpleaños</h4>
-                            <hr>
-                            <p> 9 de Octubre </p>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Back Side -->
-                </div>
-                </div>
-            </div>
+        <div class="row p-0 m-0 w-100 mb-5 birth">
+                <?php birthday(); ?>
         </div>
     </section>
     <!--/.Seventh Section-->

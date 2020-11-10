@@ -22,4 +22,8 @@ function validationEmail($str)
 {
   return (false !== strpos($str, "@") && false !== strpos($str, ".") && false !== strpos($str, "montechelo") && false !== strpos($str, ".com"));
 }
+
+function imgValidation($tmp,$name){
+  move_uploaded_file($tmp, '../../../img/'.$name);
+}
 ?>

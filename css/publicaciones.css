@@ -22,6 +22,14 @@
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
+.text-copy{
+    box-sizing: border-box;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -ms-user-select:text;
+    cursor: default;
+}
 .button:focus{
   outline:none;
 }
@@ -207,9 +215,12 @@
 }
 @media(max-width:900px){
   .card{
-    width: 92%;
+    width: 92% !important;
 
   }
+}
+.card-two{
+  width: 50%;
 }
 .card-body-pub{
     width: 100%;
@@ -223,6 +234,11 @@
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+.img-plus{
+  width: 100% !important;
+  max-height: 600px !important;
+  margin: auto !important;
 }
 .title-card h3{
   font-weight: 700;
@@ -337,6 +353,7 @@
   max-height: 150px;
   overflow-x: hidden;
   overflow-y: auto; 
+  white-space: pre-line;
 }
 @media (max-width:1000px){
   .media{
@@ -373,4 +390,16 @@
 }
 .card-modal header span{
   font-weight: 400;
+}
+.time{
+  width: 45%;
+  padding-top: 10px;
+}
+.name{
+  width: 80%;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+.cursor{
+  cursor: pointer;
 }

@@ -70,61 +70,15 @@
     <!-- FIRST SECTION -->
     <section class="container-fluid w-100 p-0 m-0 mt-5" id="demo">
        <?php 
-       loadPublications(); 
+            loadPublications(); 
        ?>
     </section>
     <div class="modal fade" id="modalLike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
     aria-hidden="true">
         <div class="modal-dialog scrollbar-light-blue" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Reacciones</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="row w-100 m-0 p-0 mt-3 content mb-3 scrollbar-light-blue-menu scrollbar-light-blue">
-                    <div class="col-12">
-                        <div class=" border-bottom mb-3 cont-like-mo border-danger d-flex">
-                            <button class="button like-mod btn-danger rounded-circle col-3" disabled>
-                                    <i class="fa fa-heart text-white"></i>
-                            </button>
-                            <span class="pt-2 mt-1" style="font-size: 14px;">55</span>
-                        </div>    
-                    </div> 
-                    <br>
-                    <div class="col-12">
-                        <div class="card-modal">
-                            <header class="d-flex">
-                                <img src="../../img/user.png" alt="user image">
-                                <span class="mt-2 pl-4"> Juan Carlos Bohorquez</span>
-                                <span class="pl-5 ml-auto mr-2 mt-2">Ayer</span>
-                            </header>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-3">
-                        <div class="card-modal">
-                            <header class="d-flex">
-                                <img src="../../img/user.png" alt="user image">
-                                <span class="mt-2 pl-4"> Juan Carlos Bohorquez</span>
-                                <span class="pl-5 ml-auto mr-2 mt-2">Hoy</span>
-                            </header>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-3">
-                        <div class="card-modal">
-                            <header class="d-flex">
-                                <img src="../../img/user.png" alt="user image">
-                                <span class="mt-2 pl-4"> Juan Carlos Bohorquez</span>
-                                <span class="pl-5 ml-auto mr-2 mt-2">5/10/2020 8:00AM</span>
-                            </header>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="modal-content"></div>
         </div>
     </div>
-
 
     <!--FOOTER-->
     <footer class="footer-login container-fluid p-0 m-0"-->   
@@ -144,7 +98,8 @@
 
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
-    <script src="../../js/like.js"></script>
-    <script src="../../js/viewRepositorio.js"></script>
+    <script src="../../js/btn-like.js"></script>
+    <script src="../../js/likesFetch.js"></script>
+    <script src="../../js/viewNotice.js"></script>
 </body>
 </html>

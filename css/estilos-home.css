@@ -180,6 +180,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       position: relative;
       padding-left: .5em;
       max-width: 60em;
+      max-height: 500px;
       background: #acbbd7 100% -webkit-gradient(linear, left top, left bottom, from(#6a696d), color-stop(50%, #504949), color-stop(50%, #acbbd7), to(#acbbd7));
       background: #acbbd7 100% linear-gradient(#6a696d 0%, #504949 50%, #acbbd7 50%, #acbbd7 100%);
       background-size: auto 10em;
@@ -190,9 +191,9 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   .app header {
       position: relative;
       height: 8em;
+      max-height: 500px;
       grid-row: 1 / 3;
       grid-column: 2;
-      background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/bla.jpg");
       background-size: cover;
       background-position: right center;
   }
@@ -203,19 +204,34 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     display: block;
     width: var(--logo-width);
   }
+  .app article p {
+    max-width: 445.20px;
+    max-height: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .app header img {
     display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
     max-width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center center;
   }
   .app article {
     padding: var(--var-padding);
     grid-row: 1 / 3;
     height: 100%;
+    max-height: 500px;
     background: #fff;
   }
   .app article h1 {
     margin-top: 0;
     font-weight: normal;
+    text-transform: uppercase;
   }
   .app article h1 span {
     display: block;
@@ -276,9 +292,20 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       .app {
           margin: 3em auto;
           margin-top: 5em !important;
+          max-height: 900px;
       }
-      .app main {
+        .app main {
           padding: 30px !important;
+        }
+        .app header{
+          height: 25em !important;
+        }
+        .app header img {
+          max-height: 900px !important;
+        }
+        .app article {
+          max-height: 900px;
+          padding: 1.52em;
         }
   }  
 
@@ -295,6 +322,17 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 .uk-card-body{
   padding: 10px;
+  min-height: 160px;
+  max-height: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.uk-card-body p{
+  margin: auto;
+  padding-top: 10px;
+  max-height: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .arrows{
   min-height: 80px;

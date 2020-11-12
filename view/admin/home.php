@@ -1,6 +1,8 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
     require_once('../../controller/admin/read/load.php');
+    require_once('../../controller/admin/read/loadPublications.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +39,10 @@
         <div class="full-bg-img flex-center mask mask-sec-one text-white">
             <ul class="animated fadeInUp col-md-12 list-unstyled list-inline">
             <li>
-                <h1 class="font-weight-bold text-uppercase mt-5 text-white">Type Something here</h1>
+                <h1 class="font-weight-bold text-uppercase mt-5 text-white">El éxito es la suma de pequeños</h1>
             </li>
             <li>
-                <p class="font-weight-bold text-uppercase py-4">Type Something here</p>
+                <p class="font-weight-bold text-uppercase py-4"> esfuerzos repetidos día tras día</p>
             </li>
             <li class="list-inline-item">
                 <div class="input-group md-form form-sm form-2 pl-0">
@@ -92,11 +94,11 @@
                             <div class="tile-num full-reset"><?php echo numUsers();?></div>
                         </article>
                     </a>
-                    <a href="" class="mr-md-5">
+                    <a href="publicaciones.php" class="mr-md-5">
                         <article class="tile">
                             <div class="tile-icon full-reset"><i class="fas fa-folder-open fa-xs"></i></div>
                             <div class="tile-name all-tittles">Publicaciones</div>
-                            <div class="tile-num full-reset">410</div>
+                            <div class="tile-num full-reset"><?php echo numPub();?></div>
                         </article>
                     </a>
                     <a href="">
@@ -113,7 +115,7 @@
     <!--fourth section-->
     <section class="w-100 section-fourth container-fluid p-0">
         <div class="my-5">
-            <h4 class="title-section text-center">Publicaciones</h4>
+            <h4 class="title-section text-center">Publicaciones Populares</h4>
         </div>
         <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
         <!--Indicators-->
@@ -182,71 +184,20 @@
     <!-- Fifth Section -->
     <section class="section-fifth container-fluid w-100 p-2 p-md-5">
         <div class="row text-center w-100">
-            <h4 class="title-section m-auto">Noticias</h4>
+            <h4 class="title-section m-auto"><a class="text-decoration-none text-dark" href="publicaciones.php">Noticias</a></h4>
         </div>
-        <!-- BODY NEWS -->
-        <div class="app">
-            <header>
-                <a href="">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/Official.png" alt="Earth News">
-                </a>
-            </header>
-            <article>
-                <h1> Nueva noticia 1</h1>
-                <p>What a wonderful joy it is to see,
-            the beauty of nature and its majesty.
-            Everything blends, entwines and embraces,
-            Spaced precisely in their designated places.
-            What a marvel to see, I wish I were a bee,
-            flying free, smelling life’s roses, no particular place to be.</p>
-                <a href="">Ver más</a>
-            </article>
-        </div>
-        <!-- BODY NEWS -->
-        <div class="app">
-            <header>
-                <a href="">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/Official.png" alt="Earth News">
-                </a>
-            </header>
-            <article>
-                <h1> Nueva noticia 2</h1>
-                <p>What a wonderful joy it is to see,
-            the beauty of nature and its majesty.
-            Everything blends, entwines and embraces,
-            Spaced precisely in their designated places.
-            What a marvel to see, I wish I were a bee,
-            flying free, smelling life’s roses, no particular place to be.</p>
-                <a href="">Ver más</a>
-            </article>
-        </div>
-        <!-- BODY NEWS -->
-        <div class="app">
-            <header>
-                <a href="">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154571/Official.png" alt="Earth News">
-                </a>
-            </header>
-            <article>
-                <h1> Nueva noticia 3</h1>
-                <p>What a wonderful joy it is to see,
-            the beauty of nature and its majesty.
-            Everything blends, entwines and embraces,
-            Spaced precisely in their designated places.
-            What a marvel to see, I wish I were a bee,
-            flying free, smelling life’s roses, no particular place to be.</p>
-                <a href="">Ver más </a>
-            </article>
-        </div>
+        <?php
+            loadNoticiasHome();
+        ?>
         <div class="button-sec text-center mt-4 mb-4">
-            <button type="button" class="btn btn-primary p-2"><i class="fas fa-plus"></i></button>
+            <button type="button" class="btn btn-primary p-2"><a class="text-white" href="addNotice.php"><i class="fas fa-plus"></i></a></button>
         </div>
     </section>
     <!--/. Fifth Section -->
     <!-- Sixth Section -->
     <section class="class-sixth container-fluid m-0 p-0 mt-5">
     <div class="mb-5 w-100">
-            <h4 class="title-section text-center">Anuncios</h4>
+            <h4 class="title-section text-center"><a class="text-decoration-none text-dark" href="anuncios.php">Anuncios</a></h4>
     </div>
     <div uk-slider="center: true">
         <div class="w-100 arrows text-center">
@@ -255,93 +206,16 @@
         </div>
         <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
             <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
-                <li>
-                    <div class="card-anun shadow text-center m-auto">
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top bg-dark text-center">
-                                <h3 class="uk-card-title text-white pt-3">Anuncio 1</h3>
-                                <div class="w-100 text-right pr-3">
-                                    <span class="mr-auto text-white">General</span>
-                                </div>
-                            </div>
-                            <div class="uk-card-body text-center">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem placeat eius perferendis. Nobis, natus nostrum deserunt nihil esse, ducimus rerum consequuntur perspiciatis ut ipsa nisi nesciunt sequi optio incidunt aliquid. </p>
-                                <span>20/10/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-anun shadow text-center m-auto">
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top bg-dark text-center">
-                                <h3 class="uk-card-title text-white pt-3">Anuncio 2</h3>
-                                <div class="w-100 text-right pr-3">
-                                    <span class="mr-auto text-white">General</span>
-                                </div>
-                            </div>
-                            <div class="uk-card-body text-center">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem placeat eius perferendis. Nobis, natus nostrum deserunt nihil esse, ducimus rerum consequuntur perspiciatis ut ipsa nisi nesciunt sequi optio incidunt aliquid. </p>
-                                <span>20/10/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-anun shadow text-center m-auto">
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top bg-dark text-center">
-                                <h3 class="uk-card-title text-white pt-3">Anuncio 3</h3>
-                                <div class="w-100 text-right pr-3">
-                                    <span class="mr-auto text-white">General</span>
-                                </div>
-                            </div>
-                            <div class="uk-card-body text-center">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem placeat eius perferendis. Nobis, natus nostrum deserunt nihil esse, ducimus rerum consequuntur perspiciatis ut ipsa nisi nesciunt sequi optio incidunt aliquid. </p>
-                                <span>20/10/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-anun shadow text-center m-auto">
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top bg-dark text-center">
-                                <h3 class="uk-card-title text-white pt-3">Anuncio 4</h3>
-                                <div class="w-100 text-right pr-3">
-                                    <span class="mr-auto text-white">General</span>
-                                </div>
-                            </div>
-                            <div class="uk-card-body text-center">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem placeat eius perferendis. Nobis, natus nostrum deserunt nihil esse, ducimus rerum consequuntur perspiciatis ut ipsa nisi nesciunt sequi optio incidunt aliquid. </p>
-                                <span>20/10/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-anun shadow text-center m-auto">
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top bg-dark text-center">
-                                <h3 class="uk-card-title text-white pt-3">Anuncio 5</h3>
-                                <div class="w-100 text-right pr-3">
-                                    <span class="mr-auto text-white">General</span>
-                                </div>
-                            </div>
-                            <div class="uk-card-body text-center">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem placeat eius perferendis. Nobis, natus nostrum deserunt nihil esse, ducimus rerum consequuntur perspiciatis ut ipsa nisi nesciunt sequi optio incidunt aliquid. </p>
-                                <span>20/10/2020 9:00 AM</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                <?php 
+                    loadAnunciosHome();
+                ?> 
             </ul>
         </div>
         <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
         </div>
         <!-- BUTTON -->
         <div class="button-sec text-center mt-4 mb-4">
-            <button type="button" class="btn btn-primary p-2"><i class="fas fa-plus"></i></button>
+            <button type="button" class="btn btn-primary p-2"><a href="addAnuncio.php" class="text-white"><i class="fas fa-plus"></i></a></button>
         </div>
     </section>
     <!--/. Sixth Section -->
@@ -403,5 +277,7 @@
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/cont.js"></script>
+    <script src="../../js/viewNotice.js"></script>
+    <script src="../../js/viewRepositorio.js"></script>
 </body>
 </html>

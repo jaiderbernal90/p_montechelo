@@ -352,6 +352,6 @@
 
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
-    <script src="../../js/like.js"></script>
+    <script src="../../js/btn-like.js"></script>
 </body>
 </html>

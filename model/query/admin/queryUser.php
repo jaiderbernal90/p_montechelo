@@ -263,7 +263,7 @@
 			$modelo= new conexion();
 			$conexion=$modelo->post_conexion();
 			//QUERY SQL
-			$sql="SELECT name, last_name, date_birth,img_profile,charge FROM user WHERE MONTH(date_birth) = MONTH(CURDATE()) AND DAY( date_birth ) > DAY(CURDATE()) OR MONTH(date_birth) = MONTH(DATE_ADD(CURDATE(),INTERVAL 1 MONTH)) LIMIT 3";
+			$sql="SELECT id_user, name, last_name, date_birth,img_profile,charge FROM user WHERE MONTH(date_birth) = MONTH(CURDATE()) AND DAY( date_birth ) > DAY(CURDATE()) OR MONTH(date_birth) = MONTH(DATE_ADD(CURDATE(),INTERVAL 1 MONTH)) LIMIT 3";
 
 			$result=$conexion->prepare($sql);
 			//PDO

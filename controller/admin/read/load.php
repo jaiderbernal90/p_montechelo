@@ -767,7 +767,7 @@
 
                                     <!-- Avatar -->
                                     <div class="avatar avatar-card"><img src="../../img/'.$f['img_profile'].'" class="rounded-circle"
-                                        alt="Sample avatar image.">
+                                        alt="Sample avatar image." id='.$f['id_user'].' onclick="viewRepositorio(this)">
                                     </div>
 
                                     <!-- Content -->

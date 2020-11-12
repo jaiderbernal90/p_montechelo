@@ -17,7 +17,7 @@
    $url_images=$_FILES['images'];
    $state=trim($_POST['state']);
    //IMAGE
-   if($url_images === '' || $url_images === null){
+   if($url_images['name'] === '' || $url_images['name'] === null){
       $name_images='cup-of-coffee-1280537_640.jpg';
       $type_img = 'image/jpg';
       $tp_name = '';

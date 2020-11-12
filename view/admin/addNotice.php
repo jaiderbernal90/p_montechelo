@@ -99,7 +99,7 @@
                             <!-- Material input -->
                             <div class="md-form form-group green-border-focus">
                                 <p class="tite text-primary">Contenido de la Noticia <span class="text-danger">*</span></p>
-                                <textarea name="content" id="" cols="50" rows="3" class="w-100 md-textarea form-control" required></textarea>
+                                <textarea name="content" id="" cols="50" rows="3" class="w-100 md-textarea form-control textareaElement" required></textarea>
                             </div>
                         </div>
                         <!-- Grid column -->   

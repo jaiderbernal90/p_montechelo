@@ -24,9 +24,22 @@
             return 'Hace '.$value.' '.$intervals[1][0].($value > 1 ? 's' : '');
         }
     }
-    function translationOur($our){
+    function translationOurs($our){
         $date = translationDateAndHor($our);     
         return $date;
+    }
+
+    function translationEditable($user,$title,$id){
+        $resultado= null;
+        $userSession = $_SESSION['email'];
+        
+        if($userSession === $user){
+            $resultado = '<h4 class="title-section m-auto text-copy">'.$title.'<i class="fas fa-pen ml-3 fa-1x cursor" onclick="updateNotice(this)" id="'.$id.'"></i></h4>';
+        }else{
+            $resultado = '<h4 class="title-section m-auto text-copy">'.$title.'</h4>';
+        }
+
+        return $resultado;
     }
 
 ?>

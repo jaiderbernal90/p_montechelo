@@ -17,7 +17,7 @@
    $url_images = $_FILES['images'];
    $state=trim($_POST['state']);
    //IMAGE
-   if($url_images === '' || $url_images === null){
+   if($url_images['name'] === '' || $url_images['name'] === null){
       $name_images='cup-of-coffee-1280537_640.jpg';
       $type_img = 'image/jpg';
       $tp_name = '';
@@ -29,7 +29,7 @@
    
    $id_area = NULL;
 
-  //VALIDATION TYPE IMAGE AND UPLOAD IMAGE
+//   VALIDATION TYPE IMAGE AND UPLOAD IMAGE
    if($type_img === 'image/jpeg' || $type_img == 'image/jpg' || $type_img == 'image/png' || $type_img === 'image/gif'){
         $img = imgValidation($tp_name,$name_images);
    }

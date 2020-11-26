@@ -1,8 +1,8 @@
 <?php 
 require_once('../../../model/conection/conexion.php');
-require_once('../../../model/query/ajax/user.php');
+require_once('../../../model/query/ajax/publications.php');
 require_once('../../../model/query/admin/queryUser.php');
-require_once('../../translation/translation-User.php');
+require_once('../../translation/translation-publications.php');
 require_once('../../translation/roles.php');
 echo searchUsers();
 function searchUsers(){

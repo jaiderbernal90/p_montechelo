@@ -6,7 +6,7 @@ const filtro = document.querySelector('#filtro');
 input.addEventListener('input', query_users);
 filtro.addEventListener('change', filtrerUser);
 
-function query_users(){
+function query_users(e){
     const data = `input=${input.value}`;
     fetch('../../controller/admin/create/searchUser.php',{
         method:'POST',

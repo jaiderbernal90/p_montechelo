@@ -1,7 +1,8 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
-    require_once('../../controller/admin/read/load.php');
+    require_once('../../controller/admin/read/loadPublications.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,56 +24,41 @@
     <!--Local CSS -->
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/estilos-home.css">
-    <link rel="stylesheet" href="../../css/user.css">
+    <link rel="stylesheet" href="../../css/publicaciones.css">
+
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
         <?php include('header.php') ?>
     <!--/.Navbar-->
     <!--First section-->
-
-    <section class="first-section container-fluid p-0 m-0 mt-5">
-        <!-- Title -->
-            <div class="row m-0 mt-4 p-0">
-                <div class="col-12 mt-5">
-                    <header>
-                        <h4 class="title-section text-center">Información Usuarios</h4>
-                    </header>
-                </div>
+    <section class="container-fluid w-100 p-0 m-0 mt-5">
+        <div class="row w-100 m-0 p-0 mt-5">
+            <div class="col-12 p-0 mt-5 d-flex">
+                <h4 class="title-section m-auto">Actualizar Noticia</h4>
             </div>
-        <!-- FORM -->
-        <div class="row m-0 p-0">
+        </div>
+    </section>
+    <section class="container-fluid w-100 p-0 m-0">
+        <div class="row w-100 m-0 p-0 ">
             <div class="col-12">
-                <form autocomplete="off" class="form m-4 m-md-5" action="../../controller/admin/update/updateUser.php" method="POST">
+                <form action="../../controller/admin/update/updateNotice.php" method="POST" enctype="multipart/form-data" class="form m-4 m-md-5">
                     <?php
                         $id=$_POST['id'];
                         //Invocacion de la función para cargar usuarios
-                        userInformation($id);
-                    ?> 
-                    <div class="form-row d-flex mt-5">
-                            <div class="col-5 text-md-right text-center">
-                                <button type="button" class="btn btn-md btn-info" ><a class='text-white' href="users.php">Volver</a></button>
-                            </div> 
-                            <div class="col-1 text-md-right text-center">
-                                <button type="button" class="btn btn-md btn-info" id="mod"><a class='text-white'>Modificar</a></button>
-                            </div> 
-                            <div class="col-3  text-center">
-                                <button type="submit" class="btn btn-md btn-info seleccionar seleccionarBtn" disabled id="save"><a class='text-white'>Guardar</a></button>
-                            </div>
-
-                        </div>
-                </form>
+                        updateNotice($id);
+                    ?>
+            </form>
             </div>
         </div>
     </section>
 
     
+    
     <!--FOOTER-->
-    <footer class="footer-login container-fluid p-0 m-0"-->   
+    <footer class="footer-login container-fluid p-0 m-0">   
         <?php include('../footer.html')?>
     </footer>
-    <!--Funcion para desbloquear el boton guardar-->
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -81,11 +67,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-   <!-- DATATABLE JS -->
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
-    <script src="../../js/updateSelect.js"></script>
+    <script src="../../js/textarea.js"></script>
     <script src="../../js/modificar.js"></script>
+    <script src="../../js/photoPublication.js"></script>
+    <script src="../../js/viewNotice.js"></script>
 </body>
 </html>

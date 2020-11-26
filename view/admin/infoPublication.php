@@ -49,7 +49,7 @@
      <div class="modal fade" id="modalLike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
     aria-hidden="true">
         <div class="modal-dialog scrollbar-light-blue" role="document">
-            <div class="modal-content"></div>
+            <div class="modal-content" id="like"></div>
         </div>
     </div>
 
@@ -65,10 +65,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
     <script src="../../js/btn-like.js"></script>
-    <script src="../../js/viewNotice.js"></script>
-    <script src="../../js/likesFetch.js"></script>
+    <script src="../../js/updateNotice.js"></script>
+    <script src="../../js/likesFetch.js"  type="module"></script>
+    <script src="../../js/commentFetchTwo.js" type="module"></script>
 </body>
 </html>

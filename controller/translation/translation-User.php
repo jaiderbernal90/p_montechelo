@@ -196,9 +196,19 @@
                 break;
 
         }
-        //Date FInally for view
-        $dateFinally = $day.' de '.$monthFinally;
-
+        $dateActuallity= date("Y-m-d");
+        if($month === substr($dateActuallity, 5,2)){
+            if($day === substr($dateActuallity, -2)){
+                $dateFinally = '¡Hoy!';
+            }else if($day == substr($dateActuallity, -2) + 1){
+                $dateFinally = '¡Mañana!';
+            }else{
+                $dateFinally = $day.' de '.$monthFinally;
+            }
+        }else{
+            //Date FInally for view
+            $dateFinally = $day.' de '.$monthFinally;
+        }
         return $dateFinally;
     }
     function translationMonth($date){
@@ -207,12 +217,4 @@
        
         return $month;
     }
-
-    function translationOur($our){
-        $date = translationDate($our);
-        $hora = date("g:i a",strtotime($our));
-        
-        return $our;
-     }
-
 ?>

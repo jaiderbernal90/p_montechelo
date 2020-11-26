@@ -1,47 +1,38 @@
 // Variables
 const btnLike = document.querySelectorAll('.like');
-const spanModal = document.querySelectorAll('.modal-span');
-const contModal = document.querySelector('.modal-content');
+const spanModalLike = document.querySelectorAll('.modal-span');
+const contModal = document.querySelector('#like');
 let url,data;
 
 // Add EventListener
 
 btnLike.forEach(btn => {
-    btn.addEventListener('click', validationClass);
+    btn.addEventListener('click', () =>{
+        validationClass(btn)
+    });
 });
-
-spanModal.forEach(span => {
+//LIKE MODAL
+spanModalLike.forEach(span => {
     span.addEventListener('click', validationSpan);
 });
 
 // FUNCTIONS 
 //-----------------------------------------------LIKES---------------------------------------------
-function validationClass(e){
+function validationClass(btn){
     //VALIDATION IF TARGET IS ICON OR <i>
-    if(e.target.className.includes('fa')){
-        if(e.target.parentNode.className.includes('is-loading')){
+        if(btn.className.includes('is-loading')){
             url = '../../controller/admin/create/like.php';
-            data = `id_publications=${e.target.parentNode.id}`;
-            fetchs(url,data,e.target.parentNode.parentNode.childNodes[3]);
+            data = `id_publications=${btn.id}`;
+            fetchs(url,data,btn.parentNode.childNodes[3]);
         }else{
             url = '../../controller/admin/create/dislike.php';
-            data = `id_publications=${e.target.parentNode.id}`;
-            fetchs(url,data,e.target.parentNode.parentNode.childNodes[3]);
+            data = `id_publications=${btn.id}`;
+            fetchs(url,data,btn.parentNode.childNodes[3]);
         }
-    }else{
-        if(e.target.className.includes('is-loading')){
-            url = '../../controller/admin/create/like.php';
-            data = `id_publications=${e.target.id}`;
-            fetchs(url,data,e.target.parentNode.childNodes[3]);
-        }else{
-            url = '../../controller/admin/create/dislike.php';
-            data = `id_publications=${e.target.id}`;
-            fetchs(url,data,e.target.parentNode.childNodes[3]);
-        }
-    }
 }
 //FUNCION PARA REALIZAR LAS PETICIONES A PHP
-function fetchs(url,data,btn){
+export function fetchs(url,data,btn){
+    console.log(data);
     fetch(url,{
         method:'POST',
         headers: {
@@ -56,7 +47,7 @@ function fetchs(url,data,btn){
     .catch(error => console.log(error))
 }
 //FUNCION PARA QUE EL CONTADOR DE LIKES SE ACTUALICE CADA VEZ QUE SE RALICE UNA ACCIÓN
-function reloadLike(data,btn){
+export function reloadLike(data,btn){
     fetch('../../controller/admin/create/countLike.php', {
         method:'POST',
         headers: {
@@ -72,7 +63,7 @@ function reloadLike(data,btn){
 }
 
 // ------------------------------------------MODAL------------------------------------------------
-
+//LIKE
 function validationSpan(e){
     data = `id_publications=${e.target.parentNode.childNodes[1].id}`;
     fetch('../../controller/admin/create/viewLikes.php', {
@@ -84,13 +75,10 @@ function validationSpan(e){
     })
     .then(res => res.text())
     .then(likes => {
-        console.log(likes);
         contModal.innerHTML = likes;
       })
     .catch(error => console.log(error))
 }
-
-
 
 
 

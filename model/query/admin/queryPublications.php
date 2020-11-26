@@ -150,7 +150,48 @@
 
 			return $resultado;
 		}
-		//Cierre ver publications
+		//Cierre
+		//Funcion para consultar Likes
+		public function showComments($id_publications){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="SELECT * FROM publications INNER JOIN comments ON publications.id_publications = comments.id_publications WHERE comments.id_publications = :id_publications"; 
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":id_publications",$id_publications);	
+			//PDO
+			$result->execute();
+
+			//Cargar el resultado a la variable resultado
+			if($result){
+				$resultado = $result->rowCount();
+			}
+
+			return $resultado;
+		}
+		//Muestra comentarios de una publicacion en especifico
+		public function searchComments($id){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="SELECT Com.id ,Com.id_publications, Com.id_user,Com.date, Com.content, Us.id_user,Us.name,Us.last_name,Us.email,Us.img_profile FROM comments Com INNER JOIN user Us ON Com.id_user = Us.id_user WHERE id_publications = :id_publications"; 
+			$result=$conexion->prepare($sql);
+			//PDO
+			$result->bindParam(":id_publications",$id);
+			$result->execute();
+
+			//Cargar el resultado a la variable resultado
+			while ($f=$result->fetch()) {
+				$resultado[]=$f;
+			}
+			return $resultado;
+		}
 		//Funcion para consultar likes de una publicacion
 		public function showAllLikes($id){
 			//Toma el resultado de la consulta
@@ -243,7 +284,7 @@
 			$modelo = new conexion();
 			$conexion = $modelo -> post_conexion();
 			//QUERY SQL
-			$sql = "SELECT Pub.id_publications, Pub.title, Pub.date_publication, Pub.content,Pub.url_images, Pub.id_user,Pub.type_publications,Us.email, Us.id_user, Us.img_profile FROM publications Pub INNER JOIN user Us ON Pub.id_user = Us.id_user WHERE Pub.id_publications = :id";
+			$sql = "SELECT Pub.id_publications, Pub.title, Pub.date_publication, Pub.content,Pub.url_images, Pub.id_user,Pub.type_publications,Pub.level_importance,Pub.state ,Us.email, Us.id_user, Us.img_profile FROM publications Pub INNER JOIN user Us ON Pub.id_user = Us.id_user WHERE Pub.id_publications = :id";
 			//PDO
 			$result = $conexion -> prepare($sql);
 			$result->bindParam(':id',$id);
@@ -272,6 +313,76 @@
 			}
 
 			return $resultado;
+		}
+		//UPDATE NOTICE
+		public function updateNotice($id_publications,$type_publications,$title,$content,$id_user,$level_importance,$state,$url_images,$id_area,$url){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL		
+            $sql="UPDATE publications SET type_publications=:type_publications, title=:title, content=:content, id_user=:id_user, level_importance=:level_importance, state=:state, id_area=:id_area, url_images=:url_images WHERE id_publications=:id_publications";
+            
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":id_publications",$id_publications);
+			$result->bindParam(":type_publications",$type_publications);
+			$result->bindParam(":title",$title);
+			$result->bindParam(":content",$content);
+			$result->bindParam(":id_user",$id_user);
+			$result->bindParam(":level_importance",$level_importance);
+			$result->bindParam(":state",$state);
+			$result->bindParam(":id_area",$id_area);
+            $result->bindParam(":url_images",$url_images);		
+            	
+			//QUERY RESULT
+			if (!$result){
+				modalAlert('ERROR AL ACTUALIZACION','../../../view/admin/addNotice.php','error',3);
+			}else {		
+				$result->execute();
+				modalAlert('ACTUALIZACION EXITOSA','../../../view/admin/'.$url.'','success',3);
+        	}
+		  }
+		  
+		//add COMMENT
+		public function addCommentary($text,$id_publications,$user,$date){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL		
+			$sql="INSERT INTO comments (id_user,id_publications,date,content) VALUES(:id_user,:id_publications,:date,:content)";
+			
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":id_user",$user);
+			$result->bindParam(":id_publications",$id_publications);
+			$result->bindParam(":date",$date);
+			$result->bindParam(":content",$text);
+
+				
+			//QUERY RESULT
+			if (!$result){
+				modalAlert('ERROR AL INSERTAR EL COMENTARIO','../../../view/admin/anuncios.php','error',3);
+			}else {		
+				$result->execute();
+			}
+		}
+		//DELETE COMMENT
+		public function deleteComments($id){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL		
+			$sql="DELETE FROM comments WHERE id=:id";	
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":id",$id);
+			//QUERY RESULT
+			if (!$result){
+				modalAlert('ERROR AL BORRAR COMENTARIO','../../../view/admin/anuncios.php','error',3);
+			}else {		
+				$result->execute();
+			}
+	
 		}
     }
 ?>

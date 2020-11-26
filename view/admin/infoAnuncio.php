@@ -1,7 +1,9 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
-    require_once('../../controller/admin/read/load.php');
+    require_once('../../controller/admin/read/loadPublications.php');
+    $id=$_POST['id'];
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,55 +26,37 @@
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/estilos-home.css">
-    <link rel="stylesheet" href="../../css/user.css">
+    <link rel="stylesheet" href="../../css/publicaciones.css">
 </head>
 <body class="scrollbar-light-blue">
    <!--Navbar-->
         <?php include('header.php') ?>
     <!--/.Navbar-->
     <!--First section-->
-
-    <section class="first-section container-fluid p-0 m-0 mt-5">
-        <!-- Title -->
-            <div class="row m-0 mt-4 p-0">
-                <div class="col-12 mt-5">
-                    <header>
-                        <h4 class="title-section text-center">Información Usuarios</h4>
-                    </header>
-                </div>
-            </div>
-        <!-- FORM -->
-        <div class="row m-0 p-0">
-            <div class="col-12">
-                <form autocomplete="off" class="form m-4 m-md-5" action="../../controller/admin/update/updateUser.php" method="POST">
-                    <?php
-                        $id=$_POST['id'];
-                        //Invocacion de la función para cargar usuarios
-                        userInformation($id);
-                    ?> 
-                    <div class="form-row d-flex mt-5">
-                            <div class="col-5 text-md-right text-center">
-                                <button type="button" class="btn btn-md btn-info" ><a class='text-white' href="users.php">Volver</a></button>
-                            </div> 
-                            <div class="col-1 text-md-right text-center">
-                                <button type="button" class="btn btn-md btn-info" id="mod"><a class='text-white'>Modificar</a></button>
-                            </div> 
-                            <div class="col-3  text-center">
-                                <button type="submit" class="btn btn-md btn-info seleccionar seleccionarBtn" disabled id="save"><a class='text-white'>Guardar</a></button>
-                            </div>
-
-                        </div>
-                </form>
+    <section class="container-fluid w-100 p-0 m-0 mt-5">
+        <div class="font-up">
+            <div>
+                <button class="btn btn-color1 mt-5 ml-2"><a href="anuncios.php" class="text-white">VOLVER</a></button>
             </div>
         </div>
-    </section>
+        <?php
+            //Invocacion de la función para cargar usuarios
+            noticeInformation($id);
+        ?>  
+    </section>   
 
-    
+     <!-- MODAL LIKE -->
+     <div class="modal fade" id="modalLike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+    aria-hidden="true">
+        <div class="modal-dialog scrollbar-light-blue" role="document">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
     <!--FOOTER-->
-    <footer class="footer-login container-fluid p-0 m-0"-->   
+    <footer class="footer-login container-fluid p-0 m-0">   
         <?php include('../footer.html')?>
     </footer>
-    <!--Funcion para desbloquear el boton guardar-->
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -81,11 +65,10 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-   <!-- DATATABLE JS -->
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
-    <script src="../../js/updateSelect.js"></script>
-    <script src="../../js/modificar.js"></script>
+    <script src="../../js/btn-like.js"></script>
+    <script src="../../js/updateNotice.js"></script>
+    <script src="../../js/likesFetch.js"  type="module"></script>
 </body>
 </html>

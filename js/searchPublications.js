@@ -1,25 +1,36 @@
 import { viewComment } from './commentsFetch.js';
 import { fetchs, reloadLike } from './likesFetch.js';
-
-
 //Variables
 const input = document.querySelector('input#anythingSearch');
 const container = document.querySelector("#demo");
 const filtro = document.querySelector('#filtro');
+const btnDelete = document.querySelectorAll('.btn-delete');
 
 input.addEventListener('input', query_publications);
 filtro.addEventListener('change', filtrerPublications);
 
+btnDelete.forEach(btn => {
+  btn.addEventListener('click', () =>{
+    deletePublication(btn);
+  })
+})
+
 function query_publications(){
+    let url;
+    if(input.name === 'noticias'){
+      url = '../../controller/admin/create/searchPublications.php';
+    }else if(input.name === 'anuncios'){
+      url = '../../controller/admin/create/searchAnuncios.php';
+    }
     const data = `input=${input.value}`;
-    fetch('../../controller/admin/create/searchPublications.php',{
+    fetch(url,{
         method:'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: data
     })
-    .then( res => res.text() )
+    .then( res => res.text())
     .then( user => { 
       container.innerHTML =  user;
       if(input.value.length < 1){
@@ -30,9 +41,6 @@ function query_publications(){
     //EVENT LISTENER COMMENTS
     spanModalCommen.forEach(span => {
         span.addEventListener('click', () => {
-          console.log('click');
-          // console.log('ME DISTE CLICK');
-          // console.log(span.id);
           //CALL FUN VIEW COMMENTS SPICIFICATION
           viewComment(span.id);
         })
@@ -72,17 +80,12 @@ function query_publications(){
         });
     });
     function validationClass(btn){
-      console.log(btn.id);
       //VALIDATION IF TARGET IS ICON OR <i>
           if(btn.className.includes('is-loading')){
-            console.log('cargando');
               url = '../../controller/admin/create/like.php';
               dataLike = `id_publications=${btn.id}`;
-              console.log(btn.parentNode.childNodes[3]);
-              console.log(dataLike);
               fetchs(url,dataLike,btn.parentNode.childNodes[3]);
           }else{
-            console.log('NO cargando');
               url = '../../controller/admin/create/dislike.php';
               dataLike = `id_publications=${btn.id}`;
               fetchs(url,dataLike,btn.parentNode.childNodes[3]);
@@ -92,9 +95,15 @@ function query_publications(){
     })
     .catch(error => console.log(error));
 }
-function filtrerPublications(){
+export function filtrerPublications(){
+      let url;
+      if(filtro.name === 'anuncios'){
+        url = '../../controller/admin/create/filterAnuncie.php';
+      }else if(filtro.name === 'noticias'){
+        url = '../../controller/admin/create/filterPublication.php';
+      }
       const data = `select=${filtro.value}`;
-      fetch('../../controller/admin/create/filterPublication.php',{
+      fetch(url,{
           method:'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -109,9 +118,6 @@ function filtrerPublications(){
             //EVENT LISTENER COMMENTS
             spanModalCommen.forEach(span => {
                 span.addEventListener('click', () => {
-                console.log(span.id);
-                // console.log('ME DISTE CLICK');
-                // console.log(span.id);
                 //CALL FUN VIEW COMMENTS SPICIFICATION
                 viewComment(span.id);
             })
@@ -165,4 +171,43 @@ function filtrerPublications(){
               }
         })
       .catch(error => console.log(error))
+}
+
+function deletePublication(esto){
+  Swal.fire({
+      title: 'Eliminar publicación',
+      text: "¿Seguro que quieres borrar esta publicación de manera permanente?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          Swal.fire(
+              'Eliminado!',
+              'Se ha borrado la publicación exitosamente',
+              'success'
+            )
+          deletePublicationFetch(esto.id);
+          setTimeout( () =>{
+            filtrerPublications();
+          },1000);
+      }
+    })
+}
+function deletePublicationFetch(id){
+  const data = `id=${id}`;
+  fetch('../../controller/admin/delete/deletePublication.php',{
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: data
+  })
+  .then( res => res.text() )
+  .then( users => {
+      // filtrerPublications();
+  })
+  .catch(error => console.log(error))
 }

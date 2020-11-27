@@ -11,7 +11,7 @@
 			$sql="SELECT Pub.id_publications, Pub.title, Pub.date_publication, Pub.content, 			Pub.url_images, Pub.id_user,Pub.type_publications,
 				Us.email, Us.id_user, Us.img_profile
 			FROM publications Pub 
-			INNER JOIN user Us ON Pub.id_user = Us.id_user ORDER BY date_publication DESC "; 
+			INNER JOIN user Us ON Pub.id_user = Us.id_user ORDER BY date_publication DESC"; 
 			$result=$conexion->prepare($sql);
 			//PDO
 			$result->execute();
@@ -373,6 +373,24 @@
 			$conexion=$modelo->post_conexion();
 			//QUERY SQL		
 			$sql="DELETE FROM comments WHERE id=:id";	
+			// PDO
+			$result = $conexion->prepare($sql);
+			$result->bindParam(":id",$id);
+			//QUERY RESULT
+			if (!$result){
+				modalAlert('ERROR AL BORRAR COMENTARIO','../../../view/admin/anuncios.php','error',3);
+			}else {		
+				$result->execute();
+			}
+	
+		}
+		//DELETE PUBLICATION
+		public function deletePublications($id){
+			//CONECTION DATA BASE
+			$modelo=new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL		
+			$sql="DELETE FROM publications WHERE id_publications=:id";	
 			// PDO
 			$result = $conexion->prepare($sql);
 			$result->bindParam(":id",$id);

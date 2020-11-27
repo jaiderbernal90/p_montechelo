@@ -31,7 +31,7 @@
                                 </a>
                             </header>
                         </div>
-                        <article class="card mb-5">
+                        <article class="card mb-3">
                             <!-- HEADER -->
                             <header class="card-body-pub">
                                 <a onclick="viewNotice(this)" id="'.$f['id_publications'].'">
@@ -60,6 +60,9 @@
                                 <!--./Comments-->
                             </div>
                         </article>
+                        <div class="d-flex w-100 text-center">
+                            '.translationEditableButton($f['email'],$f['id_publications'],$f['type_publications']).'
+                        </div>
                     </div>
                 </div>';
                 }    
@@ -122,6 +125,9 @@
                                         <!--./Comments-->
                                     </div>
                                 </article>
+                                <div class="d-flex w-100 text-center mt-4">
+                                '.translationEditableButton($f['email'],$f['id_publications'],$f['type_publications']).'
+                            </div>
                             </div>
                         </div>';
                     }
@@ -365,7 +371,7 @@
                         <!-- Material input -->
                         <div class="md-form form-group green-border-focus">
                             <p class="tite text-primary">Contenido de la Noticia <span class="text-danger">*</span></p>
-                            <textarea disabled name="content" id="" cols="50" rows="3" class="w-100 md-textarea form-control seleccionar " required>'.$f['content'].'</textarea>
+                            <textarea disabled name="content" id="comment" class="w-100 md-textarea form-control seleccionar " required>'.$f['content'].'</textarea>
                         </div>
                     </div>
                     <!-- Grid column -->   

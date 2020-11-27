@@ -52,17 +52,17 @@
             </div>
         <div class="row m-0 w-100 p-0 d-flex">
             <div class="input-group md-form form-sm form-2 w-25 mr-auto ml-5 res-search">
-                <input class="form-control my-0 py-1 red-border text-white" type="text" placeholder="Buscar" aria-label="Buscar" name="input" id="anythingSearch">
+                <input class="form-control my-0 py-1 red-border text-white" type="text" placeholder="Buscar" aria-label="Buscar" name="anuncios" id="anythingSearch">
                 <div class="input-group-append">
                     <span class="input-group-text elegant-color" id="basic-text1"><i class="fas fa-search text-white"
                         aria-hidden="true"></i></span>
                 </div>
             </div>
             <div class="w-25 mr-5 res-search">
-                <select name="filtrer_selec" id="filtro" class="seleccionar md-form w-100" name="deparment" >
+                <select name="anuncios" id="filtro" class="seleccionar md-form w-100" name="deparment" >
                     <option value="" selected>FILTRAR</option>
-                    <option value="asc">Más Recientes</option>
-                    <option value="desc">Más Antigüos</option>
+                    <option value="desc">Más Recientes</option>
+                    <option value="asc">Más Antigüos</option>
                 </select>
             </div>
         </div>

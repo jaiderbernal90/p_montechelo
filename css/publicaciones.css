@@ -289,6 +289,10 @@
   height: 50px;
   width: 50px;
 }
+.icon-delete{
+  font-size: 25px;
+  color: #E74C3C;
+}
 .text-img img{
   height: 100%;
   width: 80%;

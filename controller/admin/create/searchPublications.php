@@ -46,7 +46,7 @@ function searchPublications(){
                                 </a>
                             </header>
                         </div>
-                        <article class="card mb-5">
+                        <article class="card mb-3">
                             <!-- HEADER -->
                             <header class="card-body-pub">
                                 <a onclick="viewNotice(this)" id="'.$f['id_publications'].'">
@@ -75,6 +75,9 @@ function searchPublications(){
                                 <!--./Comments-->
                             </div>
                         </article>
+                        <div class="d-flex w-100 text-center">
+                            '.translationEditableButton($f['email'],$f['id_publications'],$f['type_publications']).'
+                        </div>
                     </div>
                 </div>';
                 }    

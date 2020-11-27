@@ -278,6 +278,27 @@
 		}
 		//Cierre mirar usuarios
 		//Funcion para consultar usuarios
+		public function showAllBirthday(){
+			//Toma el resultado de la consulta
+			$resultado=null;
+			//CONECTION DATA BASE
+			$modelo= new conexion();
+			$conexion=$modelo->post_conexion();
+			//QUERY SQL
+			$sql="SELECT id_user, name, last_name, date_birth,img_profile,charge FROM user ORDER BY MONTH(date_birth)";
+
+			$result=$conexion->prepare($sql);
+			//PDO
+			$result->execute();
+
+			//Cargar el resultado a la variable resultado
+			while ($f=$result->fetch()) {
+				$resultado[]=$f;
+			}
+
+			return $resultado;
+		}
+		//Funcion para consultar usuarios
 		public function numUsers(){
 			//Toma el resultado de la consulta
 			$resultado=null;

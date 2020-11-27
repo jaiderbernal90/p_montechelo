@@ -792,6 +792,56 @@
                 }//END FOREACH
          }//END BIRTHDAY
 
+         //SHOW BIRTHDAYS
+          function showBirthday(){
+            //Invocamos una clase para realizar consultas
+            $queries = new consultas();
+            //Genera consulta
+            $result=$queries->showAllBirthday();
+
+            if (!isset($result)) {//En caso de haya un error en la variable resultado
+                echo '<h2> NO HAY NADA PARA MOSTRAR, INTENTE DE NUEVO</h2>';
+            }else{
+                foreach($result as $f){
+                    echo '<div class="col-12 col-md-6 col-lg-4 p-0">
+                                <!-- Rotating card -->
+                            <div class="card-wrapper">
+                            <div id="card-1" class="card card-rotating text-center">
+
+                                <!-- Front Side -->
+                                <div class="face front">
+
+                                <!-- Image-->
+                                <div class="card-up">
+                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" alt="Image with a photo of clouds.">
+                                </div>
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-card"  id='.$f['id_user'].' onclick="viewRepositorio(this)"><img src="../../img/'.$f['img_profile'].'" class="rounded-circle"
+                                    alt="Sample avatar image.">
+                                </div>
+
+                                <!-- Content -->
+                                <div class="card-body">
+                                    <h4 class="font-weight-bold mb-3 cursor" id='.$f['id_user'].' onclick="viewRepositorio(this)">'.ucfirst($f['name']).' '.ucfirst($f['last_name']).'</h4>
+                                    <p class="font-weight-bold blue-text">'.$f['charge'].'</p>
+                                    <!-- Triggering button -->
+                                    <div class="card-body-two">
+                                        <!-- Content -->
+                                        <h4 class="font-weight-bold mb-0">Fecha de cumpleaños</h4>
+                                        <hr>
+                                        <p>'.translationDate($f['date_birth']).'</p>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Back Side -->
+                            </div>
+                            </div>
+                        </div>';
+                }
+            }
+         }
+
          function numUsers(){ //función para cargar usuarios
             $resultado=null;
             //Invocamos una clase para realizar consultas del administrador

@@ -87,4 +87,24 @@
         return $resultado;
     } 
 
+    function translationEditableButton($user,$id,$type){
+       $resultado = null;
+       $userSession = $_SESSION['email'];
+
+       if($userSession === $user){
+            if($type === '1'){
+                    $resultado = '<button type="button" class="btn btn-light m-auto p-2 btn-delete" id="'.$id.'">
+                        <i class="fas fa-trash-alt m-auto icon-delete btn-delete" id="'.$id.'"></i>
+                        </button>';
+                }else{
+                    $resultado = '<button type="button" class="btn btn-light m-auto p-2" id="'.$id.'">
+                    <i class="fas fa-trash-alt m-auto icon-delete btn-delete" id="'.$id.'"></i>
+                    </button>';
+                }
+            }
+
+            return $resultado;
+    
+    }
+
 ?>

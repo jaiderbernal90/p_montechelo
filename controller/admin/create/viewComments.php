@@ -27,7 +27,7 @@ function commentsAll(){
                     </div>  
                </div>
                <div class="col-12">
-                <div class="media m-auto px-0 pt-0 w-100">
+                <div class="media m-auto px-0 pt-0 w-100 d-flex">
                     <img class="d-flex rounded-circle avatar-comment z-depth-1-half mr-3" src="../../img/'.$_SESSION['img_profile'].'"
                         alt="Avatar">
                     <div class="media-body">

@@ -40,21 +40,21 @@ function filterPublications(){
         foreach ($result as $f){
            if($f['type_publications'] == 1 ){
               $repositorios .= '<div class="row w-100 m-0 p-0 pb-3 border-bottom">
-              <div class="col-12">
-                  <div class="w-100 row m-0 pl-2 d-flex pl-lg-5">
+              <div class="col-12 p-0 pl-3">
+                  <div class="w-100 row m-0 d-flex pl-lg-5">
                       <header class="col-12 p-0 pb-4 pl-lg-5">
                           <a onclick="viewRepositorio(this)" id="'.$f["id_user"].'" class="m-auto">
                               <div class="d-flex pt-3">
-                                  <img src="../../img/'.$f['img_profile'].'" alt="" width="50px" height="50px" class="img-responsive rounded-circle mr-3" alt="Noticia">
+                                  <img src="../../img/'.$f['img_profile'].'" alt="" class="img-responsive avatar-pub rounded-circle mr-2 mr-md-3 " alt="Noticia">
                                   <div class="d-block mt-1">
-                                      <span style="font-weight: 500;">'.$f['email'].'</span>
+                                      <span class="title-user">'.$f['email'].'</span>
                                       <span class="font d-block">'.translationOurs($f['date_publication']).'</span>
                                   </div>
                               </div>
                           </a>
                       </header>
                   </div>
-                  <article class="card mb-5">
+                  <article class="card mb-3">
                       <!-- HEADER -->
                       <header class="card-body-pub">
                           <a onclick="viewNotice(this)" id="'.$f['id_publications'].'">
@@ -77,12 +77,15 @@ function filterPublications(){
                           </div>
                           <!--./LIKE-->
                           <!--Comments -->
-                          <div class="mb-2 col-7 text-right mt-2 pt-1">  
+                          <div class="mb-2 col-7 text-right mt-2 pt-1 cont-com">  
                               <span class="modal-span-com" data-toggle="modal" data-target="#modalComment" id="'.$f['id_publications'].'" >Comentarios: </span><span><strong>'.countComments($f['id_publications']).'</strong></span>
                           </div>
                           <!--./Comments-->
                       </div>
                   </article>
+                  <div class="d-flex w-100 text-center">
+                      '.translationEditableButton($f['email'],$f['id_publications'],$f['type_publications']).'
+                  </div>
               </div>
           </div>';
         }//end if

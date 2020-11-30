@@ -250,10 +250,10 @@
                 <button type="button" class="btn p-2">Administrar PQRF</button>
             </div>
             <div class="text-center mt-4 mb-4 btn-color-two">
-                <button type="button" class="btn p-2">Realizar una solicitud</button>
+                <a href="addSolicitud.php"><button type="button" class="btn p-2">Realizar una solicitud</button></a>
             </div>
             <div class="text-center mt-4 mb-4 btn-color-two">
-                <button type="button" class="btn p-2">Administrar Solicitudes</button>
+                <a href="solicitudesAdmin.php"><button type="button" class="btn p-2">Administrar Solicitudes</button></a>
             </div>
             </div>
         </div>

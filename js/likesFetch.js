@@ -25,7 +25,7 @@ function validationClass(btn){
             data = `id_publications=${btn.id}`;
             fetchs(url,data,btn.parentNode.childNodes[3]);
         }else{
-            url = '../../controller/admin/create/dislike.php';
+            url = '../../controller/admin/delete/dislike.php';
             data = `id_publications=${btn.id}`;
             fetchs(url,data,btn.parentNode.childNodes[3]);
         }

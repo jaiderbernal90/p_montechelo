@@ -1,6 +1,6 @@
 <?php
     require_once('../../controller/sessions/security/securityAdmin.php');
-    require_once('../../controller/admin/read/loadPublications.php');
+    require_once('../../controller/admin/read/loadRequest.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/estilos-home.css">
-    <link rel="stylesheet" href="../../css/publicaciones.css">
+    <link rel="stylesheet" href="../../css/solicitudes.css">
 </head>
 <body class="scrollbar-light-blue bg-white">
    <!--Navbar-->
@@ -33,58 +33,24 @@
     <section class="container-fluid w-100 p-0 m-0 mt-5">
         <div class="row w-100 m-0 p-0 mt-5">
             <div class="col-12 p-0 mt-5 d-flex">
-                <h4 class="title-section m-auto">Publicaciones</h4>
-            </div>
-            <div class="container-fluid mt-5">
-                <ul class="nav nav-tabs nav-justified" style="font-size: 17px;">
-                    <li role="presentation" class="active li-men" >
-                        <a href="publicaciones.php" class="link-pub">Noticias</a>
-                    </li>
-                    <li role="presentation" class="li-men">
-                        <a href="anuncios.php" class="link-pub link-pub-reac">Anuncios</a>
-                    </li>
-                </ul>
+                <h4 href="solicitudes.php" class="title-section m-auto">Mis Solicitudes</h4>
             </div>
         </div>
         <div class="button-sec text-center mt-4">
             <button type="button" class="btn btn-primary p-2 mb-3">
-            <a href="addNotice.php" class="text-white"><i class="fas fa-plus"></i></a></button>
-        </div>
-        <div class="row m-0 w-100 p-0 d-flex mt-3 mt-md-0">
-        <div class="input-group md-form form-sm form-2 w-25 mr-auto ml-5 res-search">
-                <input class="form-control my-0 py-1 red-border text-white" type="text" placeholder="Buscar" aria-label="Buscar" name="noticias" id="anythingSearch">
-                <div class="input-group-append">
-                    <span class="input-group-text elegant-color" id="basic-text1"><i class="fas fa-search text-white"
-                        aria-hidden="true"></i></span>
-                </div>
-            </div>
-            <div class="w-25 mr-5 res-search">
-                <select name="noticias" id="filtro" class="seleccionar md-form w-100" name="deparment" >
-                    <option value="" selected >FILTRAR</option>
-                    <option value="desc">Más Recientes</option>
-                    <option value="asc">Más Antigüos</option>
-                </select>
-            </div>
+            <a href="addSolicitud.php" class="text-white"><i class="fas fa-plus"></i></a></button>
         </div>
     </section>
     <!-- FIRST SECTION -->
     <section class="container-fluid w-100 p-0 m-0 mt-5" id="demo">
        <?php 
-            loadPublications(); 
+        loadSolicitudes();
        ?>
     </section>
     <div class="modal fade" id="modalLike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
     aria-hidden="true">
         <div class="modal-dialog scrollbar-light-blue" role="document">
-            <div class="modal-content" id="like"></div>
-        </div>
-    </div>
-
-    <!-- COMMENTS -->
-    <div class="modal fade" id="modalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
-    aria-hidden="true">
-        <div class="modal-dialog modal-dialog-com scrollbar-light-blue" role="document">
-            <div class="modal-content" id="comment"></div>
+            <div class="modal-content"></div>
         </div>
     </div>
 
@@ -100,16 +66,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-    <!-- SWEET ALERT -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   <!-- PAGINATION JS -->
+   <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+   <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script>
 
     <!--LOCAL JAVASCRIPT-->
     <script src="../../js/menu.js"></script>
-    <script src="../../js/textarea.js"></script>
-    <script src="../../js/btn-like.js"></script>
-    <script src="../../js/likesFetch.js" type="module"></script>
-    <script src="../../js/viewNotice.js"></script>
-    <script src="../../js/commentsFetch.js" type="module"></script>
-    <script src="../../js/searchPublications.js" type="module"></script>
+    <script src="../../js/viewSolicitud.js"></script>
+    <script src="../../js/viewRepositorio.js"></script>
 </body>
 </html>

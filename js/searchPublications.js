@@ -114,6 +114,15 @@ export function filtrerPublications(){
       .then( users => {
             container.innerHTML =  users;
             const spanModalCommen = document.querySelectorAll('.modal-span-com');
+            const btnDelete = document.querySelectorAll('.btn-delete');
+
+
+            //DELETE
+            btnDelete.forEach(btn => {
+              btn.addEventListener('click', () =>{
+                deletePublication(btn);
+              })
+            })
 
             //EVENT LISTENER COMMENTS
             spanModalCommen.forEach(span => {

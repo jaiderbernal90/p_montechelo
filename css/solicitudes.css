@@ -1,0 +1,40 @@
+.card{
+    width: 70%;
+    margin: auto;
+}
+.bg-header{
+    background: #BB6216;
+    border-radius: 5px 5px 0px 0px;
+    color: white;
+}
+.state-span{
+    text-align: center;
+    margin-left: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+.text-content-soli{
+    font-size: 18px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+.anch-res{
+    width: 70%;
+}
+.btn-color1{
+    background: #0098C9;
+}
+.header-card{
+    border-radius: 5px 5px 0px 0px;
+    background: #002A60;
+}
+.header-card p{
+    border-radius: 5px 5px 0px 0px;
+    background: #002A60;
+}
+.card-two{
+    left: 20px;
+}

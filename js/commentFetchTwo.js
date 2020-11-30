@@ -147,7 +147,7 @@ function addCommentary(id,input){
 //FUNCTION THAT BRINGS THE NEW NUMBER OF COMMENTS
 function reloadCounts(id){
     data = `id_publications=${id}`;
-    fetch('../../controller/admin/create/updateCounts.php',{
+    fetch('../../controller/admin/update/updateCounts.php',{
         method:'POST',
         headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
